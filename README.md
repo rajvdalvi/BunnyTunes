@@ -140,7 +140,7 @@ A stunning, ad-free music streaming app tailored with an **iOS Liquid Glass aest
 | Asset | Platform | Type | Size | SHA-256 Checksum |
 |:---|:---:|:---:|:---:|:---|
 | **BunnyTunes-V1.apk** | Android 8.0+ | Signed APK | 81.36 MB | `2D9E6D5F1CE7D06B2CC355A4F7260076FA0626FB0C3B38E64CDC5465DBBD6666` |
-| **BunnyTunes-V1-Windows-Portable.zip** | Windows 10/11 x64 | Portable ZIP | 302.45 MB | `59D5A07B2275146FA8E8B368082901E5A10D4A3D6C16DA263E9318B373E35D0C` |
+| **BunnyTunes-V1-Windows-Portable.zip** | Windows 10/11 x64 | Portable ZIP | 302.26 MB | `3ADAFA036156E2C8CAFBD53B00BA7DE71A8F8F44E4FD4169725E579C29A8A4C5` |
 
 ---
 
