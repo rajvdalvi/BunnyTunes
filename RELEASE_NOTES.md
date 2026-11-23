@@ -31,5 +31,5 @@ Download `BunnyTunes-V1.apk` below, grant unknown source permission if prompted,
 ### 🛠️ Verification Hash (SHA-256)
 - **File:** `BunnyTunes-V1.apk`
 - **Output Directory:** `outputs/BunnyTunes-V1.apk`
-- **SHA-256:** `F4C56DA7C571E803F72621150E87D5EDD5CDEC838EE3DA6B2018E361990E0DB4`
+- **SHA-256:** `2D9E6D5F1CE7D06B2CC355A4F7260076FA0626FB0C3B38E64CDC5465DBBD6666`
 - **Download URL:** [https://github.com/rajvdalvi/BunnyTunes/releases/download/v1.0/BunnyTunes-V1.apk](https://github.com/rajvdalvi/BunnyTunes/releases/download/v1.0/BunnyTunes-V1.apk)
