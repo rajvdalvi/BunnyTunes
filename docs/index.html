@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bunny Tunes — Aesthetic Apple Music & Liquid Glass Client for Android</title>
+  <meta name="description" content="Experience music like never before. Bunny Tunes brings an Apple Music liquid glass aesthetic, lossless audio, prioritized Hindi & Indian music feeds, and zero ads to Android. Developed by Raj Dalvi.">
+  <meta name="theme-color" content="#FA233B">
+  
+  <!-- OpenGraph Metadata -->
+  <meta property="og:title" content="Bunny Tunes — Apple Music & Liquid Glass for Android">
+  <meta property="og:description" content="Lossless audio streaming, curated Hindi charts, fluid iOS animations, and ad-free playback. Developed by Raj Dalvi.">
+  <meta property="og:url" content="https://github.com/rajvdalvi/BunnyTunes">
+  <meta property="og:type" content="website">
+
+  <style>
+    :root {
+      --bg: #07070a;
+      --bg-card: rgba(255, 255, 255, 0.04);
+      --bg-card-hover: rgba(255, 255, 255, 0.07);
+      --border: rgba(255, 255, 255, 0.09);
+      --border-highlight: rgba(255, 255, 255, 0.22);
+      --primary: #fa233b;
+      --primary-glow: rgba(250, 35, 59, 0.45);
+      --accent-pink: #ff375f;
+      --accent-violet: #8e1877;
+      --accent-purple: #af52de;
+      --text: #ffffff;
+      --text-muted: #8e8e93;
+      --text-dim: #636366;
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --radius-sm: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      overflow-x: hidden;
+      line-height: 1.5;
+    }
+
+    /* Animated Ambient Liquid Background */
+    .ambient-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .ambient-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(140px);
+      opacity: 0.38;
+      animation: floatOrb 22s infinite ease-in-out alternate;
+    }
+
+    .orb-1 {
+      width: 650px;
+      height: 650px;
+      background: radial-gradient(circle, #ff2d55 0%, #fa233b 60%, transparent 100%);
+      top: -150px;
+      right: -100px;
+    }
+
+    .orb-2 {
+      width: 580px;
+      height: 580px;
+      background: radial-gradient(circle, #8e1877 0%, #af52de 60%, transparent 100%);
+      top: 35%;
+      left: -180px;
+      animation-duration: 28s;
+      animation-delay: -5s;
+    }
+
+    .orb-3 {
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, #fa233b 0%, #ff5277 50%, transparent 100%);
+      bottom: -200px;
+      right: 15%;
+      animation-duration: 25s;
+      animation-delay: -10s;
+    }
+
+    @keyframes floatOrb {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(80px, 60px) scale(1.12); }
+      100% { transform: translate(-60px, -40px) scale(0.92); }
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Navbar */
+    header {
+      position: sticky;
+      top: 16px;
+      z-index: 100;
+      margin-bottom: 40px;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 24px;
+      background: rgba(18, 18, 22, 0.72);
+      backdrop-filter: blur(28px) saturate(180%);
+      -webkit-backdrop-filter: blur(28px) saturate(180%);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-logo {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #ff4777 0%, #fa233b 50%, #96155f 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 16px var(--primary-glow);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 22px;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #ff3b68 0%, #fa233b 60%, #d01655 100%);
+      color: #ffffff;
+      box-shadow: 0 8px 24px var(--primary-glow), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 12px 32px rgba(250, 35, 59, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.45);
+    }
+
+    .btn-glass {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
+
+    .btn-glass:hover {
+      background: rgba(255, 255, 255, 0.14);
+      border-color: var(--border-highlight);
+      transform: translateY(-2px);
+    }
+
+    .btn-large {
+      padding: 15px 32px;
+      font-size: 1.05rem;
+      border-radius: 999px;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 40px 0 90px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .badge-capsule {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: 999px;
+      background: rgba(250, 35, 59, 0.12);
+      border: 1px solid rgba(250, 35, 59, 0.32);
+      color: #ff5277;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      margin-bottom: 24px;
+    }
+
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #fa233b;
+      box-shadow: 0 0 10px #fa233b;
+      animation: pulseDot 2s infinite;
+    }
+
+    @keyframes pulseDot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.8); }
+    }
+
+    .hero-title {
+      font-size: 4rem;
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      margin-bottom: 22px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #ffffff 30%, #ff688e 75%, #fa233b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-sub {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 36px;
+      max-width: 520px;
+      font-weight: 400;
+    }
+
+    .hero-ctas {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .hero-stats {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+    }
+
+    .stat-item h4 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .stat-item p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Interactive Phone Mockup with Liquid Glass UI */
+    .mockup-wrapper {
+      position: relative;
+      perspective: 1200px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .phone-container {
+      width: 320px;
+      height: 650px;
+      background: #000000;
+      border-radius: 54px;
+      border: 8px solid #2c2c32;
+      box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.15), 0 20px 40px rgba(250, 35, 59, 0.25);
+      position: relative;
+      overflow: hidden;
+      transform: rotateY(-8deg) rotateX(6deg);
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease;
+    }
+
+    .phone-container:hover {
+      transform: rotateY(0deg) rotateX(0deg) scale(1.03);
+      box-shadow: 0 50px 120px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(255, 255, 255, 0.25), 0 25px 60px rgba(250, 35, 59, 0.4);
+    }
+
+    /* Dynamic Island / Speaker notch */
+    .phone-notch {
+      position: absolute;
+      top: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 26px;
+      background: #000000;
+      border-radius: 20px;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10px;
+    }
+
+    .camera-lens {
+      width: 10px;
+      height: 10px;
+      background: #111116;
+      border-radius: 50%;
+      border: 1px solid #1c1c24;
+    }
+
+    /* Inside Phone Screen */
+    .phone-screen {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, #180918 0%, #0e050f 45%, #08080a 100%);
+      padding: 50px 18px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .screen-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #ffffff;
+      padding-bottom: 12px;
+    }
+
+    .liquid-badge {
+      font-size: 0.65rem;
+      padding: 3px 8px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #ff5e7e;
+      font-weight: 600;
+    }
+
+    /* Album Art Card */
+    .album-card {
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: 24px;
+      background: linear-gradient(135deg, #ff3b68 0%, #fa233b 40%, #7d1369 100%);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(250, 35, 59, 0.45);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      margin: 10px 0;
+    }
+
+    .album-mesh {
+      position: absolute;
+      width: 140%;
+      height: 140%;
+      background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.4) 0%, transparent 40%),
+                  radial-gradient(circle at 80% 80%, rgba(0, 0, 0, 0.5) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .album-vinyl {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: #111114;
+      border: 6px solid #222228;
+      box-shadow: 0 0 20px rgba(0,0,0,0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      animation: spinVinyl 12s linear infinite;
+    }
+
+    .vinyl-grooves {
+      position: absolute;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      border: 1px dashed rgba(255, 255, 255, 0.1);
+    }
+
+    .vinyl-center {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #fa233b, #af52de);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+
+    @keyframes spinVinyl {
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Player Controls */
+    .player-info {
+      text-align: left;
+      margin: 10px 0;
+    }
+
+    .track-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #ffffff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .track-artist {
+      font-size: 0.85rem;
+      color: #ff5277;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 2px;
+    }
+
+    .lossless-tag {
+      font-size: 0.62rem;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1px 6px;
+      border-radius: 4px;
+      color: #fff;
+      font-weight: 700;
+    }
+
+    /* Scrubber Progress */
+    .scrubber {
+      width: 100%;
+      margin: 8px 0;
+    }
+
+    .scrubber-bar {
+      width: 100%;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.16);
+      border-radius: 2px;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .scrubber-fill {
+      width: 48%;
+      height: 100%;
+      background: #ffffff;
+      border-radius: 2px;
+      position: relative;
+    }
+
+    .scrubber-fill::after {
+      content: '';
+      position: absolute;
+      right: -4px;
+      top: -3px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ffffff;
+      box-shadow: 0 0 6px rgba(255,255,255,0.8);
+    }
+
+    .scrubber-times {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* Transport Buttons */
+    .transport-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 10px 4px;
+    }
+
+    .ctrl-btn {
+      background: none;
+      border: none;
+      color: #ffffff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.15s;
+    }
+
+    .ctrl-btn:hover {
+      transform: scale(1.15);
+    }
+
+    .play-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #ffffff;
+      color: #000000;
+      box-shadow: 0 6px 18px rgba(255, 255, 255, 0.35);
+    }
+
+    /* Soundwave Equalizer */
+    .equalizer-wave {
+      display: flex;
+      align-items: flex-end;
+      gap: 3px;
+      height: 20px;
+      justify-content: center;
+      margin-top: 6px;
+    }
+
+    .eq-bar {
+      width: 3px;
+      background: #ff375f;
+      border-radius: 3px;
+      animation: eqBounce 1.2s infinite ease-in-out alternate;
+    }
+
+    .eq-bar:nth-child(1) { height: 60%; animation-delay: 0.1s; }
+    .eq-bar:nth-child(2) { height: 90%; animation-delay: 0.3s; }
+    .eq-bar:nth-child(3) { height: 40%; animation-delay: 0.2s; }
+    .eq-bar:nth-child(4) { height: 100%; animation-delay: 0.5s; }
+    .eq-bar:nth-child(5) { height: 70%; animation-delay: 0.4s; }
+
+    @keyframes eqBounce {
+      0% { height: 20%; }
+      100% { height: 100%; }
+    }
+
+    /* Section Styling */
+    section {
+      padding: 90px 0;
+      position: relative;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 60px;
+    }
+
+    .section-subtitle {
+      color: #ff375f;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: 2.8rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    /* Features Grid */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .feature-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
+      backdrop-filter: blur(20px);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .feature-card:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--border-highlight);
+      transform: translateY(-6px);
+      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4), 0 0 30px rgba(250, 35, 59, 0.15);
+    }
+
+    .feature-card:hover::before {
+      opacity: 1;
+    }
+
+    .feature-icon-box {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      background: rgba(250, 35, 59, 0.12);
+      border: 1px solid rgba(250, 35, 59, 0.24);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ff375f;
+      margin-bottom: 24px;
+      font-size: 1.5rem;
+    }
+
+    .feature-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+
+    .feature-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* Comparison Table Section */
+    .comparison-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 40px;
+      backdrop-filter: blur(24px);
+      overflow-x: auto;
+    }
+
+    .comp-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    .comp-table th, .comp-table td {
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .comp-table th {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .comp-table td {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    .highlight-col {
+      background: rgba(250, 35, 59, 0.07);
+      color: #ff5277;
+      font-weight: 700;
+      border-radius: 12px;
+    }
+
+    .check-icon {
+      color: #34c759;
+      font-weight: 800;
+    }
+
+    .cross-icon {
+      color: #ff3b30;
+      font-weight: 800;
+    }
+
+    /* Download Banner Card */
+    .download-card {
+      background: linear-gradient(135deg, rgba(255, 55, 95, 0.15) 0%, rgba(142, 24, 119, 0.12) 100%), var(--bg-card);
+      border: 1px solid rgba(255, 55, 95, 0.3);
+      border-radius: var(--radius-xl);
+      padding: 60px 48px;
+      backdrop-filter: blur(28px);
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+      gap: 40px;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5), 0 0 60px rgba(250, 35, 59, 0.2);
+    }
+
+    .download-content h3 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 14px;
+      line-height: 1.15;
+    }
+
+    .download-content p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+
+    .terminal-box {
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.88rem;
+      color: #34c759;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+
+    .terminal-box:hover {
+      border-color: var(--border-highlight);
+    }
+
+    .copy-pill {
+      font-size: 0.72rem;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      padding: 4px 10px;
+      border-radius: 999px;
+      transition: background 0.2s;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 60px 0 40px;
+      color: var(--text-muted);
+      font-size: 0.92rem;
+    }
+
+    .footer-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-bottom: 30px;
+    }
+
+    .footer-left p {
+      margin-top: 6px;
+      font-size: 0.85rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--text);
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #1c1c1e;
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 12px 24px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 999;
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* Responsive */
+    @media (max-width: 968px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 50px;
+      }
+      .hero-title { font-size: 3rem; }
+      .hero-sub { margin: 0 auto 30px; }
+      .hero-ctas { justify-content: center; }
+      .hero-stats { justify-content: center; }
+      .features-grid { grid-template-columns: 1fr; }
+      .download-card { grid-template-columns: 1fr; text-align: center; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Liquid Glow Mesh Background -->
+  <div class="ambient-canvas">
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+  </div>
+
+  <div class="container">
+    <!-- Navbar -->
+    <header>
+      <nav class="navbar">
+        <a href="#" class="brand">
+          <div class="brand-logo">
+            <!-- Bunny Vector SVG Icon -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2a4 4 0 0 0-4 4v7a4 4 0 0 0 8 0V6a4 4 0 0 0-4-4z"/>
+              <path d="M6 10v2a6 6 0 0 0 12 0v-2"/>
+              <circle cx="12" cy="18" r="2"/>
+            </svg>
+          </div>
+          <span>Bunny Tunes</span>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#liquid-glass">Liquid Glass</a></li>
+          <li><a href="#audio">Audio Engine</a></li>
+          <li><a href="#comparison">Compare</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="https://github.com/rajvdalvi/BunnyTunes" target="_blank" class="btn btn-glass">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+            GitHub
+          </a>
+          <a href="https://github.com/rajvdalvi/BunnyTunes/releases/download/v2.0/BunnyTunes-v2.0-RajDalvi.apk" class="btn btn-primary">
+            Download APK
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <main>
+      <section class="hero">
+        <div class="hero-left">
+          <div class="badge-capsule">
+            <span class="badge-dot"></span>
+            Bunny Tunes v2.0 • Liquid Glass Edition Live
+          </div>
+          <h1 class="hero-title">
+            Your Music.<br>
+            In Pure <span class="gradient-text">Liquid Glass.</span>
+          </h1>
+          <p class="hero-sub">
+            The ultimate Apple Music aesthetic client for Android. Experience lossless audio, curated Indian & Hindi trending feeds, fluid iOS animations, and zero ads.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="https://github.com/rajvdalvi/BunnyTunes/releases/download/v2.0/BunnyTunes-v2.0-RajDalvi.apk" class="btn btn-primary btn-large">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              Download v2.0 APK (83 MB)
+            </a>
+            <a href="https://github.com/rajvdalvi/BunnyTunes" target="_blank" class="btn btn-glass btn-large">
+              View Source & Docs
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <h4>Lossless</h4>
+              <p>24-bit / Hi-Res Audio</p>
+            </div>
+            <div class="stat-item">
+              <h4>100%</h4>
+              <p>Ad-Free & Private</p>
+            </div>
+            <div class="stat-item">
+              <h4>Android 8+</h4>
+              <p>Up to Android 17</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Phone Mockup -->
+        <div class="mockup-wrapper">
+          <div class="phone-container">
+            <div class="phone-notch">
+              <div class="camera-lens"></div>
+            </div>
+
+            <div class="phone-screen">
+              <div class="screen-header">
+                <span>Bunny Tunes</span>
+                <span class="liquid-badge">LIQUID GLASS</span>
+              </div>
+
+              <!-- Animated Album Art -->
+              <div class="album-card">
+                <div class="album-mesh"></div>
+                <div class="album-vinyl">
+                  <div class="vinyl-grooves"></div>
+                  <div class="vinyl-center">🐰</div>
+                </div>
+              </div>
+
+              <!-- Track Details -->
+              <div class="player-info">
+                <h3 class="track-title" id="trackTitle">Kesariya (From "Brahmastra")</h3>
+                <div class="track-artist">
+                  <span>Arijit Singh, Pritam</span>
+                  <span class="lossless-tag">LOSSLESS</span>
+                </div>
+              </div>
+
+              <!-- Live Soundwave Equalizer -->
+              <div class="equalizer-wave">
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+              </div>
+
+              <!-- Scrubber -->
+              <div class="scrubber">
+                <div class="scrubber-bar" id="scrubberBar">
+                  <div class="scrubber-fill" id="scrubberFill"></div>
+                </div>
+                <div class="scrubber-times">
+                  <span id="currentTime">1:42</span>
+                  <span>3:28</span>
+                </div>
+              </div>
+
+              <!-- Transport Buttons -->
+              <div class="transport-controls">
+                <button class="ctrl-btn" id="prevBtn" title="Previous">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="19 20 9 12 19 4 19 20"/>
+                    <line x1="5" y1="19" x2="5" y2="5" stroke="currentColor" stroke-width="2.5"/>
+                  </svg>
+                </button>
+                <button class="ctrl-btn play-btn" id="playBtn" title="Play/Pause">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" id="playIcon">
+                    <rect x="6" y="4" width="4" height="16" rx="1"/>
+                    <rect x="14" y="4" width="4" height="16" rx="1"/>
+                  </svg>
+                </button>
+                <button class="ctrl-btn" id="nextBtn" title="Next">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="5 4 15 12 5 20 5 4"/>
+                    <line x1="19" y1="5" x2="19" y2="19" stroke="currentColor" stroke-width="2.5"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Key Features Section -->
+      <section id="features">
+        <div class="section-header">
+          <p class="section-subtitle">Crafted For Audiophiles</p>
+          <h2 class="section-title">Designed with Pure Elegance</h2>
+          <p class="section-desc">Every element of Bunny Tunes is engineered to elevate your listening experience into a visual and acoustic pleasure.</p>
+        </div>
+
+        <div class="features-grid">
+          <!-- Card 1 -->
+          <div class="feature-card">
+            <div class="feature-icon-box">🌸</div>
+            <h3 class="feature-title">Liquid Glass by Default</h3>
+            <p class="feature-desc">Active dynamic frosted blur shaders and vibrant ambient background bleed that harmonize with whatever album art is playing.</p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="feature-card">
+            <div class="feature-icon-box">💎</div>
+            <h3 class="feature-title">Lossless Hi-Fi Audio</h3>
+            <p class="feature-desc">Experience studio master recordings with maximum bitrate decoding, bit-perfect DAC routing, and system mixer bypass.</p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="feature-card">
+            <div class="feature-icon-box">🇮🇳</div>
+            <h3 class="feature-title">Curated Indian & Hindi Feed</h3>
+            <p class="feature-desc">Smart regional discovery pins trending Bollywood hits, Hindi classics, and regional Indian charts right to your primary Home screen.</p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="feature-card">
+            <div class="feature-icon-box">⚡</div>
+            <h3 class="feature-title">Fluid iOS Physics</h3>
+            <p class="feature-desc">Cubic decelerate slide and fade transitions designed after the Apple App Store, giving native tactile responsiveness on Android.</p>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="feature-card">
+            <div class="feature-icon-box">🚫</div>
+            <h3 class="feature-title">100% Ad-Free & Private</h3>
+            <p class="feature-desc">Zero commercials, zero tracking telemetry, and no forced logins. Your listening habits remain solely on your device.</p>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="feature-card">
+            <div class="feature-icon-box">🪶</div>
+            <h3 class="feature-title">Lightweight & Bloat-Free</h3>
+            <p class="feature-desc">Unnecessary wearable smartwatch daemons have been stripped, resulting in faster launch times and lower battery consumption.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Comparison Section -->
+      <section id="comparison">
+        <div class="section-header">
+          <p class="section-subtitle">How We Compare</p>
+          <h2 class="section-title">The Bunny Tunes Advantage</h2>
+          <p class="section-desc">See how Bunny Tunes compares against conventional streaming services.</p>
+        </div>
+
+        <div class="comparison-card">
+          <table class="comp-table">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th class="highlight-col">Bunny Tunes</th>
+                <th>Spotify Free</th>
+                <th>YouTube Music Free</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Liquid Glass iOS UI</td>
+                <td class="highlight-col"><span class="check-icon">✓</span> Enabled Default</td>
+                <td><span class="cross-icon">✗</span> Standard Dark</td>
+                <td><span class="cross-icon">✗</span> Standard Dark</td>
+              </tr>
+              <tr>
+                <td>Audio Quality</td>
+                <td class="highlight-col"><span class="check-icon">✓</span> Lossless / Hi-Res</td>
+                <td><span class="cross-icon">✗</span> 160 kbps (Lossy)</td>
+                <td><span class="cross-icon">✗</span> 128 kbps (Lossy)</td>
+              </tr>
+              <tr>
+                <td>Advertisements</td>
+                <td class="highlight-col"><span class="check-icon">✓</span> Zero Ads Ever</td>
+                <td><span class="cross-icon">✗</span> Audio & Visual Ads</td>
+                <td><span class="cross-icon">✗</span> Video Ads</td>
+              </tr>
+              <tr>
+                <td>Background Playback</td>
+                <td class="highlight-col"><span class="check-icon">✓</span> Unlimited</td>
+                <td><span class="check-icon">✓</span> Limited</td>
+                <td><span class="cross-icon">✗</span> Screen Must Stay On</td>
+              </tr>
+              <tr>
+                <td>Account Mandatory</td>
+                <td class="highlight-col"><span class="check-icon">✓</span> No Account Needed</td>
+                <td><span class="cross-icon">✗</span> Required</td>
+                <td><span class="cross-icon">✗</span> Required</td>
+              </tr>
+              <tr>
+                <td>Curated Hindi Priority</td>
+                <td class="highlight-col"><span class="check-icon">✓</span> Native Regional Feed</td>
+                <td>Algorithm Dependent</td>
+                <td>Algorithm Dependent</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Download Banner -->
+      <section id="download">
+        <div class="download-card">
+          <div class="download-content">
+            <h3>Get Bunny Tunes for Android</h3>
+            <p>Download the official release APK signed with modern v2 & v3 schemes. Compatible with Android 8.0 Oreo through Android 17.</p>
+            <a href="https://github.com/rajvdalvi/BunnyTunes/releases/download/v2.0/BunnyTunes-v2.0-RajDalvi.apk" class="btn btn-primary btn-large">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              Download APK v2.0 (83 MB)
+            </a>
+          </div>
+
+          <div class="download-code">
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px;">Install via ADB command:</p>
+            <div class="terminal-box" id="adbBox" onclick="copyAdbCommand()">
+              <span>adb install -r BunnyTunes-v2.0-RajDalvi.apk</span>
+              <span class="copy-pill" id="copyPill">Copy</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-left">
+          <div class="brand">
+            <div class="brand-logo" style="width: 28px; height: 28px; border-radius: 8px;">🐰</div>
+            <span>Bunny Tunes</span>
+          </div>
+          <p>Designed and crafted with passion by <b>Raj Dalvi</b>.</p>
+        </div>
+
+        <ul class="footer-links">
+          <li><a href="https://github.com/rajvdalvi/BunnyTunes" target="_blank">GitHub Repository</a></li>
+          <li><a href="https://github.com/rajvdalvi/BunnyTunes/releases" target="_blank">Releases</a></li>
+          <li><a href="https://github.com/rajvdalvi/BunnyTunes/blob/main/LICENSE" target="_blank">GNU GPL-3.0 License</a></li>
+        </ul>
+      </div>
+      <div style="text-align: center; font-size: 0.8rem; color: var(--text-dim);">
+        &copy; 2026 Raj Dalvi • All trademarks and music logos belong to their respective copyright holders.
+      </div>
+    </footer>
+  </div>
+
+  <div class="toast" id="toast">Copied ADB command to clipboard!</div>
+
+  <script>
+    // Copy ADB command
+    function copyAdbCommand() {
+      const text = "adb install -r BunnyTunes-v2.0-RajDalvi.apk";
+      navigator.clipboard.writeText(text).then(() => {
+        const toast = document.getElementById('toast');
+        toast.classList.add('show');
+        document.getElementById('copyPill').innerText = 'Copied!';
+        setTimeout(() => {
+          toast.classList.remove('show');
+          document.getElementById('copyPill').innerText = 'Copy';
+        }, 2200);
+      });
+    }
+
+    // Interactive Player Demo Songs
+    const playlist = [
+      { title: "Kesariya (From \"Brahmastra\")", artist: "Arijit Singh, Pritam", duration: "3:28" },
+      { title: "Tum Hi Ho", artist: "Arijit Singh, Mithoon", duration: "4:22" },
+      { title: "Chaleya (From \"Jawan\")", artist: "Anirudh Ravichander, Shilpa Rao", duration: "3:20" },
+      { title: "Starboy", artist: "The Weeknd, Daft Punk", duration: "3:50" }
+    ];
+
+    let currentTrackIdx = 0;
+    let isPlaying = true;
+
+    const playBtn = document.getElementById('playBtn');
+    const playIcon = document.getElementById('playIcon');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const trackTitle = document.getElementById('trackTitle');
+    const scrubberFill = document.getElementById('scrubberFill');
+
+    playBtn.addEventListener('click', () => {
+      isPlaying = !isPlaying;
+      if (isPlaying) {
+        playIcon.innerHTML = '<rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/>';
+        document.querySelectorAll('.eq-bar').forEach(bar => bar.style.animationPlayState = 'running');
+      } else {
+        playIcon.innerHTML = '<polygon points="5 3 19 12 5 21 5 3"/>';
+        document.querySelectorAll('.eq-bar').forEach(bar => bar.style.animationPlayState = 'paused');
+      }
+    });
+
+    nextBtn.addEventListener('click', () => {
+      currentTrackIdx = (currentTrackIdx + 1) % playlist.length;
+      updateTrack();
+    });
+
+    prevBtn.addEventListener('click', () => {
+      currentTrackIdx = (currentTrackIdx - 1 + playlist.length) % playlist.length;
+      updateTrack();
+    });
+
+    function updateTrack() {
+      trackTitle.innerText = playlist[currentTrackIdx].title;
+      document.querySelector('.track-artist span').innerText = playlist[currentTrackIdx].artist;
+      scrubberFill.style.width = '15%';
+    }
+
+    // Dynamic Scrubber Animation
+    setInterval(() => {
+      if (isPlaying) {
+        let currentWidth = parseFloat(scrubberFill.style.width) || 48;
+        if (currentWidth >= 100) {
+          nextBtn.click();
+        } else {
+          scrubberFill.style.width = (currentWidth + 0.5) + '%';
+        }
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
