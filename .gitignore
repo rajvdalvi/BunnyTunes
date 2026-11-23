@@ -3,11 +3,14 @@ build/
 bin/
 gen/
 out/
+outputs/
+windows_port/
 *.apk
 *.ap_
 *.dex
 *.class
 *.idsig
+*.zip
 
 # Keys & Signing Secrets
 *.jks

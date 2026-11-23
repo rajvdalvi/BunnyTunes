@@ -1,18 +1,19 @@
 <div align="center">
 
 # 🐰 Bunny Tunes
-### Premium Music & Streaming Client for Android
+### Premium Music & Streaming Client for Android & Windows
 
 [![Website](https://img.shields.io/badge/Website-Live%20Showcase-FF2D55?logo=safari&logoColor=white)](https://rajvdalvi.github.io/BunnyTunes/)
-[![Android](https://img.shields.io/badge/Android-8.0%2B-3DDC84?logo=android&logoColor=white)](https://android.com)
+[![Android](https://img.shields.io/badge/Android-8.0%2B-3DDC84?logo=android&logoColor=white)](https://github.com/rajvdalvi/BunnyTunes/releases)
+[![Windows](https://img.shields.io/badge/Windows-10%20%2F%2011-0078D4?logo=windows&logoColor=white)](https://github.com/rajvdalvi/BunnyTunes/releases)
 [![License: GPL-3.0](https://img.shields.io/badge/License-GPL--3.0-blue.svg)](LICENSE)
 [![Latest Release](https://img.shields.io/badge/Release-v1.0-FF2D55?logo=apple-music&logoColor=white)](https://github.com/rajvdalvi/BunnyTunes/releases)
 [![Audio Quality](https://img.shields.io/badge/Audio-Lossless%20Hi--Res-gold)](#key-features)
 [![Developer](https://img.shields.io/badge/Developer-Raj%20Dalvi-black)](https://github.com/rajvdalvi)
 
-A stunning, ad-free music streaming app tailored with an **iOS Liquid Glass aesthetic**, smooth physics-based transition animations, lossless audio rendering, custom themes & changable icons, and curated trending Indian & Hindi music prioritization.
+A stunning, ad-free music streaming app tailored with an **iOS Liquid Glass aesthetic**, smooth physics-based transition animations, lossless audio rendering, custom themes & changable icons, and curated trending Indian & Hindi music prioritization. Available for **Android** and **Windows PC**.
 
-[**Download APK**](https://github.com/rajvdalvi/BunnyTunes/releases/download/v1.0/BunnyTunes-V1.apk) • [**Live Website**](https://rajvdalvi.github.io/BunnyTunes/) • [**Screenshots**](#-screenshots) • [**Features**](#-key-features) • [**Installation**](#-installation) • [**Credits**](#-developer--credits)
+[**Download Android APK**](https://github.com/rajvdalvi/BunnyTunes/releases/download/v1.0/BunnyTunes-V1.apk) • [**Download Windows PC**](https://github.com/rajvdalvi/BunnyTunes/releases/download/v1.0/BunnyTunes-V1-Windows-Portable.zip) • [**Live Website**](https://rajvdalvi.github.io/BunnyTunes/) • [**Screenshots**](#-screenshots-sequential-app-flow) • [**Installation**](#-installation)
 
 ---
 
@@ -120,20 +121,26 @@ A stunning, ad-free music streaming app tailored with an **iOS Liquid Glass aest
 
 ---
 
-## 📥 Installation
+## 📥 Installation & Downloads
 
-### Method 1: Direct Download (Recommended)
-1. Download the latest **`BunnyTunes-V1.apk`** from [GitHub Releases](https://github.com/rajvdalvi/BunnyTunes/releases/download/v1.0/BunnyTunes-V1.apk).
-2. Open the downloaded `.apk` file on your Android device.
-3. If prompted, allow **"Install unknown apps"** for your browser or file manager.
-4. Tap **Install** and enjoy!
+### 🤖 Android (Direct APK)
+1. Download **`BunnyTunes-V1.apk`** (81 MB) from [GitHub Releases](https://github.com/rajvdalvi/BunnyTunes/releases/download/v1.0/BunnyTunes-V1.apk).
+2. Open the downloaded `.apk` file on your Android device and tap **Install**.
+3. *Alternative (ADB):*
+   ```bash
+   adb install -r BunnyTunes-V1.apk
+   ```
 
-### Method 2: Via ADB (USB Debugging)
-```bash
-adb install -r BunnyTunes-V1.apk
-```
+### 🪟 Windows PC (Portable Desktop Edition)
+1. Download **`BunnyTunes-V1-Windows-Portable.zip`** (302 MB) from [GitHub Releases](https://github.com/rajvdalvi/BunnyTunes/releases/download/v1.0/BunnyTunes-V1-Windows-Portable.zip).
+2. Extract the ZIP anywhere on your PC (e.g. `C:\BunnyTunes` or Desktop).
+3. Double-click **`BunnyTunes.exe`** (or `Run-BunnyTunes.bat`).
+4. **Zero setup required:** Bundles its own self-contained OpenJDK 21 runtime and native Windows audio codecs. Features native Windows media keys and taskbar playback controls!
 
-> **Note:** If you have an earlier unofficial version installed, uninstall it first to ensure clean certificate pairing.
+| Asset | Platform | Type | Size | SHA-256 Checksum |
+|:---|:---:|:---:|:---:|:---|
+| **BunnyTunes-V1.apk** | Android 8.0+ | Signed APK | 81.36 MB | `2D9E6D5F1CE7D06B2CC355A4F7260076FA0626FB0C3B38E64CDC5465DBBD6666` |
+| **BunnyTunes-V1-Windows-Portable.zip** | Windows 10/11 x64 | Portable ZIP | 302.45 MB | `59D5A07B2275146FA8E8B368082901E5A10D4A3D6C16DA263E9318B373E35D0C` |
 
 ---
 
