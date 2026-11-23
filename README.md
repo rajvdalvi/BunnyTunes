@@ -3,6 +3,7 @@
 # 🐰 Bunny Tunes
 ### Premium Apple Music & Liquid Glass Streaming Client for Android
 
+[![Website](https://img.shields.io/badge/Website-Live%20Showcase-FF2D55?logo=safari&logoColor=white)](https://rajvdalvi.github.io/BunnyTunes/)
 [![Android](https://img.shields.io/badge/Android-8.0%2B-3DDC84?logo=android&logoColor=white)](https://android.com)
 [![License: GPL-3.0](https://img.shields.io/badge/License-GPL--3.0-blue.svg)](LICENSE)
 [![Latest Release](https://img.shields.io/badge/Release-v2.0-FF2D55?logo=apple-music&logoColor=white)](https://github.com/rajvdalvi/BunnyTunes/releases)
@@ -11,7 +12,7 @@
 
 A stunning, ad-free music streaming app tailored with an **iOS Liquid Glass aesthetic**, smooth physics-based transition animations, lossless audio rendering, and curated trending Indian & Hindi music prioritization.
 
-[**Download APK**](https://github.com/rajvdalvi/BunnyTunes/releases/latest) • [**Features**](#-key-features) • [**Installation**](#-installation) • [**Credits**](#-developer--credits)
+[**Download APK**](https://github.com/rajvdalvi/BunnyTunes/releases/latest) • [**Live Website**](https://rajvdalvi.github.io/BunnyTunes/) • [**Features**](#-key-features) • [**Installation**](#-installation) • [**Credits**](#-developer--credits)
 
 ---
 
