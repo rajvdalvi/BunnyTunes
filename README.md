@@ -69,7 +69,7 @@ adb install -r BunnyTunes-V1.apk
 
 ## 👤 Developer & Credits
 
-- **Lead Developer & Customizer:** **Raj Dalvi**
+- **Developer:** **Raj Dalvi**
 - **Inspiration:** Apple Music iOS design language & open-source Android audio engineering
 - **License:** Distributed under the [GNU General Public License v3.0](LICENSE).
 
