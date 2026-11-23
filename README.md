@@ -1,19 +1,19 @@
 <div align="center">
 
 # 🐰 Bunny Tunes
-### Premium Music & Streaming Client for Android & Windows
+### Premium Music & Streaming Client for Android
 
 [![Website](https://img.shields.io/badge/Website-Live%20Showcase-FF2D55?logo=safari&logoColor=white)](https://rajvdalvi.github.io/BunnyTunes/)
 [![Android](https://img.shields.io/badge/Android-8.0%2B-3DDC84?logo=android&logoColor=white)](https://github.com/rajvdalvi/BunnyTunes/releases)
-[![Windows](https://img.shields.io/badge/Windows-10%20%2F%2011-0078D4?logo=windows&logoColor=white)](https://github.com/rajvdalvi/BunnyTunes/releases)
+[![Windows](https://img.shields.io/badge/Windows-Coming%20Soon-lightgrey?logo=windows&logoColor=white)](#-installation)
 [![License: GPL-3.0](https://img.shields.io/badge/License-GPL--3.0-blue.svg)](LICENSE)
 [![Latest Release](https://img.shields.io/badge/Release-v1.0-FF2D55?logo=apple-music&logoColor=white)](https://github.com/rajvdalvi/BunnyTunes/releases)
 [![Audio Quality](https://img.shields.io/badge/Audio-Lossless%20Hi--Res-gold)](#key-features)
 [![Developer](https://img.shields.io/badge/Developer-Raj%20Dalvi-black)](https://github.com/rajvdalvi)
 
-A stunning, ad-free music streaming app tailored with an **iOS Liquid Glass aesthetic**, smooth physics-based transition animations, lossless audio rendering, custom themes & changable icons, and curated trending Indian & Hindi music prioritization. Available for **Android** and **Windows PC**.
+A stunning, ad-free music streaming app tailored with an **iOS Liquid Glass aesthetic**, smooth physics-based transition animations, lossless audio rendering, custom themes & changable icons, and curated trending Indian & Hindi music prioritization. Currently available for **Android** (Windows edition in development).
 
-[**Download Android APK**](https://github.com/rajvdalvi/BunnyTunes/releases/download/v1.0/BunnyTunes-V1.apk) • [**Download Windows PC**](https://github.com/rajvdalvi/BunnyTunes/releases/download/v1.0/BunnyTunes-V1-Windows-Portable.zip) • [**Live Website**](https://rajvdalvi.github.io/BunnyTunes/) • [**Screenshots**](#-screenshots-sequential-app-flow) • [**Installation**](#-installation)
+[**Download Android APK**](https://github.com/rajvdalvi/BunnyTunes/releases/download/v1.0/BunnyTunes-V1.apk) • [**Live Website**](https://rajvdalvi.github.io/BunnyTunes/) • [**Screenshots**](#-screenshots-sequential-app-flow) • [**Installation**](#-installation)
 
 ---
 
@@ -131,16 +131,13 @@ A stunning, ad-free music streaming app tailored with an **iOS Liquid Glass aest
    adb install -r BunnyTunes-V1.apk
    ```
 
-### 🪟 Windows PC (Portable Desktop Edition)
-1. Download **`BunnyTunes-V1-Windows-Portable.zip`** (302 MB) from [GitHub Releases](https://github.com/rajvdalvi/BunnyTunes/releases/download/v1.0/BunnyTunes-V1-Windows-Portable.zip).
-2. Extract the ZIP anywhere on your PC (e.g. `C:\BunnyTunes` or Desktop).
-3. Double-click **`BunnyTunes.exe`** (or `Run-BunnyTunes.bat`).
-4. **Zero setup required:** Bundles its own self-contained OpenJDK 21 runtime and native Windows audio codecs. Features native Windows media keys and taskbar playback controls!
+### 🪟 Windows PC (In Active Development)
+> [!NOTE]
+> The single-file installer edition for Windows is currently being finalized and optimized. Currently, official releases on GitHub are for Android. Windows builds will be published once fully approved.
 
 | Asset | Platform | Type | Size | SHA-256 Checksum |
 |:---|:---:|:---:|:---:|:---|
 | **BunnyTunes-V1.apk** | Android 8.0+ | Signed APK | 81.36 MB | `2D9E6D5F1CE7D06B2CC355A4F7260076FA0626FB0C3B38E64CDC5465DBBD6666` |
-| **BunnyTunes-V1-Windows-Portable.zip** | Windows 10/11 x64 | Portable ZIP | 302.26 MB | `3ADAFA036156E2C8CAFBD53B00BA7DE71A8F8F44E4FD4169725E579C29A8A4C5` |
 
 ---
 
