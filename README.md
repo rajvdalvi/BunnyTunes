@@ -18,7 +18,7 @@ A stunning, ad-free music streaming app tailored with an **iOS Liquid Glass aest
 
 </div>
 
-## 📱 Screenshots (Sequential App Flow)
+## 📱 Screenshots
 
 <div align="center">
 
