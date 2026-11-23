@@ -3,35 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bunny Tunes — Aesthetic Apple Music & Liquid Glass Client for Android</title>
-  <meta name="description" content="Experience music like never before. Bunny Tunes brings an Apple Music liquid glass aesthetic, lossless audio, prioritized Hindi & Indian music feeds, and zero ads to Android. Developed by Raj Dalvi.">
+  <title>BunnyTunes V1 &mdash; Premium Apple Music &amp; Liquid Glass Streaming for Android</title>
+  <meta name="description" content="Experience music in pure liquid glass. BunnyTunes V1 delivers an iOS Apple Music aesthetic, bit-perfect lossless audio, curated Indian &amp; Hindi music prioritization, changable themes, and zero ads on Android. Designed and crafted by Raj Dalvi.">
   <meta name="theme-color" content="#FA233B">
-  
+
   <!-- OpenGraph Metadata -->
-  <meta property="og:title" content="Bunny Tunes — Apple Music & Liquid Glass for Android">
-  <meta property="og:description" content="Lossless audio streaming, curated Hindi charts, fluid iOS animations, and ad-free playback. Developed by Raj Dalvi.">
-  <meta property="og:url" content="https://github.com/rajvdalvi/BunnyTunes">
+  <meta property="og:title" content="BunnyTunes V1 &mdash; Apple Music &amp; Liquid Glass for Android">
+  <meta property="og:description" content="Lossless Hi-Res audio, curated Hindi hits, fluid iOS animations, and ad-free playback. Developed by Raj Dalvi.">
+  <meta property="og:url" content="https://rajvdalvi.github.io/BunnyTunes/">
   <meta property="og:type" content="website">
 
   <style>
     :root {
-      --bg: #07070a;
+      --bg: #060609;
       --bg-card: rgba(255, 255, 255, 0.04);
-      --bg-card-hover: rgba(255, 255, 255, 0.07);
-      --border: rgba(255, 255, 255, 0.09);
+      --bg-card-hover: rgba(255, 255, 255, 0.08);
+      --border: rgba(255, 255, 255, 0.08);
       --border-highlight: rgba(255, 255, 255, 0.22);
       --primary: #fa233b;
       --primary-glow: rgba(250, 35, 59, 0.45);
       --accent-pink: #ff375f;
-      --accent-violet: #8e1877;
-      --accent-purple: #af52de;
+      --accent-violet: #bf5af2;
+      --accent-cyan: #00f5ff;
+      --accent-silver: #e5e5ea;
+      --accent-green: #30d158;
       --text: #ffffff;
       --text-muted: #8e8e93;
       --text-dim: #636366;
-      --radius-xl: 32px;
-      --radius-lg: 24px;
-      --radius-md: 16px;
-      --radius-sm: 12px;
+      --font-stack: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --phone-accent: #fa233b;
+      --phone-glow: rgba(250, 35, 59, 0.35);
     }
 
     * {
@@ -45,12 +46,12 @@
     body {
       background-color: var(--bg);
       color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: var(--font-stack);
       overflow-x: hidden;
       line-height: 1.5;
     }
 
-    /* Animated Ambient Liquid Background */
+    /* Ambient Liquid Canvas Background */
     .ambient-canvas {
       position: fixed;
       top: 0;
@@ -66,105 +67,137 @@
       position: absolute;
       border-radius: 50%;
       filter: blur(140px);
-      opacity: 0.38;
-      animation: floatOrb 22s infinite ease-in-out alternate;
+      opacity: 0.32;
+      animation: floatOrb 24s infinite ease-in-out alternate;
     }
 
     .orb-1 {
-      width: 650px;
-      height: 650px;
+      width: 720px;
+      height: 720px;
       background: radial-gradient(circle, #ff2d55 0%, #fa233b 60%, transparent 100%);
-      top: -150px;
+      top: -180px;
       right: -100px;
     }
 
     .orb-2 {
-      width: 580px;
-      height: 580px;
-      background: radial-gradient(circle, #8e1877 0%, #af52de 60%, transparent 100%);
-      top: 35%;
-      left: -180px;
-      animation-duration: 28s;
-      animation-delay: -5s;
+      width: 640px;
+      height: 640px;
+      background: radial-gradient(circle, #8e1877 0%, #bf5af2 60%, transparent 100%);
+      top: 38%;
+      left: -200px;
+      animation-duration: 32s;
+      animation-delay: -6s;
     }
 
     .orb-3 {
-      width: 700px;
-      height: 700px;
+      width: 780px;
+      height: 780px;
       background: radial-gradient(circle, #fa233b 0%, #ff5277 50%, transparent 100%);
-      bottom: -200px;
-      right: 15%;
-      animation-duration: 25s;
-      animation-delay: -10s;
+      bottom: -240px;
+      right: 8%;
+      animation-duration: 28s;
+      animation-delay: -12s;
     }
 
     @keyframes floatOrb {
       0% { transform: translate(0, 0) scale(1); }
-      50% { transform: translate(80px, 60px) scale(1.12); }
-      100% { transform: translate(-60px, -40px) scale(0.92); }
+      50% { transform: translate(60px, 40px) scale(1.08); }
+      100% { transform: translate(-40px, 70px) scale(0.95); }
     }
 
-    /* Container */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-      position: relative;
+    /* Top Grid Overlay Pattern */
+    .grid-overlay {
+      position: fixed;
+      inset: 0;
+      background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
       z-index: 1;
     }
 
-    /* Navbar */
-    header {
-      position: sticky;
-      top: 16px;
-      z-index: 100;
-      margin-bottom: 40px;
+    .page-wrapper {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
-    .navbar {
+    /* Navigation Bar */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(24px) saturate(190%);
+      -webkit-backdrop-filter: blur(24px) saturate(190%);
+      background: rgba(6, 6, 9, 0.72);
+      border-bottom: 1px solid var(--border);
+      transition: background 0.3s;
+    }
+
+    .nav-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 14px 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 14px 24px;
-      background: rgba(18, 18, 22, 0.72);
-      backdrop-filter: blur(28px) saturate(180%);
-      -webkit-backdrop-filter: blur(28px) saturate(180%);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.12);
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    .brand {
+    .brand-wrap {
       display: flex;
       align-items: center;
       gap: 12px;
       text-decoration: none;
-      color: var(--text);
-      font-weight: 700;
-      font-size: 1.15rem;
-      letter-spacing: -0.02em;
+      color: #ffffff;
     }
 
-    .brand-logo {
-      width: 38px;
-      height: 38px;
+    .brand-icon {
+      width: 36px;
+      height: 36px;
       border-radius: 10px;
-      background: linear-gradient(135deg, #ff4777 0%, #fa233b 50%, #96155f 100%);
+      background: linear-gradient(135deg, #ff375f 0%, #fa233b 100%);
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 6px 16px var(--primary-glow);
+      box-shadow: 0 4px 14px var(--primary-glow);
     }
 
-    .nav-links {
+    .brand-icon svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+
+    .brand-version {
+      font-size: 0.68rem;
+      color: var(--primary);
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .nav-menu {
       display: flex;
       align-items: center;
       gap: 28px;
       list-style: none;
     }
 
-    .nav-links a {
+    .nav-menu a {
       color: var(--text-muted);
       text-decoration: none;
       font-size: 0.92rem;
@@ -172,14 +205,14 @@
       transition: color 0.2s;
     }
 
-    .nav-links a:hover {
-      color: var(--text);
+    .nav-menu a:hover {
+      color: #ffffff;
     }
 
     .nav-actions {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
     }
 
     /* Buttons */
@@ -188,68 +221,72 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      padding: 10px 22px;
-      border-radius: 999px;
+      padding: 10px 20px;
+      border-radius: 12px;
       font-size: 0.92rem;
       font-weight: 600;
       text-decoration: none;
       transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
       cursor: pointer;
       border: none;
+      white-space: nowrap;
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, #ff3b68 0%, #fa233b 60%, #d01655 100%);
+      background: linear-gradient(135deg, #ff375f 0%, #fa233b 100%);
       color: #ffffff;
-      box-shadow: 0 8px 24px var(--primary-glow), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+      box-shadow: 0 4px 18px var(--primary-glow);
     }
 
     .btn-primary:hover {
-      transform: translateY(-2px) scale(1.02);
-      box-shadow: 0 12px 32px rgba(250, 35, 59, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.45);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(250, 35, 59, 0.6);
+      filter: brightness(1.06);
     }
 
     .btn-glass {
-      background: rgba(255, 255, 255, 0.08);
-      color: var(--text);
+      background: rgba(255, 255, 255, 0.06);
+      color: #ffffff;
+      backdrop-filter: blur(14px);
       border: 1px solid var(--border);
-      backdrop-filter: blur(12px);
     }
 
     .btn-glass:hover {
-      background: rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.12);
       border-color: var(--border-highlight);
       transform: translateY(-2px);
     }
 
     .btn-large {
-      padding: 15px 32px;
-      font-size: 1.05rem;
-      border-radius: 999px;
+      padding: 14px 28px;
+      font-size: 1.02rem;
+      border-radius: 14px;
     }
 
     /* Hero Section */
     .hero {
-      padding: 40px 0 90px;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 80px 24px 60px;
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
       align-items: center;
-      gap: 60px;
+      gap: 48px;
     }
 
     .badge-capsule {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 6px 16px;
-      border-radius: 999px;
+      padding: 6px 14px;
+      border-radius: 100px;
       background: rgba(250, 35, 59, 0.12);
-      border: 1px solid rgba(250, 35, 59, 0.32);
+      border: 1px solid rgba(250, 35, 59, 0.35);
       color: #ff5277;
       font-size: 0.82rem;
       font-weight: 600;
       letter-spacing: 0.02em;
-      margin-bottom: 24px;
+      margin-bottom: 22px;
     }
 
     .badge-dot {
@@ -257,8 +294,8 @@
       height: 7px;
       border-radius: 50%;
       background: #fa233b;
-      box-shadow: 0 0 10px #fa233b;
-      animation: pulseDot 2s infinite;
+      box-shadow: 0 0 8px #fa233b;
+      animation: pulseDot 2s infinite ease-in-out;
     }
 
     @keyframes pulseDot {
@@ -267,207 +304,470 @@
     }
 
     .hero-title {
-      font-size: 4rem;
+      font-size: clamp(2.6rem, 5.2vw, 4.2rem);
       font-weight: 800;
-      line-height: 1.05;
+      line-height: 1.08;
       letter-spacing: -0.04em;
       margin-bottom: 22px;
     }
 
     .gradient-text {
-      background: linear-gradient(135deg, #ffffff 30%, #ff688e 75%, #fa233b 100%);
+      background: linear-gradient(135deg, #ffffff 15%, #ff5277 55%, #bf5af2 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .hero-sub {
-      font-size: 1.25rem;
+      font-size: 1.16rem;
       color: var(--text-muted);
-      line-height: 1.5;
-      margin-bottom: 36px;
-      max-width: 520px;
-      font-weight: 400;
+      line-height: 1.6;
+      margin-bottom: 34px;
+      max-width: 580px;
     }
 
     .hero-ctas {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       gap: 16px;
-      flex-wrap: wrap;
-      margin-bottom: 40px;
+      margin-bottom: 38px;
     }
 
     .hero-stats {
-      display: flex;
-      align-items: center;
-      gap: 36px;
-      padding-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      padding-top: 26px;
       border-top: 1px solid var(--border);
     }
 
     .stat-item h4 {
-      font-size: 1.4rem;
+      font-size: 1.45rem;
       font-weight: 700;
       letter-spacing: -0.02em;
+      color: var(--text);
     }
 
     .stat-item p {
-      font-size: 0.85rem;
-      color: var(--text-muted);
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      font-weight: 500;
+      margin-top: 2px;
     }
 
-    /* Interactive Phone Mockup with Liquid Glass UI */
-    .mockup-wrapper {
-      position: relative;
-      perspective: 1200px;
+    /* Realistic Smartphone Frame Mockup */
+    .hero-right {
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      perspective: 1200px;
     }
 
     .phone-container {
-      width: 320px;
-      height: 650px;
+      width: 340px;
+      height: 690px;
       background: #000000;
-      border-radius: 54px;
-      border: 8px solid #2c2c32;
-      box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.15), 0 20px 40px rgba(250, 35, 59, 0.25);
+      border-radius: 50px;
       position: relative;
+      box-shadow: 
+        0 0 0 10px #1a1a1e,
+        0 0 0 12px rgba(255, 255, 255, 0.16),
+        0 35px 90px rgba(0, 0, 0, 0.85),
+        0 0 75px var(--phone-glow);
+      transform-style: preserve-3d;
+      transition: transform 0.25s ease-out, box-shadow 0.35s;
       overflow: hidden;
-      transform: rotateY(-8deg) rotateX(6deg);
-      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease;
+      display: flex;
+      flex-direction: column;
+      user-select: none;
     }
 
     .phone-container:hover {
-      transform: rotateY(0deg) rotateX(0deg) scale(1.03);
-      box-shadow: 0 50px 120px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(255, 255, 255, 0.25), 0 25px 60px rgba(250, 35, 59, 0.4);
+      box-shadow: 
+        0 0 0 10px #242429,
+        0 0 0 12px rgba(255, 255, 255, 0.28),
+        0 45px 120px rgba(0, 0, 0, 0.95),
+        0 0 95px var(--phone-glow);
     }
 
-    /* Dynamic Island / Speaker notch */
-    .phone-notch {
+    /* Dynamic Island */
+    .phone-island {
       position: absolute;
       top: 12px;
       left: 50%;
       transform: translateX(-50%);
-      width: 100px;
+      width: 104px;
       height: 26px;
       background: #000000;
       border-radius: 20px;
-      z-index: 50;
+      z-index: 60;
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 0 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    .camera-lens {
-      width: 10px;
-      height: 10px;
-      background: #111116;
+    .island-camera {
+      width: 9px;
+      height: 9px;
       border-radius: 50%;
-      border: 1px solid #1c1c24;
+      background: #0b0b14;
+      border: 1px solid rgba(255, 255, 255, 0.12);
     }
 
-    /* Inside Phone Screen */
+    .island-wave {
+      display: flex;
+      align-items: center;
+      gap: 2.5px;
+      height: 12px;
+    }
+
+    .island-bar {
+      width: 2.2px;
+      height: 8px;
+      background: var(--phone-accent);
+      border-radius: 1px;
+      animation: soundBar 1.2s infinite ease-in-out alternate;
+    }
+
+    .island-bar:nth-child(2) { animation-delay: 0.3s; height: 13px; }
+    .island-bar:nth-child(3) { animation-delay: 0.6s; height: 7px; }
+
+    @keyframes soundBar {
+      0% { transform: scaleY(0.4); }
+      100% { transform: scaleY(1.3); }
+    }
+
+    /* Realistic Screen Content */
     .phone-screen {
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(180deg, #180918 0%, #0e050f 45%, #08080a 100%);
-      padding: 50px 18px 24px;
+      flex: 1;
+      background: #07070a;
+      overflow-y: auto;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      font-size: 13px;
+    }
+
+    .phone-screen::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* In-App Status Bar */
+    .screen-status-bar {
+      height: 44px;
+      padding: 0 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.9);
+      position: sticky;
+      top: 0;
+      background: rgba(7, 7, 10, 0.85);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      z-index: 40;
+    }
+
+    .screen-status-right {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Screens View Manager */
+    .phone-view {
+      display: none;
+      flex-direction: column;
+      flex: 1;
+      padding-bottom: 125px; /* space for miniplayer + dock */
+      animation: fadeInView 0.25s ease-out;
+    }
+
+    .phone-view.active {
+      display: flex;
+    }
+
+    @keyframes fadeInView {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* In-App Navigation Bar Header */
+    .screen-header {
+      padding: 8px 18px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .screen-brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .screen-brand svg {
+      width: 28px;
+      height: 28px;
+      filter: drop-shadow(0 2px 8px var(--phone-glow));
+    }
+
+    .screen-brand span {
+      font-size: 1.18rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .screen-user-pill {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    /* Google Sign-in Banner */
+    .google-signin-banner {
+      margin: 4px 16px 14px;
+      background: linear-gradient(135deg, rgba(235, 0, 50, 0.25) 0%, rgba(180, 0, 30, 0.15) 100%);
+      border: 1px solid rgba(255, 55, 95, 0.25);
+      border-radius: 18px;
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .google-signin-banner h5 {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .google-signin-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: #ffffff;
+      color: #000000;
+      border-radius: 100px;
+      padding: 8px 16px;
+      font-size: 0.76rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Screen Section Headers */
+    .screen-section {
+      padding: 10px 18px 16px;
+    }
+
+    .section-title-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: #ffffff;
+    }
+
+    .section-more {
+      font-size: 0.74rem;
+      color: var(--phone-accent);
+      text-decoration: none;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    /* Horizontal Card Carousels */
+    .horizontal-scroll {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+    }
+
+    .horizontal-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Top Picks Cards */
+    .top-pick-card {
+      min-width: 130px;
+      width: 130px;
+      height: 160px;
+      border-radius: 16px;
+      padding: 12px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .top-pick-card:hover {
+      transform: scale(1.03);
+    }
+
+    .card-bunny-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 24px;
+      height: 24px;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(8px);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .card-bunny-badge svg {
+      width: 15px;
+      height: 15px;
+    }
+
+    .card-meta span {
+      font-size: 0.62rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.8);
+      letter-spacing: 0.04em;
+    }
+
+    .card-meta h5 {
+      font-size: 0.84rem;
+      font-weight: 700;
+      line-height: 1.25;
+      color: #ffffff;
+      margin-top: 2px;
+    }
+
+    /* Mood Card */
+    .mood-card {
+      min-width: 100px;
+      width: 100px;
+      height: 100px;
+      border-radius: 16px;
+      padding: 10px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       position: relative;
+      cursor: pointer;
+      transition: transform 0.2s;
     }
 
-    .screen-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.8rem;
+    .mood-card:hover {
+      transform: scale(1.04);
+    }
+
+    .mood-title {
+      font-size: 0.78rem;
       font-weight: 700;
       color: #ffffff;
-      padding-bottom: 12px;
     }
 
-    .liquid-badge {
-      font-size: 0.65rem;
-      padding: 3px 8px;
-      border-radius: 10px;
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      color: #ff5e7e;
-      font-weight: 600;
+    /* Album & Singles Row */
+    .album-item {
+      min-width: 110px;
+      width: 110px;
+      cursor: pointer;
     }
 
-    /* Album Art Card */
-    .album-card {
-      width: 100%;
-      aspect-ratio: 1;
-      border-radius: 24px;
-      background: linear-gradient(135deg, #ff3b68 0%, #fa233b 40%, #7d1369 100%);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(250, 35, 59, 0.45);
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      margin: 10px 0;
-    }
-
-    .album-mesh {
-      position: absolute;
-      width: 140%;
-      height: 140%;
-      background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.4) 0%, transparent 40%),
-                  radial-gradient(circle at 80% 80%, rgba(0, 0, 0, 0.5) 0%, transparent 50%);
-      pointer-events: none;
-    }
-
-    .album-vinyl {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      background: #111114;
-      border: 6px solid #222228;
-      box-shadow: 0 0 20px rgba(0,0,0,0.8);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      animation: spinVinyl 12s linear infinite;
-    }
-
-    .vinyl-grooves {
-      position: absolute;
+    .album-art-wrap {
       width: 110px;
       height: 110px;
-      border-radius: 50%;
-      border: 1px dashed rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      background: #1c1c1e;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 6px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
     }
 
-    .vinyl-center {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #fa233b, #af52de);
+    .album-item h6 {
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: #ffffff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .album-item p {
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* Floating Liquid Glass Miniplayer */
+    .phone-miniplayer {
+      position: absolute;
+      bottom: 66px;
+      left: 12px;
+      right: 12px;
+      height: 52px;
+      background: rgba(28, 28, 35, 0.88);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+      gap: 10px;
+      z-index: 45;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .phone-miniplayer:hover {
+      transform: translateY(-2px);
+    }
+
+    .miniplayer-thumb {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #1b3855, #225688);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 16px;
+      flex-shrink: 0;
     }
 
-    @keyframes spinVinyl {
-      100% { transform: rotate(360deg); }
+    .miniplayer-info {
+      flex: 1;
+      overflow: hidden;
     }
 
-    /* Player Controls */
-    .player-info {
-      text-align: left;
-      margin: 10px 0;
-    }
-
-    .track-title {
-      font-size: 1.15rem;
+    .miniplayer-info h6 {
+      font-size: 0.78rem;
       font-weight: 700;
       color: #ffffff;
       white-space: nowrap;
@@ -475,688 +775,1797 @@
       text-overflow: ellipsis;
     }
 
-    .track-artist {
-      font-size: 0.85rem;
-      color: #ff5277;
-      font-weight: 500;
+    .miniplayer-info p {
+      font-size: 0.66rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .miniplayer-actions {
       display: flex;
       align-items: center;
       gap: 6px;
-      margin-top: 2px;
     }
 
-    .lossless-tag {
+    .miniplayer-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: transparent;
+      border: none;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 0.15s;
+    }
+
+    .miniplayer-btn:hover {
+      transform: scale(1.15);
+    }
+
+    /* Liquid Glass Bottom Dock */
+    .phone-dock {
+      position: absolute;
+      bottom: 10px;
+      left: 12px;
+      right: 12px;
+      height: 52px;
+      background: rgba(20, 20, 26, 0.92);
+      backdrop-filter: blur(24px) saturate(200%);
+      -webkit-backdrop-filter: blur(24px) saturate(200%);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      z-index: 45;
+      padding: 0 4px;
+    }
+
+    .dock-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      color: rgba(255, 255, 255, 0.5);
+      cursor: pointer;
+      transition: all 0.2s;
+      padding: 4px 8px;
+      border-radius: 10px;
+    }
+
+    .dock-item svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .dock-item span {
       font-size: 0.62rem;
+      font-weight: 600;
+    }
+
+    .dock-item.active {
+      color: #ffffff;
+    }
+
+    .dock-item.active svg {
+      color: var(--phone-accent);
+      filter: drop-shadow(0 0 6px var(--phone-glow));
+    }
+
+    /* Screen 2: Explore Grid */
+    .explore-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      padding: 10px 16px;
+    }
+
+    /* Screen 3: History List */
+    .history-list {
+      padding: 6px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .history-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.03);
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .history-row:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .history-thumb {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.7rem;
+      flex-shrink: 0;
+    }
+
+    .history-info {
+      flex: 1;
+      overflow: hidden;
+    }
+
+    .history-info h6 {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #ffffff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .history-info p {
+      font-size: 0.66rem;
+      color: var(--text-muted);
+    }
+
+    .history-time {
+      font-size: 0.64rem;
+      color: var(--text-dim);
+    }
+
+    /* Screen 4: Library View */
+    .library-screen-content {
+      padding: 10px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .listener-hero-card {
+      background: linear-gradient(135deg, #0e273c 0%, #173d5d 100%);
+      border-radius: 20px;
+      padding: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      position: relative;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .listener-badge-tag {
+      font-size: 0.62rem;
+      color: rgba(255, 255, 255, 0.7);
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    .listener-hours-num {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.1;
+      margin: 8px 0 2px;
+    }
+
+    .listener-hours-lbl {
+      font-size: 0.68rem;
+      color: rgba(255, 255, 255, 0.6);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .listener-bottom-row {
+      margin-top: 14px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .listener-rank-title {
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: #38ef7d;
+      letter-spacing: 0.08em;
+      text-shadow: 0 0 10px rgba(56, 239, 125, 0.4);
+    }
+
+    .listener-member-date {
+      font-size: 0.66rem;
+      color: rgba(255, 255, 255, 0.6);
+      font-weight: 600;
+    }
+
+    .library-menu-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 14px;
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      cursor: pointer;
+    }
+
+    .library-menu-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .library-menu-left svg {
+      width: 18px;
+      height: 18px;
+      color: var(--phone-accent);
+    }
+
+    .library-menu-left span {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    /* Screen 5: Now Playing Modal */
+    .nowplaying-modal {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 25%, #421626 0%, #07070a 85%);
+      z-index: 80;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 24px 20px 20px;
+      transform: translateY(100%);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .nowplaying-modal.active {
+      transform: translateY(0);
+    }
+
+    .modal-header-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .modal-down-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
       background: rgba(255, 255, 255, 0.1);
-      padding: 1px 6px;
-      border-radius: 4px;
-      color: #fff;
+      border: none;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .modal-title-center {
+      text-align: center;
+    }
+
+    .modal-title-center span {
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
       font-weight: 700;
     }
 
-    /* Scrubber Progress */
-    .scrubber {
-      width: 100%;
+    .modal-title-center h6 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    /* Spinning Vinyl Record */
+    .vinyl-wrapper {
+      position: relative;
+      width: 190px;
+      height: 190px;
+      margin: 10px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .vinyl-disc {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: 
+        radial-gradient(circle at center, transparent 35%, rgba(0, 0, 0, 0.8) 36%, #111 40%, #080808 60%, #1a1a1a 80%, #000 100%),
+        repeating-radial-gradient(circle at center, #111 0, #111 2px, #000 3px, #000 4px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 30px var(--phone-glow);
+      animation: spinVinyl 12s linear infinite;
+      animation-play-state: paused;
+    }
+
+    .vinyl-disc.playing {
+      animation-play-state: running;
+    }
+
+    @keyframes spinVinyl {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .vinyl-center-art {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ff375f, #fa233b);
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+    }
+
+    .vinyl-center-art svg {
+      width: 44px;
+      height: 44px;
+    }
+
+    /* Modal Song Details */
+    .modal-song-info {
+      text-align: center;
+      margin-top: 6px;
+    }
+
+    .modal-song-info h4 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .modal-song-info p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .lossless-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 10px;
+      border-radius: 6px;
+      background: rgba(255, 215, 0, 0.12);
+      border: 1px solid rgba(255, 215, 0, 0.35);
+      color: #ffd700;
+      font-size: 0.64rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      margin-top: 8px;
+    }
+
+    /* Synced Lyrics Preview */
+    .modal-lyrics-card {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(16px);
+      border-radius: 14px;
+      padding: 10px 14px;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.1);
       margin: 8px 0;
     }
 
-    .scrubber-bar {
-      width: 100%;
+    .modal-lyrics-card p {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.4;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Modal Controls */
+    .modal-scrubber {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .scrubber-track {
       height: 4px;
-      background: rgba(255, 255, 255, 0.16);
+      background: rgba(255, 255, 255, 0.15);
       border-radius: 2px;
       position: relative;
       cursor: pointer;
     }
 
     .scrubber-fill {
-      width: 48%;
+      width: 42%;
       height: 100%;
       background: #ffffff;
       border-radius: 2px;
       position: relative;
     }
 
-    .scrubber-fill::after {
-      content: '';
-      position: absolute;
-      right: -4px;
-      top: -3px;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: #ffffff;
-      box-shadow: 0 0 6px rgba(255,255,255,0.8);
-    }
-
     .scrubber-times {
       display: flex;
       justify-content: space-between;
-      font-size: 0.68rem;
+      font-size: 0.65rem;
+      color: var(--text-dim);
+      font-weight: 600;
+    }
+
+    .modal-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 6px;
+    }
+
+    .modal-play-btn {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: #ffffff;
+      color: #000000;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(255, 255, 255, 0.4);
+      transition: transform 0.15s;
+    }
+
+    .modal-play-btn:hover {
+      transform: scale(1.08);
+    }
+
+    /* Showcase Section */
+    .showcase-section {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 70px 24px;
+    }
+
+    .section-header-center {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 38px;
+    }
+
+    .section-header-center h2 {
+      font-size: clamp(2rem, 3.8vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 14px;
+    }
+
+    .section-header-center p {
+      font-size: 1.08rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .screen-selector-tabs {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 38px;
+    }
+
+    .tab-pill {
+      padding: 10px 22px;
+      border-radius: 100px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .tab-pill:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+    }
+
+    .tab-pill.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+      box-shadow: 0 4px 18px var(--primary-glow);
+    }
+
+    .interactive-stage {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 44px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 48px;
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.6);
+    }
+
+    .stage-preview {
+      display: flex;
+      justify-content: center;
+    }
+
+    .stage-details h3 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+    }
+
+    .stage-details p {
+      font-size: 1.02rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .feature-points {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .feature-point {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+
+    .point-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: rgba(250, 35, 59, 0.16);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 800;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* Live Player Section */
+    .player-section {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 60px 24px;
+    }
+
+    .player-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 38px;
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 38px;
+      align-items: center;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    .player-art-wrap {
+      width: 100%;
+      aspect-ratio: 1;
+      max-width: 320px;
+      margin: 0 auto;
+      border-radius: 24px;
+      background: linear-gradient(135deg, #1d2671 0%, #c33764 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+      transition: background 0.5s;
+    }
+
+    .player-art-wrap svg {
+      width: 120px;
+      height: 120px;
+      filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.4));
+    }
+
+    .player-controls-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .player-meta h3 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .player-meta p {
+      font-size: 0.95rem;
       color: var(--text-muted);
       margin-top: 4px;
     }
 
-    /* Transport Buttons */
-    .transport-controls {
+    .canvas-container {
+      width: 100%;
+      height: 70px;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .player-scrubber-bar {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .main-scrubber {
+      height: 6px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 3px;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .main-scrubber-fill {
+      width: 25%;
+      height: 100%;
+      background: linear-gradient(90deg, #ff375f, #fa233b);
+      border-radius: 3px;
+    }
+
+    .player-buttons-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 10px 10px 4px;
+    }
+
+    .track-nav-btns {
+      display: flex;
+      align-items: center;
+      gap: 16px;
     }
 
     .ctrl-btn {
-      background: none;
-      border: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border);
       color: #ffffff;
-      cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: transform 0.15s;
+      cursor: pointer;
+      transition: all 0.2s;
     }
 
     .ctrl-btn:hover {
-      transform: scale(1.15);
+      background: rgba(255, 255, 255, 0.12);
+      transform: scale(1.08);
     }
 
-    .play-btn {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: #ffffff;
-      color: #000000;
-      box-shadow: 0 6px 18px rgba(255, 255, 255, 0.35);
+    .ctrl-btn-play {
+      width: 58px;
+      height: 58px;
+      background: linear-gradient(135deg, #ff375f, #fa233b);
+      box-shadow: 0 4px 20px var(--primary-glow);
     }
 
-    /* Soundwave Equalizer */
-    .equalizer-wave {
-      display: flex;
-      align-items: flex-end;
-      gap: 3px;
-      height: 20px;
-      justify-content: center;
-      margin-top: 6px;
+    /* Bento Features Grid */
+    .bento-section {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 60px 24px;
     }
 
-    .eq-bar {
-      width: 3px;
-      background: #ff375f;
-      border-radius: 3px;
-      animation: eqBounce 1.2s infinite ease-in-out alternate;
-    }
-
-    .eq-bar:nth-child(1) { height: 60%; animation-delay: 0.1s; }
-    .eq-bar:nth-child(2) { height: 90%; animation-delay: 0.3s; }
-    .eq-bar:nth-child(3) { height: 40%; animation-delay: 0.2s; }
-    .eq-bar:nth-child(4) { height: 100%; animation-delay: 0.5s; }
-    .eq-bar:nth-child(5) { height: 70%; animation-delay: 0.4s; }
-
-    @keyframes eqBounce {
-      0% { height: 20%; }
-      100% { height: 100%; }
-    }
-
-    /* Section Styling */
-    section {
-      padding: 90px 0;
-      position: relative;
-    }
-
-    .section-header {
-      text-align: center;
-      max-width: 640px;
-      margin: 0 auto 60px;
-    }
-
-    .section-subtitle {
-      color: #ff375f;
-      font-weight: 700;
-      text-transform: uppercase;
-      font-size: 0.8rem;
-      letter-spacing: 0.1em;
-      margin-bottom: 12px;
-    }
-
-    .section-title {
-      font-size: 2.8rem;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      line-height: 1.15;
-      margin-bottom: 16px;
-    }
-
-    .section-desc {
-      color: var(--text-muted);
-      font-size: 1.1rem;
-    }
-
-    /* Features Grid */
-    .features-grid {
+    .bento-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      gap: 20px;
     }
 
-    .feature-card {
-      background: var(--bg-card);
+    .bento-card {
+      background: rgba(255, 255, 255, 0.03);
       border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 36px 28px;
-      backdrop-filter: blur(20px);
-      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-      position: relative;
-      overflow: hidden;
+      border-radius: 24px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s;
     }
 
-    .feature-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-
-    .feature-card:hover {
-      background: var(--bg-card-hover);
+    .bento-card:hover {
+      background: rgba(255, 255, 255, 0.06);
       border-color: var(--border-highlight);
-      transform: translateY(-6px);
-      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4), 0 0 30px rgba(250, 35, 59, 0.15);
+      transform: translateY(-4px);
     }
 
-    .feature-card:hover::before {
-      opacity: 1;
+    .bento-card.span-2 {
+      grid-column: span 2;
     }
 
-    .feature-icon-box {
-      width: 54px;
-      height: 54px;
-      border-radius: 16px;
+    .bento-icon-pill {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
       background: rgba(250, 35, 59, 0.12);
-      border: 1px solid rgba(250, 35, 59, 0.24);
+      border: 1px solid rgba(250, 35, 59, 0.3);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #ff375f;
-      margin-bottom: 24px;
-      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: 20px;
     }
 
-    .feature-title {
-      font-size: 1.35rem;
+    .bento-card h4 {
+      font-size: 1.25rem;
       font-weight: 700;
       letter-spacing: -0.02em;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
     }
 
-    .feature-desc {
+    .bento-card p {
+      font-size: 0.92rem;
       color: var(--text-muted);
-      font-size: 0.95rem;
-      line-height: 1.6;
+      line-height: 1.55;
     }
 
-    /* Comparison Table Section */
-    .comparison-card {
-      background: var(--bg-card);
+    /* Comparison Table */
+    .comparison-section {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 60px 24px;
+    }
+
+    .table-container {
+      background: rgba(255, 255, 255, 0.02);
       border: 1px solid var(--border);
-      border-radius: var(--radius-xl);
-      padding: 40px;
-      backdrop-filter: blur(24px);
-      overflow-x: auto;
+      border-radius: 24px;
+      overflow: hidden;
     }
 
-    .comp-table {
+    table {
       width: 100%;
       border-collapse: collapse;
       text-align: left;
     }
 
-    .comp-table th, .comp-table td {
+    th, td {
       padding: 18px 24px;
       border-bottom: 1px solid var(--border);
-    }
-
-    .comp-table th {
       font-size: 0.95rem;
-      color: var(--text-muted);
-      font-weight: 600;
     }
 
-    .comp-table td {
-      font-size: 1rem;
-      font-weight: 500;
-    }
-
-    .highlight-col {
-      background: rgba(250, 35, 59, 0.07);
-      color: #ff5277;
+    th {
       font-weight: 700;
-      border-radius: 12px;
+      color: var(--text-muted);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    th.highlight, td.highlight {
+      background: rgba(250, 35, 59, 0.06);
+      color: #ffffff;
+      font-weight: 700;
     }
 
     .check-icon {
-      color: #34c759;
+      color: #30d158;
       font-weight: 800;
     }
 
     .cross-icon {
-      color: #ff3b30;
-      font-weight: 800;
+      color: #636366;
     }
 
-    /* Download Banner Card */
-    .download-card {
-      background: linear-gradient(135deg, rgba(255, 55, 95, 0.15) 0%, rgba(142, 24, 119, 0.12) 100%), var(--bg-card);
-      border: 1px solid rgba(255, 55, 95, 0.3);
-      border-radius: var(--radius-xl);
-      padding: 60px 48px;
-      backdrop-filter: blur(28px);
+    /* Download Banner */
+    .download-section {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 60px 24px 80px;
+    }
+
+    .download-box {
+      background: linear-gradient(135deg, rgba(250, 35, 59, 0.12) 0%, rgba(191, 90, 242, 0.08) 100%);
+      border: 1px solid rgba(250, 35, 59, 0.35);
+      border-radius: 32px;
+      padding: 50px;
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      align-items: center;
+      grid-template-columns: 1.3fr 0.7fr;
       gap: 40px;
-      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5), 0 0 60px rgba(250, 35, 59, 0.2);
+      align-items: center;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
     }
 
-    .download-content h3 {
-      font-size: 2.6rem;
+    .download-left h3 {
+      font-size: 2.3rem;
       font-weight: 800;
       letter-spacing: -0.03em;
-      margin-bottom: 14px;
-      line-height: 1.15;
+      margin: 12px 0 10px;
     }
 
-    .download-content p {
+    .download-left p {
+      font-size: 1.05rem;
       color: var(--text-muted);
-      font-size: 1.1rem;
-      margin-bottom: 30px;
+      line-height: 1.6;
+      margin-bottom: 28px;
     }
 
-    .terminal-box {
-      background: rgba(0, 0, 0, 0.5);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      padding: 16px 20px;
+    .download-actions {
       display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .terminal-card {
+      background: rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      padding: 10px 16px;
+      display: inline-flex;
       align-items: center;
-      justify-content: space-between;
+      gap: 16px;
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      font-size: 0.88rem;
-      color: #34c759;
+      font-size: 0.85rem;
+      color: #a8edea;
       cursor: pointer;
-      transition: border-color 0.2s;
     }
 
-    .terminal-box:hover {
-      border-color: var(--border-highlight);
-    }
-
-    .copy-pill {
-      font-size: 0.72rem;
+    .copy-chip {
       background: rgba(255, 255, 255, 0.1);
-      color: #fff;
-      padding: 4px 10px;
-      border-radius: 999px;
-      transition: background 0.2s;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-size: 0.72rem;
+      color: #ffffff;
+      font-family: var(--font-stack);
+    }
+
+    .hash-badge {
+      font-family: ui-monospace, SFMono-Regular, monospace;
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      margin-top: 14px;
+      word-break: break-all;
+    }
+
+    .qr-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 24px;
+    }
+
+    .qr-box {
+      background: #ffffff;
+      padding: 12px;
+      border-radius: 16px;
+      margin-bottom: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .qr-card p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
     }
 
     /* Footer */
     footer {
       border-top: 1px solid var(--border);
-      padding: 60px 0 40px;
-      color: var(--text-muted);
-      font-size: 0.92rem;
+      background: rgba(6, 6, 9, 0.9);
+      padding: 40px 24px;
     }
 
-    .footer-content {
+    .footer-row {
+      max-width: 1240px;
+      margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: 24px;
-      margin-bottom: 30px;
+      gap: 20px;
     }
 
-    .footer-left p {
-      margin-top: 6px;
-      font-size: 0.85rem;
+    .footer-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
 
     .footer-links {
       display: flex;
-      gap: 24px;
+      gap: 22px;
       list-style: none;
     }
 
     .footer-links a {
       color: var(--text-muted);
       text-decoration: none;
+      font-size: 0.88rem;
       transition: color 0.2s;
     }
 
     .footer-links a:hover {
-      color: var(--text);
+      color: #ffffff;
     }
 
+    .footer-copy {
+      max-width: 1240px;
+      margin: 20px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      text-align: center;
+    }
+
+    /* Toast Notification */
     .toast {
       position: fixed;
       bottom: 24px;
       right: 24px;
-      background: #1c1c1e;
-      color: #fff;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      padding: 12px 24px;
-      border-radius: 999px;
-      font-size: 0.9rem;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-      transform: translateY(100px);
+      background: rgba(28, 28, 35, 0.95);
+      border: 1px solid var(--primary);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+      color: #ffffff;
+      padding: 12px 20px;
+      border-radius: 14px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      z-index: 1000;
       opacity: 0;
+      transform: translateY(20px);
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-      z-index: 999;
+      pointer-events: none;
     }
 
     .toast.show {
-      transform: translateY(0);
       opacity: 1;
+      transform: translateY(0);
     }
 
-    /* Responsive */
-    @media (max-width: 968px) {
+    /* Responsive Queries */
+    @media (max-width: 960px) {
       .hero {
         grid-template-columns: 1fr;
         text-align: center;
-        gap: 50px;
+        padding-top: 40px;
       }
-      .hero-title { font-size: 3rem; }
-      .hero-sub { margin: 0 auto 30px; }
-      .hero-ctas { justify-content: center; }
-      .hero-stats { justify-content: center; }
-      .features-grid { grid-template-columns: 1fr; }
-      .download-card { grid-template-columns: 1fr; text-align: center; }
-      .nav-links { display: none; }
+      .hero-sub {
+        margin: 0 auto 34px;
+      }
+      .hero-ctas {
+        justify-content: center;
+      }
+      .interactive-stage, .player-card, .download-box {
+        grid-template-columns: 1fr;
+      }
+      .bento-grid {
+        grid-template-columns: 1fr;
+      }
+      .bento-card.span-2 {
+        grid-column: span 1;
+      }
+      .nav-menu {
+        display: none;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Ambient Liquid Glow Mesh Background -->
+  <!-- Ambient Animated Orbs -->
   <div class="ambient-canvas">
     <div class="ambient-orb orb-1"></div>
     <div class="ambient-orb orb-2"></div>
     <div class="ambient-orb orb-3"></div>
   </div>
 
-  <div class="container">
-    <!-- Navbar -->
+  <div class="grid-overlay"></div>
+
+  <div class="page-wrapper">
+    <!-- Navigation Bar -->
     <header>
-      <nav class="navbar">
-        <a href="#" class="brand">
-          <div class="brand-logo">
-            <!-- Bunny Vector SVG Icon -->
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 2a4 4 0 0 0-4 4v7a4 4 0 0 0 8 0V6a4 4 0 0 0-4-4z"/>
-              <path d="M6 10v2a6 6 0 0 0 12 0v-2"/>
-              <circle cx="12" cy="18" r="2"/>
+      <div class="nav-container">
+        <a href="#" class="brand-wrap">
+          <div class="brand-icon">
+            <!-- BunnyTunes Official Emblem -->
+            <svg viewBox="0 0 730 484" fill="none">
+              <path d="M145,270 C145,130 240,25 365,25 C490,25 585,130 585,270 L555,270 C555,145 470,55 365,55 C260,55 175,145 175,270 Z" fill="white"/>
+              <path d="M305,230 C290,140 240,20 270,5 C300,-10 345,70 350,190 Z" fill="white"/>
+              <path d="M425,230 C440,140 490,20 460,5 C430,-10 385,70 380,190 Z" fill="white"/>
+              <path d="M302,190 C292,130 262,45 277,32 C292,20 318,80 324,160 Z" fill="#FA365C"/>
+              <path d="M428,190 C438,130 468,45 453,32 C438,20 412,80 406,160 Z" fill="#FA365C"/>
+              <path d="M365,160 C250,160 195,235 195,335 C195,435 265,475 365,475 C465,475 535,435 535,335 C535,235 480,160 365,160 Z" fill="white"/>
+              <path d="M125,250 C125,225 150,210 175,210 C200,210 215,235 215,300 C215,365 200,390 175,390 C150,390 125,365 125,335 Z" fill="white"/>
+              <path d="M605,250 C605,225 580,210 555,210 C530,210 515,235 515,300 C515,365 530,390 555,390 C580,390 605,365 605,335 Z" fill="white"/>
             </svg>
           </div>
-          <span>Bunny Tunes</span>
+          <div class="brand-text">
+            <span class="brand-title">BunnyTunes</span>
+            <span class="brand-version">Version 1.0</span>
+          </div>
         </a>
 
-        <ul class="nav-links">
+        <ul class="nav-menu">
+          <li><a href="#showcase">UI Showcase</a></li>
+          <li><a href="#player">Lossless Engine</a></li>
           <li><a href="#features">Features</a></li>
-          <li><a href="#liquid-glass">Liquid Glass</a></li>
-          <li><a href="#audio">Audio Engine</a></li>
-          <li><a href="#comparison">Compare</a></li>
+          <li><a href="#compare">Compare</a></li>
+          <li><a href="#download">Download</a></li>
         </ul>
 
         <div class="nav-actions">
-          <a href="https://github.com/rajvdalvi/BunnyTunes" target="_blank" class="btn btn-glass">
+          <a href="https://github.com/rajvdalvi/BunnyTunes" target="_blank" class="btn btn-glass" title="View GitHub Repository">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
             </svg>
             GitHub
           </a>
-          <a href="https://github.com/rajvdalvi/BunnyTunes/releases/download/v1.0/BunnyTunes-V1.apk" class="btn btn-primary">
-            Download APK
+          <a href="#download" class="btn btn-primary">
+            Download V1
           </a>
         </div>
-      </nav>
+      </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Main Content -->
     <main>
+      <!-- Hero Section -->
       <section class="hero">
         <div class="hero-left">
           <div class="badge-capsule">
             <span class="badge-dot"></span>
-            Bunny Tunes V1 • Official Release Live
+            BunnyTunes V1 &bull; Liquid Glass Streaming Client
           </div>
           <h1 class="hero-title">
             Your Music.<br>
             In Pure <span class="gradient-text">Liquid Glass.</span>
           </h1>
           <p class="hero-sub">
-            The ultimate Apple Music aesthetic client for Android. Experience lossless audio, curated Indian & Hindi trending feeds, fluid iOS animations, and zero ads.
+            The ultimate Apple Music &amp; Liquid Glass streaming experience for Android. Lossless audio rendering, curated Hindi &amp; Bollywood charts, fluid iOS gestures, and zero interruptions. Crafted by <b>Raj Dalvi</b>.
           </p>
 
           <div class="hero-ctas">
             <a href="https://github.com/rajvdalvi/BunnyTunes/releases/download/v1.0/BunnyTunes-V1.apk" class="btn btn-primary btn-large">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
                 <polyline points="7 10 12 15 17 10"/>
                 <line x1="12" y1="15" x2="12" y2="3"/>
               </svg>
-              Download V1 APK (83 MB)
+              Download BunnyTunes V1 (81 MB)
             </a>
-            <a href="https://github.com/rajvdalvi/BunnyTunes" target="_blank" class="btn btn-glass btn-large">
-              View Source & Docs
+            <a href="#showcase" class="btn btn-glass btn-large">
+              Explore Live UI
             </a>
           </div>
 
           <div class="hero-stats">
             <div class="stat-item">
               <h4>Lossless</h4>
-              <p>24-bit / Hi-Res Audio</p>
+              <p>24-bit / Hi-Res DAC</p>
             </div>
             <div class="stat-item">
-              <h4>100%</h4>
-              <p>Ad-Free & Private</p>
+              <h4>100% Free</h4>
+              <p>Zero Audio Ads</p>
             </div>
             <div class="stat-item">
               <h4>Android 8+</h4>
-              <p>Up to Android 17</p>
+              <p>v2 &amp; v3 Verified</p>
             </div>
           </div>
         </div>
 
-        <!-- Interactive Phone Mockup -->
-        <div class="mockup-wrapper">
-          <div class="phone-container">
-            <div class="phone-notch">
-              <div class="camera-lens"></div>
+        <!-- Realistic 3D Interactive Phone Chassis Mockup -->
+        <div class="hero-right">
+          <div class="phone-container" id="phoneMockup">
+            <!-- Dynamic Island -->
+            <div class="phone-island">
+              <div class="island-camera"></div>
+              <div class="island-wave">
+                <span class="island-bar"></span>
+                <span class="island-bar"></span>
+                <span class="island-bar"></span>
+              </div>
             </div>
 
-            <div class="phone-screen">
-              <div class="screen-header">
-                <span>Bunny Tunes</span>
-                <span class="liquid-badge">LIQUID GLASS</span>
-              </div>
-
-              <!-- Animated Album Art -->
-              <div class="album-card">
-                <div class="album-mesh"></div>
-                <div class="album-vinyl">
-                  <div class="vinyl-grooves"></div>
-                  <div class="vinyl-center">🐰</div>
+            <!-- Phone Screen View -->
+            <div class="phone-screen" id="mockupScreen">
+              <!-- In-App Status Bar -->
+              <div class="screen-status-bar">
+                <span>9:41</span>
+                <div class="screen-status-right">
+                  <svg width="14" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L12 22l7.03-4.39C20.26 16.07 21 14.12 21 12c0-4.97-4.03-9-9-9z"/></svg>
+                  <span>5G</span>
+                  <svg width="18" height="10" viewBox="0 0 24 14" fill="currentColor"><rect x="1" y="1" width="18" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><rect x="3" y="3" width="12" height="8" rx="1.5"/></svg>
                 </div>
               </div>
 
-              <!-- Track Details -->
-              <div class="player-info">
-                <h3 class="track-title" id="trackTitle">Kesariya (From "Brahmastra")</h3>
-                <div class="track-artist">
-                  <span>Arijit Singh, Pritam</span>
-                  <span class="lossless-tag">LOSSLESS</span>
+              <!-- VIEW 1: HOME & TOP PICKS -->
+              <div class="phone-view active" id="viewHome">
+                <!-- Top Header -->
+                <div class="screen-header">
+                  <div class="screen-brand">
+                    <svg viewBox="0 0 730 484" fill="none">
+                      <path d="M145,270 C145,130 240,25 365,25 C490,25 585,130 585,270 L555,270 C555,145 470,55 365,55 C260,55 175,145 175,270 Z" fill="white"/>
+                      <path d="M305,230 C290,140 240,20 270,5 C300,-10 345,70 350,190 Z" fill="white"/>
+                      <path d="M425,230 C440,140 490,20 460,5 C430,-10 385,70 380,190 Z" fill="white"/>
+                      <path d="M302,190 C292,130 262,45 277,32 C292,20 318,80 324,160 Z" fill="#FA365C"/>
+                      <path d="M428,190 C438,130 468,45 453,32 C438,20 412,80 406,160 Z" fill="#FA365C"/>
+                      <path d="M365,160 C250,160 195,235 195,335 C195,435 265,475 365,475 C465,475 535,435 535,335 C535,235 480,160 365,160 Z" fill="white"/>
+                      <path d="M125,250 C125,225 150,210 175,210 C200,210 215,235 215,300 C215,365 200,390 175,390 C150,390 125,365 125,335 Z" fill="white"/>
+                      <path d="M605,250 C605,225 580,210 555,210 C530,210 515,235 515,300 C515,365 530,390 555,390 C580,390 605,365 605,335 Z" fill="white"/>
+                    </svg>
+                    <span>Bunny Tunes</span>
+                  </div>
+                  <div class="screen-user-pill">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                  </div>
+                </div>
+
+                <!-- Google Sign-in Banner -->
+                <div class="google-signin-banner">
+                  <h5>Sign in to YouTube Music</h5>
+                  <button class="google-signin-btn">
+                    <svg width="14" height="14" viewBox="0 0 24 24">
+                      <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.8-2.4 3.65v3h3.88c2.27-2.09 3.66-5.17 3.66-9.09z"/>
+                      <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.27v3.09C3.25 21.31 7.31 24 12 24z"/>
+                      <path fill="#FBBC05" d="M5.28 14.32c-.25-.72-.38-1.49-.38-2.32s.13-1.6.38-2.32V6.59H1.27C.46 8.21 0 10.05 0 12s.46 3.79 1.27 5.41l4.01-3.09z"/>
+                      <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.25 2.69 1.27 6.59l4.01 3.09c.95-2.83 3.6-4.93 6.72-4.93z"/>
+                    </svg>
+                    Sign in with Google
+                  </button>
+                </div>
+
+                <!-- Top Picks For You Carousel -->
+                <div class="screen-section">
+                  <div class="section-title-row">
+                    <span class="section-title">Top Picks for You</span>
+                    <span class="section-more">See all</span>
+                  </div>
+                  <div class="horizontal-scroll">
+                    <!-- Discovery Station Card -->
+                    <div class="top-pick-card" style="background: linear-gradient(135deg, #1d2671 0%, #c33764 100%);">
+                      <div class="card-bunny-badge">
+                        <svg viewBox="0 0 730 484" fill="none"><path d="M145,270 C145,130 240,25 365,25 C490,25 585,130 585,270 L555,270 C555,145 470,55 365,55 C260,55 175,145 175,270 Z" fill="white"/><path d="M365,160 C250,160 195,235 195,335 C195,435 265,475 365,475 C465,475 535,435 535,335 C535,235 480,160 365,160 Z" fill="white"/></svg>
+                      </div>
+                      <div class="card-meta">
+                        <span>Made for you</span>
+                        <h5>Discovery Station</h5>
+                      </div>
+                    </div>
+
+                    <!-- Bollywood Hits Card -->
+                    <div class="top-pick-card" style="background: linear-gradient(135deg, #f12711 0%, #f5af19 100%);">
+                      <div class="card-bunny-badge">
+                        <svg viewBox="0 0 730 484" fill="none"><path d="M145,270 C145,130 240,25 365,25 C490,25 585,130 585,270 L555,270 C555,145 470,55 365,55 C260,55 175,145 175,270 Z" fill="white"/><path d="M365,160 C250,160 195,235 195,335 C195,435 265,475 365,475 C465,475 535,435 535,335 C535,235 480,160 365,160 Z" fill="white"/></svg>
+                      </div>
+                      <div class="card-meta">
+                        <span>Trending India</span>
+                        <h5>Bollywood Mix</h5>
+                      </div>
+                    </div>
+
+                    <!-- Chill Lofi Card -->
+                    <div class="top-pick-card" style="background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);">
+                      <div class="card-bunny-badge">
+                        <svg viewBox="0 0 730 484" fill="none"><path d="M145,270 C145,130 240,25 365,25 C490,25 585,130 585,270 L555,270 C555,145 470,55 365,55 C260,55 175,145 175,270 Z" fill="white"/><path d="M365,160 C250,160 195,235 195,335 C195,435 265,475 365,475 C465,475 535,435 535,335 C535,235 480,160 365,160 Z" fill="white"/></svg>
+                      </div>
+                      <div class="card-meta">
+                        <span>Focus Beats</span>
+                        <h5>Deep Flow</h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Find Your Mood Section -->
+                <div class="screen-section">
+                  <div class="section-title-row">
+                    <span class="section-title">Find Your Mood</span>
+                    <span class="section-more" onclick="switchPhoneView('explore')">Show all</span>
+                  </div>
+                  <div class="horizontal-scroll">
+                    <!-- Energy Card (Green) -->
+                    <div class="mood-card" style="background: #108e48;" onclick="switchPhoneView('explore')">
+                      <div class="card-bunny-badge">
+                        <svg viewBox="0 0 730 484" fill="none"><path d="M145,270 C145,130 240,25 365,25 C490,25 585,130 585,270 L555,270 C555,145 470,55 365,55 C260,55 175,145 175,270 Z" fill="white"/><path d="M365,160 C250,160 195,235 195,335 C195,435 265,475 365,475 C465,475 535,435 535,335 C535,235 480,160 365,160 Z" fill="white"/></svg>
+                      </div>
+                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                      <span class="mood-title">Energy</span>
+                    </div>
+
+                    <!-- Relax Card (Blue) -->
+                    <div class="mood-card" style="background: #0077b6;" onclick="switchPhoneView('explore')">
+                      <div class="card-bunny-badge">
+                        <svg viewBox="0 0 730 484" fill="none"><path d="M145,270 C145,130 240,25 365,25 C490,25 585,130 585,270 L555,270 C555,145 470,55 365,55 C260,55 175,145 175,270 Z" fill="white"/><path d="M365,160 C250,160 195,235 195,335 C195,435 265,475 365,475 C465,475 535,435 535,335 C535,235 480,160 365,160 Z" fill="white"/></svg>
+                      </div>
+                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><ellipse cx="12" cy="18" rx="7" ry="3"/><ellipse cx="12" cy="12" rx="5" ry="2.5"/><ellipse cx="12" cy="7" rx="3.5" ry="2"/></svg>
+                      <span class="mood-title">Relax</span>
+                    </div>
+
+                    <!-- Feel Good Card (Coral Red) -->
+                    <div class="mood-card" style="background: #e63946;" onclick="switchPhoneView('explore')">
+                      <div class="card-bunny-badge">
+                        <svg viewBox="0 0 730 484" fill="none"><path d="M145,270 C145,130 240,25 365,25 C490,25 585,130 585,270 L555,270 C555,145 470,55 365,55 C260,55 175,145 175,270 Z" fill="white"/><path d="M365,160 C250,160 195,235 195,335 C195,435 265,475 365,475 C465,475 535,435 535,335 C535,235 480,160 365,160 Z" fill="white"/></svg>
+                      </div>
+                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
+                      <span class="mood-title">Feel Good</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Trending Indian Hits -->
+                <div class="screen-section">
+                  <div class="section-title-row">
+                    <span class="section-title">Trending India</span>
+                    <span class="section-more">See all</span>
+                  </div>
+                  <div class="horizontal-scroll">
+                    <div class="album-item" onclick="openNowPlayingTrack(0)">
+                      <div class="album-art-wrap" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                        <div style="position: absolute; bottom: 8px; left: 8px; font-weight: 800; font-size: 0.8rem; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">KESARIYA</div>
+                      </div>
+                      <h6>Kesariya</h6>
+                      <p>Arijit Singh, Pritam</p>
+                    </div>
+                    <div class="album-item" onclick="openNowPlayingTrack(1)">
+                      <div class="album-art-wrap" style="background: linear-gradient(135deg, #1b3855 0%, #225688 100%);">
+                        <div style="position: absolute; bottom: 8px; left: 8px; font-weight: 800; font-size: 0.8rem; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">ALFAAZ</div>
+                      </div>
+                      <h6>Alfaaz - Acoustic</h6>
+                      <p>Hamza Malik</p>
+                    </div>
+                    <div class="album-item" onclick="openNowPlayingTrack(2)">
+                      <div class="album-art-wrap" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+                        <div style="position: absolute; bottom: 8px; left: 8px; font-weight: 800; font-size: 0.8rem; color: #111;">CHALEYA</div>
+                      </div>
+                      <h6>Chaleya</h6>
+                      <p>Arijit Singh, Anirudh</p>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              <!-- Live Soundwave Equalizer -->
-              <div class="equalizer-wave">
-                <div class="eq-bar"></div>
-                <div class="eq-bar"></div>
-                <div class="eq-bar"></div>
-                <div class="eq-bar"></div>
-                <div class="eq-bar"></div>
+              <!-- VIEW 2: EXPLORE & MOODS -->
+              <div class="phone-view" id="viewExplore">
+                <div class="screen-header">
+                  <div class="screen-brand">
+                    <span>Mood Explorer</span>
+                  </div>
+                  <div class="screen-user-pill">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                  </div>
+                </div>
+
+                <div class="explore-grid">
+                  <div class="mood-card" style="width: 100%; height: 110px; background: #108e48;">
+                    <div class="card-bunny-badge">
+                      <svg viewBox="0 0 730 484" fill="none"><path d="M145,270 C145,130 240,25 365,25 C490,25 585,130 585,270 L555,270 C555,145 470,55 365,55 C260,55 175,145 175,270 Z" fill="white"/><path d="M365,160 C250,160 195,235 195,335 C195,435 265,475 365,475 C465,475 535,435 535,335 C535,235 480,160 365,160 Z" fill="white"/></svg>
+                    </div>
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                    <span class="mood-title">Energy (50+ songs)</span>
+                  </div>
+
+                  <div class="mood-card" style="width: 100%; height: 110px; background: #0077b6;">
+                    <div class="card-bunny-badge">
+                      <svg viewBox="0 0 730 484" fill="none"><path d="M145,270 C145,130 240,25 365,25 C490,25 585,130 585,270 L555,270 C555,145 470,55 365,55 C260,55 175,145 175,270 Z" fill="white"/><path d="M365,160 C250,160 195,235 195,335 C195,435 265,475 365,475 C465,475 535,435 535,335 C535,235 480,160 365,160 Z" fill="white"/></svg>
+                    </div>
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><ellipse cx="12" cy="18" rx="7" ry="3"/><ellipse cx="12" cy="12" rx="5" ry="2.5"/><ellipse cx="12" cy="7" rx="3.5" ry="2"/></svg>
+                    <span class="mood-title">Relax (Acoustic)</span>
+                  </div>
+
+                  <div class="mood-card" style="width: 100%; height: 110px; background: #e63946;">
+                    <div class="card-bunny-badge">
+                      <svg viewBox="0 0 730 484" fill="none"><path d="M145,270 C145,130 240,25 365,25 C490,25 585,130 585,270 L555,270 C555,145 470,55 365,55 C260,55 175,145 175,270 Z" fill="white"/><path d="M365,160 C250,160 195,235 195,335 C195,435 265,475 365,475 C465,475 535,435 535,335 C535,235 480,160 365,160 Z" fill="white"/></svg>
+                    </div>
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/></svg>
+                    <span class="mood-title">Feel Good</span>
+                  </div>
+
+                  <div class="mood-card" style="width: 100%; height: 110px; background: #7209b7;">
+                    <div class="card-bunny-badge">
+                      <svg viewBox="0 0 730 484" fill="none"><path d="M145,270 C145,130 240,25 365,25 C490,25 585,130 585,270 L555,270 C555,145 470,55 365,55 C260,55 175,145 175,270 Z" fill="white"/><path d="M365,160 C250,160 195,235 195,335 C195,435 265,475 365,475 C465,475 535,435 535,335 C535,235 480,160 365,160 Z" fill="white"/></svg>
+                    </div>
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    <span class="mood-title">Focus Beats</span>
+                  </div>
+
+                  <div class="mood-card" style="width: 100%; height: 110px; background: #f72585;">
+                    <div class="card-bunny-badge">
+                      <svg viewBox="0 0 730 484" fill="none"><path d="M145,270 C145,130 240,25 365,25 C490,25 585,130 585,270 L555,270 C555,145 470,55 365,55 C260,55 175,145 175,270 Z" fill="white"/><path d="M365,160 C250,160 195,235 195,335 C195,435 265,475 365,475 C465,475 535,435 535,335 C535,235 480,160 365,160 Z" fill="white"/></svg>
+                    </div>
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><path d="M6 4h12v4H6zm0 12h12v4H6zm2-8h8v8H8z"/></svg>
+                    <span class="mood-title">Workout Gym</span>
+                  </div>
+
+                  <div class="mood-card" style="width: 100%; height: 110px; background: #ff4d6d;">
+                    <div class="card-bunny-badge">
+                      <svg viewBox="0 0 730 484" fill="none"><path d="M145,270 C145,130 240,25 365,25 C490,25 585,130 585,270 L555,270 C555,145 470,55 365,55 C260,55 175,145 175,270 Z" fill="white"/><path d="M365,160 C250,160 195,235 195,335 C195,435 265,475 365,475 C465,475 535,435 535,335 C535,235 480,160 365,160 Z" fill="white"/></svg>
+                    </div>
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    <span class="mood-title">Romance Hits</span>
+                  </div>
+                </div>
               </div>
 
-              <!-- Scrubber -->
-              <div class="scrubber">
-                <div class="scrubber-bar" id="scrubberBar">
-                  <div class="scrubber-fill" id="scrubberFill"></div>
+              <!-- VIEW 3: HISTORY -->
+              <div class="phone-view" id="viewHistory">
+                <div class="screen-header">
+                  <div class="screen-brand">
+                    <span>Listening History</span>
+                  </div>
+                  <div class="screen-user-pill">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  </div>
                 </div>
-                <div class="scrubber-times">
-                  <span id="currentTime">1:42</span>
-                  <span>3:28</span>
+
+                <div class="history-list">
+                  <div class="history-row" onclick="openNowPlayingTrack(1)">
+                    <div class="history-thumb" style="background: linear-gradient(135deg, #1b3855, #225688); color: #fff;">ALFA</div>
+                    <div class="history-info">
+                      <h6>Alfaaz - Acoustic</h6>
+                      <p>Hamza Malik &bull; Lossless</p>
+                    </div>
+                    <span class="history-time">Just now</span>
+                  </div>
+
+                  <div class="history-row" onclick="openNowPlayingTrack(0)">
+                    <div class="history-thumb" style="background: linear-gradient(135deg, #f12711, #f5af19); color: #fff;">KESA</div>
+                    <div class="history-info">
+                      <h6>Kesariya</h6>
+                      <p>Arijit Singh, Pritam</p>
+                    </div>
+                    <span class="history-time">12m ago</span>
+                  </div>
+
+                  <div class="history-row" onclick="openNowPlayingTrack(2)">
+                    <div class="history-thumb" style="background: linear-gradient(135deg, #a8edea, #fed6e3); color: #111;">CHAL</div>
+                    <div class="history-info">
+                      <h6>Chaleya</h6>
+                      <p>Arijit Singh, Anirudh</p>
+                    </div>
+                    <span class="history-time">45m ago</span>
+                  </div>
+
+                  <div class="history-row" onclick="openNowPlayingTrack(3)">
+                    <div class="history-thumb" style="background: linear-gradient(135deg, #667eea, #764ba2); color: #fff;">APNA</div>
+                    <div class="history-info">
+                      <h6>Apna Bana Le</h6>
+                      <p>Arijit Singh, Sachin-Jigar</p>
+                    </div>
+                    <span class="history-time">2h ago</span>
+                  </div>
+
+                  <div class="history-row">
+                    <div class="history-thumb" style="background: linear-gradient(135deg, #e52d27, #b31217); color: #fff;">JAIL</div>
+                    <div class="history-info">
+                      <h6>Jailer 2 Theme</h6>
+                      <p>Anirudh Ravichander</p>
+                    </div>
+                    <span class="history-time">Yesterday</span>
+                  </div>
                 </div>
               </div>
 
-              <!-- Transport Buttons -->
-              <div class="transport-controls">
-                <button class="ctrl-btn" id="prevBtn" title="Previous">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                    <polygon points="19 20 9 12 19 4 19 20"/>
-                    <line x1="5" y1="19" x2="5" y2="5" stroke="currentColor" stroke-width="2.5"/>
-                  </svg>
+              <!-- VIEW 4: LIBRARY & REPLAY -->
+              <div class="phone-view" id="viewLibrary">
+                <div class="screen-header">
+                  <div class="screen-brand">
+                    <span>Library</span>
+                  </div>
+                  <div style="display: flex; gap: 8px;">
+                    <div class="screen-user-pill" onclick="switchPhoneView('history')">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <div class="screen-user-pill">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="library-screen-content">
+                  <!-- Listener Hero Replay Card -->
+                  <div class="listener-hero-card">
+                    <div class="card-bunny-badge">
+                      <svg viewBox="0 0 730 484" fill="none"><path d="M145,270 C145,130 240,25 365,25 C490,25 585,130 585,270 L555,270 C555,145 470,55 365,55 C260,55 175,145 175,270 Z" fill="white"/><path d="M365,160 C250,160 195,235 195,335 C195,435 265,475 365,475 C465,475 535,435 535,335 C535,235 480,160 365,160 Z" fill="white"/></svg>
+                    </div>
+                    <span class="listener-badge-tag">Your Listening Experience</span>
+                    <div class="listener-hours-num">4,280</div>
+                    <div class="listener-hours-lbl">Minutes Listened</div>
+                    
+                    <div class="listener-bottom-row">
+                      <span class="listener-rank-title">BUNNYTUNES LISTENER</span>
+                      <span class="listener-member-date">MEMBER SINCE 11/26</span>
+                    </div>
+                  </div>
+
+                  <!-- Quick Action Menu -->
+                  <div class="library-menu-item">
+                    <div class="library-menu-left">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                      <span>Downloads &bull; Offline Music</span>
+                    </div>
+                    <span style="font-size: 0.72rem; color: #8e8e93;">34 tracks &rsaquo;</span>
+                  </div>
+
+                  <div class="library-menu-item">
+                    <div class="library-menu-left">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                      <span>Local Device Storage</span>
+                    </div>
+                    <span style="font-size: 0.72rem; color: #8e8e93;">142 tracks &rsaquo;</span>
+                  </div>
+
+                  <!-- Playlists Row -->
+                  <div style="margin-top: 4px;">
+                    <div class="section-title-row">
+                      <span class="section-title">Playlists</span>
+                      <span class="section-more">+ New</span>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                      <div style="height: 80px; border-radius: 14px; background: rgba(255,255,255,0.04); border: 1px dashed rgba(255,255,255,0.15); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; cursor: pointer;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        <span style="font-size: 0.72rem; font-weight: 600; color: #fff;">Create</span>
+                      </div>
+                      <div style="height: 80px; border-radius: 14px; background: rgba(29, 185, 84, 0.15); border: 1px solid rgba(29, 185, 84, 0.35); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; cursor: pointer;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="#1DB954"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+                        <span style="font-size: 0.72rem; font-weight: 600; color: #1DB954;">Spotify Import</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- VIEW 5: SLIDE-UP NOW PLAYING MODAL -->
+              <div class="nowplaying-modal" id="nowPlayingModal">
+                <div class="modal-header-bar">
+                  <button class="modal-down-btn" onclick="closeNowPlaying()">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                  </button>
+                  <div class="modal-title-center">
+                    <span>PLAYING FROM ALBUM</span>
+                    <h6>Bollywood Hits India</h6>
+                  </div>
+                  <button class="modal-down-btn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+                  </button>
+                </div>
+
+                <!-- Spinning Vinyl Record -->
+                <div class="vinyl-wrapper">
+                  <div class="vinyl-disc" id="modalVinyl"></div>
+                  <div class="vinyl-center-art">
+                    <svg viewBox="0 0 730 484" fill="none">
+                      <path d="M145,270 C145,130 240,25 365,25 C490,25 585,130 585,270 L555,270 C555,145 470,55 365,55 C260,55 175,145 175,270 Z" fill="white"/>
+                      <path d="M365,160 C250,160 195,235 195,335 C195,435 265,475 365,475 C465,475 535,435 535,335 C535,235 480,160 365,160 Z" fill="white"/>
+                    </svg>
+                  </div>
+                </div>
+
+                <!-- Track Info -->
+                <div class="modal-song-info">
+                  <h4 id="modalSongTitle">Kesariya</h4>
+                  <p id="modalSongArtist">Arijit Singh, Pritam &bull; Brahmastra</p>
+                  <div class="lossless-pill">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    HI-RES LOSSLESS 24-BIT / 192kHz
+                  </div>
+                </div>
+
+                <!-- Synced Lyrics Card -->
+                <div class="modal-lyrics-card">
+                  <p id="modalLyricsText">&ldquo;Kesariya tera ishq hai piya... Rang jaaun jo main haath lagaun&rdquo;</p>
+                </div>
+
+                <!-- Scrubber -->
+                <div class="modal-scrubber">
+                  <div class="scrubber-track" onclick="seekAudioModal(event)">
+                    <div class="scrubber-fill" id="modalScrubberFill"></div>
+                  </div>
+                  <div class="scrubber-times">
+                    <span id="modalCurrentTime">1:12</span>
+                    <span id="modalTotalTime">3:28</span>
+                  </div>
+                </div>
+
+                <!-- Playback Buttons -->
+                <div class="modal-buttons">
+                  <button class="miniplayer-btn" onclick="prevSong()">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="19 20 9 12 19 4 19 20"/><line x1="5" y1="19" x2="5" y2="5" stroke="currentColor" stroke-width="2"/></svg>
+                  </button>
+                  <button class="modal-play-btn" onclick="togglePlayState()">
+                    <svg id="modalPlayIcon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                  </button>
+                  <button class="miniplayer-btn" onclick="nextSong()">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 4 15 12 5 20 5 4"/><line x1="19" y1="5" x2="19" y2="19" stroke="currentColor" stroke-width="2"/></svg>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Floating Liquid Glass Miniplayer -->
+              <div class="phone-miniplayer" onclick="openNowPlaying()">
+                <div class="miniplayer-thumb" id="miniThumb" style="display: flex; align-items: center; justify-content: center;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+                </div>
+                <div class="miniplayer-info">
+                  <h6 id="miniTitle">Alfaaz - Acoustic</h6>
+                  <p id="miniArtist">Hamza Malik &bull; Lossless</p>
+                </div>
+                <div class="miniplayer-actions" onclick="event.stopPropagation()">
+                  <button class="miniplayer-btn" onclick="togglePlayState()">
+                    <svg id="phonePlayIcon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                  </button>
+                  <button class="miniplayer-btn" onclick="nextSong()">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 4 15 12 5 20 5 4"/><line x1="19" y1="5" x2="19" y2="19" stroke="currentColor" stroke-width="2.5"/></svg>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Liquid Glass Bottom Dock -->
+              <div class="phone-dock">
+                <div class="dock-item active" id="dockHome" onclick="switchPhoneView('home')">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+                  <span>Home</span>
+                </div>
+                <div class="dock-item" id="dockExplore" onclick="switchPhoneView('explore')">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/></svg>
+                  <span>Explore</span>
+                </div>
+                <div class="dock-item" id="dockHistory" onclick="switchPhoneView('history')">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  <span>History</span>
+                </div>
+                <div class="dock-item" id="dockLibrary" onclick="switchPhoneView('library')">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                  <span>Library</span>
+                </div>
+                <div class="dock-item" id="dockSearch" onclick="showToast('Instant search across 100M+ tracks')">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                  <span>Search</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span style="font-size: 0.78rem; color: var(--text-dim); margin-top: 14px;">Interactive Mockup &bull; Click Dock or Miniplayer to test navigation</span>
+        </div>
+      </section>
+
+      <!-- Interactive UI Showcase Stage -->
+      <section class="showcase-section" id="showcase">
+        <div class="section-header-center">
+          <h2>Crafted Like Pure Apple Music.</h2>
+          <p>Explore the full suite of BunnyTunes V1 interfaces reconstructed with true liquid glass physics and iOS interaction design.</p>
+        </div>
+
+        <div class="screen-selector-tabs">
+          <button class="tab-pill active" onclick="switchStage('home', this)">Home &amp; Top Picks</button>
+          <button class="tab-pill" onclick="switchStage('moods', this)">Mood Explorer</button>
+          <button class="tab-pill" onclick="switchStage('library', this)">Library &amp; Replay</button>
+          <button class="tab-pill" onclick="switchStage('nowplaying', this)">Now Playing &amp; Lyrics</button>
+          <button class="tab-pill" onclick="switchStage('themes', this)">Theme &amp; Icon Studio</button>
+        </div>
+
+        <div class="interactive-stage" id="stageContainer">
+          <div class="stage-preview" id="stagePreview"></div>
+          <div class="stage-details" id="stageDetails"></div>
+        </div>
+      </section>
+
+      <!-- Live Interactive Music Player & Spectrum Visualizer -->
+      <section class="player-section" id="player">
+        <div class="section-header-center">
+          <h2>Lossless Audio Engine In Action</h2>
+          <p>Experience bit-perfect audio streaming with real-time liquid glass spectrum analysis.</p>
+        </div>
+
+        <div class="player-card">
+          <div class="player-art-wrap" id="playerArtBackground">
+            <svg viewBox="0 0 730 484" fill="none">
+              <path d="M145,270 C145,130 240,25 365,25 C490,25 585,130 585,270 L555,270 C555,145 470,55 365,55 C260,55 175,145 175,270 Z" fill="white"/>
+              <path d="M305,230 C290,140 240,20 270,5 C300,-10 345,70 350,190 Z" fill="white"/>
+              <path d="M425,230 C440,140 490,20 460,5 C430,-10 385,70 380,190 Z" fill="white"/>
+              <path d="M302,190 C292,130 262,45 277,32 C292,20 318,80 324,160 Z" fill="#FA365C"/>
+              <path d="M428,190 C438,130 468,45 453,32 C438,20 412,80 406,160 Z" fill="#FA365C"/>
+              <path d="M365,160 C250,160 195,235 195,335 C195,435 265,475 365,475 C465,475 535,435 535,335 C535,235 480,160 365,160 Z" fill="white"/>
+              <path d="M125,250 C125,225 150,210 175,210 C200,210 215,235 215,300 C215,365 200,390 175,390 C150,390 125,365 125,335 Z" fill="white"/>
+              <path d="M605,250 C605,225 580,210 555,210 C530,210 515,235 515,300 C515,365 530,390 555,390 C580,390 605,365 605,335 Z" fill="white"/>
+            </svg>
+          </div>
+
+          <div class="player-controls-wrap">
+            <div class="player-meta">
+              <div class="badge-capsule" style="margin-bottom: 8px;">24-BIT / 192kHz HI-RES STREAM</div>
+              <h3 id="playerSongTitle">Kesariya</h3>
+              <p id="playerSongArtist">Arijit Singh, Pritam &bull; Brahmastra</p>
+            </div>
+
+            <!-- Canvas Frequency Visualizer -->
+            <div class="canvas-container">
+              <canvas id="visualizerCanvas"></canvas>
+            </div>
+
+            <!-- Scrubber -->
+            <div class="player-scrubber-bar">
+              <div class="main-scrubber" onclick="seekAudio(event)">
+                <div class="main-scrubber-fill" id="scrubberFill"></div>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.72rem; color: var(--text-dim); font-weight: 600;">
+                <span id="currentTime">0:45</span>
+                <span id="totalTime">3:28</span>
+              </div>
+            </div>
+
+            <!-- Buttons -->
+            <div class="player-buttons-row">
+              <div class="track-nav-btns">
+                <button class="ctrl-btn" onclick="prevSong()" title="Previous Track">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="19 20 9 12 19 4 19 20"/><line x1="5" y1="19" x2="5" y2="5" stroke="currentColor" stroke-width="2.5"/></svg>
                 </button>
-                <button class="ctrl-btn play-btn" id="playBtn" title="Play/Pause">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" id="playIcon">
-                    <rect x="6" y="4" width="4" height="16" rx="1"/>
-                    <rect x="14" y="4" width="4" height="16" rx="1"/>
-                  </svg>
+                <button class="ctrl-btn ctrl-btn-play" onclick="togglePlayState()" title="Play / Pause Audio Stream">
+                  <svg id="mainPlayIcon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                 </button>
-                <button class="ctrl-btn" id="nextBtn" title="Next">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                    <polygon points="5 4 15 12 5 20 5 4"/>
-                    <line x1="19" y1="5" x2="19" y2="19" stroke="currentColor" stroke-width="2.5"/>
-                  </svg>
+                <button class="ctrl-btn" onclick="nextSong()" title="Next Track">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 4 15 12 5 20 5 4"/><line x1="19" y1="5" x2="19" y2="19" stroke="currentColor" stroke-width="2.5"/></svg>
                 </button>
+              </div>
+
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">Output:</span>
+                <span style="font-size: 0.82rem; color: #fff; background: rgba(255,255,255,0.08); padding: 4px 10px; border-radius: 8px;">Bit-Perfect DAC</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Key Features Section -->
-      <section id="features">
-        <div class="section-header">
-          <p class="section-subtitle">Crafted For Audiophiles</p>
-          <h2 class="section-title">Designed with Pure Elegance</h2>
-          <p class="section-desc">Every element of Bunny Tunes is engineered to elevate your listening experience into a visual and acoustic pleasure.</p>
+      <!-- Bento Grid Features -->
+      <section class="bento-section" id="features">
+        <div class="section-header-center">
+          <h2>Engineered For Perfection</h2>
+          <p>Every pixel, gesture, and audio pipeline designed to redefine streaming on Android.</p>
         </div>
 
-        <div class="features-grid">
-          <!-- Card 1 -->
-          <div class="feature-card">
-            <div class="feature-icon-box">🌸</div>
-            <h3 class="feature-title">Liquid Glass by Default</h3>
-            <p class="feature-desc">Active dynamic frosted blur shaders and vibrant ambient background bleed that harmonize with whatever album art is playing.</p>
+        <div class="bento-grid">
+          <div class="bento-card span-2">
+            <div>
+              <div class="bento-icon-pill">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+              </div>
+              <h4>Direct Lossless Hi-Res Audio</h4>
+              <p>Streams raw uncompressed bitstreams up to 24-bit/192kHz directly to your external USB DAC or Bluetooth LDAC codec. Bypass standard Android sample rate conversions with zero distortion.</p>
+            </div>
+            <div style="margin-top: 24px; display: flex; gap: 10px; flex-wrap: wrap;">
+              <span class="badge-capsule" style="margin: 0; background: rgba(255,215,0,0.12); color: #ffd700; border-color: rgba(255,215,0,0.3);">Bit-Perfect Mode</span>
+              <span class="badge-capsule" style="margin: 0; background: rgba(0,245,255,0.12); color: #00f5ff; border-color: rgba(0,245,255,0.3);">LDAC 990kbps</span>
+              <span class="badge-capsule" style="margin: 0;">Dolby Atmos Ready</span>
+            </div>
           </div>
 
-          <!-- Card 2 -->
-          <div class="feature-card">
-            <div class="feature-icon-box">💎</div>
-            <h3 class="feature-title">Lossless Hi-Fi Audio</h3>
-            <p class="feature-desc">Experience studio master recordings with maximum bitrate decoding, bit-perfect DAC routing, and system mixer bypass.</p>
+          <div class="bento-card">
+            <div>
+              <div class="bento-icon-pill" style="color: #38ef7d; background: rgba(56, 239, 125, 0.12); border-color: rgba(56, 239, 125, 0.3);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <h4>Curated Indian Priority</h4>
+              <p>Automatic geographic routing prioritizing Trending India, Bollywood Hits, Punjabi Beats, and South Indian cinema chartbusters directly on your feed.</p>
+            </div>
           </div>
 
-          <!-- Card 3 -->
-          <div class="feature-card">
-            <div class="feature-icon-box">🇮🇳</div>
-            <h3 class="feature-title">Curated Indian & Hindi Feed</h3>
-            <p class="feature-desc">Smart regional discovery pins trending Bollywood hits, Hindi classics, and regional Indian charts right to your primary Home screen.</p>
+          <div class="bento-card">
+            <div>
+              <div class="bento-icon-pill" style="color: #bf5af2; background: rgba(191, 90, 242, 0.12); border-color: rgba(191, 90, 242, 0.3);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12a4 4 0 0 0 8 0"/></svg>
+              </div>
+              <h4>Changable Icons &amp; Themes</h4>
+              <p>Choose from 7 bespoke launcher icons &bull; Liquid Glass, Neon Violet, Neon Cyan, Neon Silver, and Monochrome OLED styles.</p>
+            </div>
           </div>
 
-          <!-- Card 4 -->
-          <div class="feature-card">
-            <div class="feature-icon-box">⚡</div>
-            <h3 class="feature-title">Fluid iOS Physics</h3>
-            <p class="feature-desc">Cubic decelerate slide and fade transitions designed after the Apple App Store, giving native tactile responsiveness on Android.</p>
-          </div>
-
-          <!-- Card 5 -->
-          <div class="feature-card">
-            <div class="feature-icon-box">🚫</div>
-            <h3 class="feature-title">100% Ad-Free & Private</h3>
-            <p class="feature-desc">Zero commercials, zero tracking telemetry, and no forced logins. Your listening habits remain solely on your device.</p>
-          </div>
-
-          <!-- Card 6 -->
-          <div class="feature-card">
-            <div class="feature-icon-box">🪶</div>
-            <h3 class="feature-title">Lightweight & Bloat-Free</h3>
-            <p class="feature-desc">Unnecessary wearable smartwatch daemons have been stripped, resulting in faster launch times and lower battery consumption.</p>
+          <div class="bento-card span-2">
+            <div>
+              <div class="bento-icon-pill" style="color: #00f5ff; background: rgba(0, 245, 255, 0.12); border-color: rgba(0, 245, 255, 0.3);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+              </div>
+              <h4>Zero Audio Ads &bull; Pure Continuity</h4>
+              <p>Experience music without commercial interruptions, audio promotions, or sponsored popups. Enjoy limitless skips, background playback with screen locked, and seamless lockscreen controls.</p>
+            </div>
+            <div style="margin-top: 24px; display: flex; gap: 10px; flex-wrap: wrap;">
+              <span class="badge-capsule" style="margin: 0;">Unlimited Free Skips</span>
+              <span class="badge-capsule" style="margin: 0;">Background Locked Audio</span>
+              <span class="badge-capsule" style="margin: 0;">Offline Caching</span>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- Comparison Section -->
-      <section id="comparison">
-        <div class="section-header">
-          <p class="section-subtitle">How We Compare</p>
-          <h2 class="section-title">The Bunny Tunes Advantage</h2>
-          <p class="section-desc">See how Bunny Tunes compares against conventional streaming services.</p>
+      <!-- Comparison Matrix -->
+      <section class="comparison-section" id="compare">
+        <div class="section-header-center">
+          <h2>How BunnyTunes Compares</h2>
+          <p>See why audiophiles and Indian music fans prefer BunnyTunes V1 over conventional music clients.</p>
         </div>
 
-        <div class="comparison-card">
-          <table class="comp-table">
+        <div class="table-container">
+          <table>
             <thead>
               <tr>
-                <th>Feature</th>
-                <th class="highlight-col">Bunny Tunes</th>
-                <th>Spotify Free</th>
-                <th>YouTube Music Free</th>
+                <th>Feature Comparison</th>
+                <th class="highlight">BunnyTunes V1</th>
+                <th>Spotify (Free)</th>
+                <th>YouTube Music (Free)</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Liquid Glass iOS UI</td>
-                <td class="highlight-col"><span class="check-icon">✓</span> Enabled Default</td>
-                <td><span class="cross-icon">✗</span> Standard Dark</td>
-                <td><span class="cross-icon">✗</span> Standard Dark</td>
-              </tr>
-              <tr>
                 <td>Audio Quality</td>
-                <td class="highlight-col"><span class="check-icon">✓</span> Lossless / Hi-Res</td>
-                <td><span class="cross-icon">✗</span> 160 kbps (Lossy)</td>
-                <td><span class="cross-icon">✗</span> 128 kbps (Lossy)</td>
+                <td class="highlight"><span class="check-icon">&check;</span> Up to 24-bit / 192kHz FLAC</td>
+                <td><span class="cross-icon">&cross;</span> 160 kbps Ogg Vorbis</td>
+                <td><span class="cross-icon">&cross;</span> 128 kbps Opus / AAC</td>
               </tr>
               <tr>
-                <td>Advertisements</td>
-                <td class="highlight-col"><span class="check-icon">✓</span> Zero Ads Ever</td>
-                <td><span class="cross-icon">✗</span> Audio & Visual Ads</td>
-                <td><span class="cross-icon">✗</span> Video Ads</td>
+                <td>Audio Advertisements</td>
+                <td class="highlight"><span class="check-icon">&check;</span> Zero Ads Forever</td>
+                <td><span class="cross-icon">&cross;</span> Ads Every 15 Mins</td>
+                <td><span class="cross-icon">&cross;</span> Video &amp; Audio Ads</td>
               </tr>
               <tr>
-                <td>Background Playback</td>
-                <td class="highlight-col"><span class="check-icon">✓</span> Unlimited</td>
-                <td><span class="check-icon">✓</span> Limited</td>
-                <td><span class="cross-icon">✗</span> Screen Must Stay On</td>
+                <td>Background Locked Playback</td>
+                <td class="highlight"><span class="check-icon">&check;</span> Full Background Support</td>
+                <td><span class="check-icon">&check;</span> Supported</td>
+                <td><span class="cross-icon">&cross;</span> Premium Paywall</td>
               </tr>
               <tr>
-                <td>Account Mandatory</td>
-                <td class="highlight-col"><span class="check-icon">✓</span> No Account Needed</td>
-                <td><span class="cross-icon">✗</span> Required</td>
-                <td><span class="cross-icon">✗</span> Required</td>
+                <td>Indian Chart Priority</td>
+                <td class="highlight"><span class="check-icon">&check;</span> Native Regional Feeds</td>
+                <td><span class="cross-icon">&cross;</span> Algorithmic Mix</td>
+                <td><span class="cross-icon">&cross;</span> Generic Mix</td>
               </tr>
               <tr>
-                <td>Curated Hindi Priority</td>
-                <td class="highlight-col"><span class="check-icon">✓</span> Native Regional Feed</td>
-                <td>Algorithm Dependent</td>
-                <td>Algorithm Dependent</td>
+                <td>Theme &amp; Launcher Customization</td>
+                <td class="highlight"><span class="check-icon">&check;</span> 7 Changable Launcher Icons</td>
+                <td><span class="cross-icon">&cross;</span> Fixed Icon</td>
+                <td><span class="cross-icon">&cross;</span> Fixed Icon</td>
+              </tr>
+              <tr>
+                <td>Subscription Required</td>
+                <td class="highlight"><span class="check-icon">&check;</span> Free &amp; Open Source</td>
+                <td><span class="cross-icon">&cross;</span> &#8377;119 / month</td>
+                <td><span class="cross-icon">&cross;</span> &#8377;109 / month</td>
               </tr>
             </tbody>
           </table>
@@ -1164,27 +2573,69 @@
       </section>
 
       <!-- Download Banner -->
-      <section id="download">
-        <div class="download-card">
-          <div class="download-content">
-            <h3>Get Bunny Tunes for Android</h3>
-            <p>Download the official release APK signed with modern v2 & v3 schemes. Compatible with Android 8.0 Oreo through Android 17.</p>
-            <a href="https://github.com/rajvdalvi/BunnyTunes/releases/download/v1.0/BunnyTunes-V1.apk" class="btn btn-primary btn-large">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                <polyline points="7 10 12 15 17 10"/>
-                <line x1="12" y1="15" x2="12" y2="3"/>
-              </svg>
-              Download APK V1 (83 MB)
-            </a>
+      <section class="download-section" id="download">
+        <div class="download-box">
+          <div class="download-left">
+            <span class="badge-capsule" style="background: rgba(250,35,59,0.2);">Official Release &bull; v1.0</span>
+            <h3>Get BunnyTunes V1 Today</h3>
+            <p>Download the official release APK signed with modern v2 &amp; v3 schemes. Fully compatible with Android 8.0 Oreo through Android 17.</p>
+            
+            <div class="download-actions">
+              <a href="https://github.com/rajvdalvi/BunnyTunes/releases/download/v1.0/BunnyTunes-V1.apk" class="btn btn-primary btn-large">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                  <polyline points="7 10 12 15 17 10"/>
+                  <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                Download APK V1 (81 MB)
+              </a>
+              <a href="https://github.com/rajvdalvi/BunnyTunes" target="_blank" class="btn btn-glass btn-large">
+                View Source on GitHub
+              </a>
+            </div>
+
+            <div style="margin-top: 24px;">
+              <p style="font-size: 0.82rem; color: var(--text-dim); margin-bottom: 8px;">Install via ADB command:</p>
+              <div class="terminal-card" onclick="copyAdbCommand()">
+                <span>adb install -r BunnyTunes-V1.apk</span>
+                <span class="copy-chip" id="copyChip">Copy</span>
+              </div>
+            </div>
+
+            <div class="hash-badge">
+              <span>SHA-256: 2D9E6D5F1CE7D06B2CC355A4F7260076FA0626FB0C3B38E64CDC5465DBBD6666</span>
+            </div>
           </div>
 
-          <div class="download-code">
-            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px;">Install via ADB command:</p>
-            <div class="terminal-box" id="adbBox" onclick="copyAdbCommand()">
-              <span>adb install -r BunnyTunes-V1.apk</span>
-              <span class="copy-pill" id="copyPill">Copy</span>
+          <!-- QR Code Direct Mobile Download -->
+          <div class="qr-card">
+            <div class="qr-box">
+              <svg viewBox="0 0 100 100" width="130" height="130">
+                <rect width="100" height="100" fill="white"/>
+                <!-- Corner 1 -->
+                <rect x="8" y="8" width="24" height="24" fill="black"/>
+                <rect x="12" y="12" width="16" height="16" fill="white"/>
+                <rect x="16" y="16" width="8" height="8" fill="black"/>
+                <!-- Corner 2 -->
+                <rect x="68" y="8" width="24" height="24" fill="black"/>
+                <rect x="72" y="12" width="16" height="16" fill="white"/>
+                <rect x="76" y="16" width="8" height="8" fill="black"/>
+                <!-- Corner 3 -->
+                <rect x="8" y="68" width="24" height="24" fill="black"/>
+                <rect x="12" y="72" width="16" height="16" fill="white"/>
+                <rect x="16" y="76" width="8" height="8" fill="black"/>
+                <!-- Data blocks -->
+                <rect x="38" y="12" width="6" height="6" fill="black"/>
+                <rect x="48" y="16" width="8" height="12" fill="black"/>
+                <rect x="40" y="36" width="16" height="6" fill="black"/>
+                <rect x="16" y="40" width="14" height="6" fill="black"/>
+                <rect x="66" y="42" width="10" height="8" fill="black"/>
+                <rect x="38" y="64" width="12" height="12" fill="black"/>
+                <rect x="56" y="72" width="14" height="14" fill="black"/>
+                <rect x="76" y="62" width="14" height="10" fill="black"/>
+              </svg>
             </div>
+            <p>Scan to download directly on your Android phone</p>
           </div>
         </div>
       </section>
@@ -1192,100 +2643,498 @@
 
     <!-- Footer -->
     <footer>
-      <div class="footer-content">
+      <div class="footer-row">
         <div class="footer-left">
-          <div class="brand">
-            <div class="brand-logo" style="width: 28px; height: 28px; border-radius: 8px;">🐰</div>
-            <span>Bunny Tunes</span>
+          <div class="brand-icon" style="width: 32px; height: 32px;">
+            <svg viewBox="0 0 730 484" fill="none">
+              <path d="M145,270 C145,130 240,25 365,25 C490,25 585,130 585,270 L555,270 C555,145 470,55 365,55 C260,55 175,145 175,270 Z" fill="white"/>
+              <path d="M365,160 C250,160 195,235 195,335 C195,435 265,475 365,475 C465,475 535,435 535,335 C535,235 480,160 365,160 Z" fill="white"/>
+            </svg>
           </div>
-          <p>Designed and crafted with passion by <b>Raj Dalvi</b>.</p>
+          <div>
+            <strong style="color: #fff;">BunnyTunes V1</strong>
+            <p style="font-size: 0.8rem; margin-top: 2px;">Designed and crafted with passion by <b>Raj Dalvi</b>.</p>
+          </div>
         </div>
 
         <ul class="footer-links">
           <li><a href="https://github.com/rajvdalvi/BunnyTunes" target="_blank">GitHub Repository</a></li>
-          <li><a href="https://github.com/rajvdalvi/BunnyTunes/releases" target="_blank">Releases</a></li>
-          <li><a href="https://github.com/rajvdalvi/BunnyTunes/blob/main/LICENSE" target="_blank">GNU GPL-3.0 License</a></li>
+          <li><a href="https://github.com/rajvdalvi/BunnyTunes/releases/tag/v1.0" target="_blank">Release v1.0</a></li>
+          <li><a href="https://github.com/rajvdalvi" target="_blank">Developer Profile</a></li>
+          <li><a href="https://github.com/rajvdalvi/BunnyTunes/blob/main/LICENSE" target="_blank">GNU GPL-3.0</a></li>
         </ul>
       </div>
-      <div style="text-align: center; font-size: 0.8rem; color: var(--text-dim);">
-        &copy; 2026 Raj Dalvi • All trademarks and music logos belong to their respective copyright holders.
+
+      <div class="footer-copy">
+        &copy; 2026 <b>Raj Dalvi</b> &bull; BunnyTunes V1 is an open-source high-fidelity audio client. All song trademarks and artist imagery belong to their respective copyright owners.
       </div>
     </footer>
   </div>
 
-  <div class="toast" id="toast">Copied ADB command to clipboard!</div>
+  <div class="toast" id="toast">Copied to clipboard!</div>
 
+  <!-- Interactive JavaScript Engine -->
   <script>
     // Copy ADB command
     function copyAdbCommand() {
       const text = "adb install -r BunnyTunes-V1.apk";
       navigator.clipboard.writeText(text).then(() => {
-        const toast = document.getElementById('toast');
-        toast.classList.add('show');
-        document.getElementById('copyPill').innerText = 'Copied!';
+        showToast("Copied: " + text);
+        document.getElementById('copyChip').innerText = "Copied!";
         setTimeout(() => {
-          toast.classList.remove('show');
-          document.getElementById('copyPill').innerText = 'Copy';
+          document.getElementById('copyChip').innerText = "Copy";
         }, 2200);
       });
     }
 
-    // Interactive Player Demo Songs
-    const playlist = [
-      { title: "Kesariya (From \"Brahmastra\")", artist: "Arijit Singh, Pritam", duration: "3:28" },
-      { title: "Tum Hi Ho", artist: "Arijit Singh, Mithoon", duration: "4:22" },
-      { title: "Chaleya (From \"Jawan\")", artist: "Anirudh Ravichander, Shilpa Rao", duration: "3:20" },
-      { title: "Starboy", artist: "The Weeknd, Daft Punk", duration: "3:50" }
-    ];
-
-    let currentTrackIdx = 0;
-    let isPlaying = true;
-
-    const playBtn = document.getElementById('playBtn');
-    const playIcon = document.getElementById('playIcon');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const trackTitle = document.getElementById('trackTitle');
-    const scrubberFill = document.getElementById('scrubberFill');
-
-    playBtn.addEventListener('click', () => {
-      isPlaying = !isPlaying;
-      if (isPlaying) {
-        playIcon.innerHTML = '<rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/>';
-        document.querySelectorAll('.eq-bar').forEach(bar => bar.style.animationPlayState = 'running');
-      } else {
-        playIcon.innerHTML = '<polygon points="5 3 19 12 5 21 5 3"/>';
-        document.querySelectorAll('.eq-bar').forEach(bar => bar.style.animationPlayState = 'paused');
-      }
-    });
-
-    nextBtn.addEventListener('click', () => {
-      currentTrackIdx = (currentTrackIdx + 1) % playlist.length;
-      updateTrack();
-    });
-
-    prevBtn.addEventListener('click', () => {
-      currentTrackIdx = (currentTrackIdx - 1 + playlist.length) % playlist.length;
-      updateTrack();
-    });
-
-    function updateTrack() {
-      trackTitle.innerText = playlist[currentTrackIdx].title;
-      document.querySelector('.track-artist span').innerText = playlist[currentTrackIdx].artist;
-      scrubberFill.style.width = '15%';
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.innerText = msg;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2500);
     }
 
-    // Dynamic Scrubber Animation
-    setInterval(() => {
-      if (isPlaying) {
-        let currentWidth = parseFloat(scrubberFill.style.width) || 48;
-        if (currentWidth >= 100) {
-          nextBtn.click();
-        } else {
-          scrubberFill.style.width = (currentWidth + 0.5) + '%';
-        }
+    // 3D Parallax Tilt for Phone Mockup
+    const phone = document.getElementById('phoneMockup');
+    if (phone) {
+      window.addEventListener('mousemove', (e) => {
+        const { innerWidth, innerHeight } = window;
+        const x = (e.clientX - innerWidth / 2) / 35;
+        const y = (e.clientY - innerHeight / 2) / 35;
+        phone.style.transform = `rotateY(${x}deg) rotateX(${-y}deg)`;
+      });
+
+      phone.addEventListener('mouseleave', () => {
+        phone.style.transform = 'rotateY(0deg) rotateX(0deg)';
+      });
+    }
+
+    // Phone Views Switcher
+    function switchPhoneView(viewKey) {
+      document.querySelectorAll('.phone-view').forEach(v => v.classList.remove('active'));
+      document.querySelectorAll('.dock-item').forEach(d => d.classList.remove('active'));
+
+      const targetView = document.getElementById('view' + capitalize(viewKey));
+      const targetDock = document.getElementById('dock' + capitalize(viewKey));
+
+      if (targetView) targetView.classList.add('active');
+      if (targetDock) targetDock.classList.add('active');
+      
+      closeNowPlaying();
+    }
+
+    function capitalize(str) {
+      return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
+    // Now Playing Modal
+    const nowPlayingModal = document.getElementById('nowPlayingModal');
+    const modalVinyl = document.getElementById('modalVinyl');
+
+    function openNowPlaying() {
+      if (nowPlayingModal) nowPlayingModal.classList.add('active');
+    }
+
+    function closeNowPlaying() {
+      if (nowPlayingModal) nowPlayingModal.classList.remove('active');
+    }
+
+    function openNowPlayingTrack(idx) {
+      currentTrackIdx = idx;
+      updateTrackDisplay();
+      openNowPlaying();
+      if (!isPlaying) togglePlayState();
+    }
+
+    // Interactive Showcase Stage Data
+    const stageData = {
+      home: {
+        title: "Home & Top Picks Discovery",
+        desc: "Curated Indian hits, Bollywood chart-toppers, and custom playlists rendered in sleek frosted glass cards with the official BunnyTunes emblem badge.",
+        points: [
+          "India (IN) regional feed routing prioritized automatically out of the box",
+          "Dynamic gradient album artwork with transparent BunnyTunes corner emblems",
+          "One-tap infinite playback matching your exact sonic tastes"
+        ],
+        previewHtml: `
+          <div style="width: 300px; height: 430px; background: #07070a; border-radius: 28px; padding: 20px; border: 1px solid rgba(255,255,255,0.12); box-shadow: 0 20px 50px rgba(0,0,0,0.8); display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+                <span style="font-weight: 700; font-size: 1rem; color: #fff;">Top Picks for You</span>
+                <span style="font-size: 0.72rem; color: #fa233b; font-weight: 600;">See all</span>
+              </div>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                <div style="height: 125px; border-radius: 14px; background: linear-gradient(135deg, #1d2671, #c33764); padding: 12px; display: flex; flex-direction: column; justify-content: space-between; position: relative;">
+                  <div class="card-bunny-badge" style="width: 22px; height: 22px;"><svg viewBox="0 0 730 484" fill="none" style="width: 14px; height: 14px;"><path d="M145,270 C145,130 240,25 365,25 C490,25 585,130 585,270 L555,270 C555,145 470,55 365,55 C260,55 175,145 175,270 Z" fill="white"/><path d="M365,160 C250,160 195,235 195,335 C195,435 265,475 365,475 C465,475 535,435 535,335 C535,235 480,160 365,160 Z" fill="white"/></svg></div>
+                  <div>
+                    <span style="font-size: 0.6rem; color: rgba(255,255,255,0.8); text-transform: uppercase; font-weight: 700;">Made for You</span>
+                    <h6 style="font-size: 0.78rem; font-weight: 700; color: #fff;">Discovery Mix</h6>
+                  </div>
+                </div>
+                <div style="height: 125px; border-radius: 14px; background: linear-gradient(135deg, #f12711, #f5af19); padding: 12px; display: flex; flex-direction: column; justify-content: space-between; position: relative;">
+                  <div class="card-bunny-badge" style="width: 22px; height: 22px;"><svg viewBox="0 0 730 484" fill="none" style="width: 14px; height: 14px;"><path d="M145,270 C145,130 240,25 365,25 C490,25 585,130 585,270 L555,270 C555,145 470,55 365,55 C260,55 175,145 175,270 Z" fill="white"/><path d="M365,160 C250,160 195,235 195,335 C195,435 265,475 365,475 C465,475 535,435 535,335 C535,235 480,160 365,160 Z" fill="white"/></svg></div>
+                  <div>
+                    <span style="font-size: 0.6rem; color: rgba(255,255,255,0.8); text-transform: uppercase; font-weight: 700;">Bollywood Hits</span>
+                    <h6 style="font-size: 0.78rem; font-weight: 700; color: #fff;">Trending India</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Bottom Glass Strip -->
+            <div style="background: rgba(255,255,255,0.06); backdrop-filter: blur(16px); border-radius: 14px; padding: 10px 14px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 10px;">
+              <div style="width: 32px; height: 32px; border-radius: 8px; background: #fa233b; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; color: #fff;">&sung;</div>
+              <div style="flex: 1;">
+                <div style="font-size: 0.78rem; font-weight: 700; color: #fff;">Kesariya</div>
+                <div style="font-size: 0.66rem; color: #8e8e93;">Arijit Singh &bull; Lossless</div>
+              </div>
+            </div>
+          </div>
+        `
+      },
+      moods: {
+        title: "Dynamic Mood Explorer",
+        desc: "Navigate through rich emotional spectrums &mdash; Energy, Relax, Feel Good, Focus, and Workout &mdash; styled with vibrant backdrops and transparent BunnyTunes emblems.",
+        points: [
+          "Color-coded acoustics matching emotional rhythms",
+          "One-tap quick queue generating 50+ hand-picked songs",
+          "Zero buffering with pre-cached audio streams"
+        ],
+        previewHtml: `
+          <div style="width: 300px; height: 430px; background: #07070a; border-radius: 28px; padding: 20px; border: 1px solid rgba(255,255,255,0.12); box-shadow: 0 20px 50px rgba(0,0,0,0.8); display: flex; flex-direction: column; gap: 12px;">
+            <span style="font-weight: 700; font-size: 1rem; color: #fff;">Find Your Mood</span>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+              <div style="height: 105px; border-radius: 14px; background: #108e48; padding: 12px; display: flex; flex-direction: column; justify-content: space-between; position: relative;">
+                <div class="card-bunny-badge" style="width: 20px; height: 20px;"><svg viewBox="0 0 730 484" fill="none" style="width: 12px; height: 12px;"><path d="M145,270 C145,130 240,25 365,25 C490,25 585,130 585,270 L555,270 C555,145 470,55 365,55 C260,55 175,145 175,270 Z" fill="white"/><path d="M365,160 C250,160 195,235 195,335 C195,435 265,475 365,475 C465,475 535,435 535,335 C535,235 480,160 365,160 Z" fill="white"/></svg></div>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                <span style="font-weight: 700; font-size: 0.85rem; color: #fff;">Energy</span>
+              </div>
+              <div style="height: 105px; border-radius: 14px; background: #0077b6; padding: 12px; display: flex; flex-direction: column; justify-content: space-between; position: relative;">
+                <div class="card-bunny-badge" style="width: 20px; height: 20px;"><svg viewBox="0 0 730 484" fill="none" style="width: 12px; height: 12px;"><path d="M145,270 C145,130 240,25 365,25 C490,25 585,130 585,270 L555,270 C555,145 470,55 365,55 C260,55 175,145 175,270 Z" fill="white"/><path d="M365,160 C250,160 195,235 195,335 C195,435 265,475 365,475 C465,475 535,435 535,335 C535,235 480,160 365,160 Z" fill="white"/></svg></div>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><ellipse cx="12" cy="18" rx="7" ry="3"/><ellipse cx="12" cy="12" rx="5" ry="2.5"/><ellipse cx="12" cy="7" rx="3.5" ry="2"/></svg>
+                <span style="font-weight: 700; font-size: 0.85rem; color: #fff;">Relax</span>
+              </div>
+              <div style="height: 105px; border-radius: 14px; background: #e63946; padding: 12px; display: flex; flex-direction: column; justify-content: space-between; position: relative;">
+                <div class="card-bunny-badge" style="width: 20px; height: 20px;"><svg viewBox="0 0 730 484" fill="none" style="width: 12px; height: 12px;"><path d="M145,270 C145,130 240,25 365,25 C490,25 585,130 585,270 L555,270 C555,145 470,55 365,55 C260,55 175,145 175,270 Z" fill="white"/><path d="M365,160 C250,160 195,235 195,335 C195,435 265,475 365,475 C465,475 535,435 535,335 C535,235 480,160 365,160 Z" fill="white"/></svg></div>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/></svg>
+                <span style="font-weight: 700; font-size: 0.85rem; color: #fff;">Feel Good</span>
+              </div>
+              <div style="height: 105px; border-radius: 14px; background: #7209b7; padding: 12px; display: flex; flex-direction: column; justify-content: space-between; position: relative;">
+                <div class="card-bunny-badge" style="width: 20px; height: 20px;"><svg viewBox="0 0 730 484" fill="none" style="width: 12px; height: 12px;"><path d="M145,270 C145,130 240,25 365,25 C490,25 585,130 585,270 L555,270 C555,145 470,55 365,55 C260,55 175,145 175,270 Z" fill="white"/><path d="M365,160 C250,160 195,235 195,335 C195,435 265,475 365,475 C465,475 535,435 535,335 C535,235 480,160 365,160 Z" fill="white"/></svg></div>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <span style="font-weight: 700; font-size: 0.85rem; color: #fff;">Focus</span>
+              </div>
+            </div>
+          </div>
+        `
+      },
+      library: {
+        title: "Library & Listener Experience",
+        desc: "Your personal listening archive featuring your stats card branded with the official BUNNYTUNES LISTENER badge and local offline downloads.",
+        points: [
+          "Real-time listener statistics and hours listened counters",
+          "Official 'BUNNYTUNES LISTENER' member card badge",
+          "Seamless access to device storage music &amp; offline playlists"
+        ],
+        previewHtml: `
+          <div style="width: 300px; height: 430px; background: #07070a; border-radius: 28px; padding: 20px; border: 1px solid rgba(255,255,255,0.12); box-shadow: 0 20px 50px rgba(0,0,0,0.8); display: flex; flex-direction: column; gap: 14px;">
+            <span style="font-weight: 700; font-size: 1rem; color: #fff;">Library</span>
+            <!-- Experience Card -->
+            <div style="background: linear-gradient(135deg, #0e273c 0%, #173d5d 100%); border-radius: 18px; padding: 16px; border: 1px solid rgba(255,255,255,0.14); position: relative;">
+              <div class="card-bunny-badge" style="width: 22px; height: 22px;"><svg viewBox="0 0 730 484" fill="none" style="width: 14px; height: 14px;"><path d="M145,270 C145,130 240,25 365,25 C490,25 585,130 585,270 L555,270 C555,145 470,55 365,55 C260,55 175,145 175,270 Z" fill="white"/><path d="M365,160 C250,160 195,235 195,335 C195,435 265,475 365,475 C465,475 535,435 535,335 C535,235 480,160 365,160 Z" fill="white"/></svg></div>
+              <span style="font-size: 0.65rem; color: rgba(255,255,255,0.7); text-transform: uppercase; font-weight: 700;">Your Listening Experience</span>
+              <div style="font-size: 1.9rem; font-weight: 800; color: #fff; margin: 8px 0 2px;">4,280</div>
+              <div style="font-size: 0.68rem; color: rgba(255,255,255,0.6); text-transform: uppercase;">Minutes Listened</div>
+              <div style="margin-top: 14px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 0.75rem; font-weight: 800; color: #38ef7d; letter-spacing: 0.05em;">BUNNYTUNES LISTENER</span>
+                <span style="font-size: 0.65rem; color: #8e8e93;">MEMBER SINCE 11/26</span>
+              </div>
+            </div>
+            <!-- Quick Links -->
+            <div style="background: rgba(255,255,255,0.04); border-radius: 14px; padding: 12px 14px; display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 0.8rem; font-weight: 600; color: #fff;">Downloads</span>
+              <span style="font-size: 0.75rem; color: #8e8e93;">34 tracks &rsaquo;</span>
+            </div>
+            <div style="background: rgba(255,255,255,0.04); border-radius: 14px; padding: 12px 14px; display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 0.8rem; font-weight: 600; color: #fff;">Local Device Storage</span>
+              <span style="font-size: 0.75rem; color: #8e8e93;">142 tracks &rsaquo;</span>
+            </div>
+          </div>
+        `
+      },
+      nowplaying: {
+        title: "Apple Music Now Playing & Lyrics",
+        desc: "Full-bleed animated frosted backdrop, time-synced karaoke lyrics, 24-bit Lossless badge, and precision audio scrubbers.",
+        points: [
+          "Real-time backdrop canvas ambient glow reacting to album art colors",
+          "Time-synced animated lyrics with Apple Music line focus",
+          "Bit-perfect Lossless 24-bit badge indicator"
+        ],
+        previewHtml: `
+          <div style="width: 300px; height: 430px; background: radial-gradient(circle at 50% 30%, #3a1525 0%, #07070a 80%); border-radius: 28px; padding: 22px; border: 1px solid rgba(255,255,255,0.12); box-shadow: 0 20px 50px rgba(0,0,0,0.8); display: flex; flex-direction: column; justify-content: space-between;">
+            <div style="width: 140px; height: 140px; margin: 0 auto; border-radius: 20px; background: linear-gradient(135deg, #ff375f, #fa233b); box-shadow: 0 12px 30px rgba(250,35,59,0.4); display: flex; align-items: center; justify-content: center;">
+              <svg viewBox="0 0 730 484" fill="none" style="width: 70px; height: 70px;"><path d="M145,270 C145,130 240,25 365,25 C490,25 585,130 585,270 L555,270 C555,145 470,55 365,55 C260,55 175,145 175,270 Z" fill="white"/><path d="M365,160 C250,160 195,235 195,335 C195,435 265,475 365,475 C465,475 535,435 535,335 C535,235 480,160 365,160 Z" fill="white"/></svg>
+            </div>
+            <div style="text-align: center;">
+              <h5 style="font-size: 1.1rem; font-weight: 800; color: #fff;">Kesariya</h5>
+              <p style="font-size: 0.78rem; color: #8e8e93; margin-top: 2px;">Arijit Singh, Pritam</p>
+              <div style="display: inline-block; margin-top: 6px; padding: 3px 10px; border-radius: 6px; background: rgba(255,215,0,0.15); color: #ffd700; font-size: 0.65rem; font-weight: 800;">HI-RES LOSSLESS 24-BIT</div>
+            </div>
+            <div style="background: rgba(255,255,255,0.06); border-radius: 12px; padding: 10px; text-align: center; font-size: 0.75rem; color: #fff; font-weight: 600;">
+              &ldquo;Kesariya tera ishq hai piya...&rdquo;
+            </div>
+          </div>
+        `
+      },
+      themes: {
+        title: "In-App Themes & Icon Studio",
+        desc: "Personalize BunnyTunes V1 with 7 distinct launcher icons and adaptive vector palettes: Liquid Glass, Neon Violet, Neon Cyan, Neon Silver, and Monochrome.",
+        points: [
+          "Neon Violet (#BF5AF2) & Neon Cyan (#00F5FF) high-glow icons",
+          "Neon Silver & Monochrome for minimalist OLED setups",
+          "Instant icon preview switcher built directly into Settings"
+        ],
+        previewHtml: `
+          <div style="width: 300px; height: 430px; background: #07070a; border-radius: 28px; padding: 20px; border: 1px solid rgba(255,255,255,0.12); box-shadow: 0 20px 50px rgba(0,0,0,0.8); display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <span style="font-weight: 700; font-size: 1rem; color: #fff;">Change Icon &amp; Theme</span>
+              <p style="font-size: 0.75rem; color: #8e8e93; margin-top: 4px;">Click an icon to preview the theme</p>
+              
+              <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 16px;">
+                <div onclick="applyThemeColor('#fa233b', 'rgba(250, 35, 59, 0.4)')" style="padding: 10px; border-radius: 14px; background: rgba(255,255,255,0.05); border: 1px solid #fa233b; text-align: center; cursor: pointer;">
+                  <div style="width: 38px; height: 38px; margin: 0 auto 6px; border-radius: 10px; background: #fa233b; display: flex; align-items: center; justify-content: center;"><svg viewBox="0 0 730 484" fill="none" style="width: 22px; height: 22px;"><path d="M145,270 C145,130 240,25 365,25 C490,25 585,130 585,270 L555,270 C555,145 470,55 365,55 C260,55 175,145 175,270 Z" fill="white"/><path d="M365,160 C250,160 195,235 195,335 C195,435 265,475 365,475 C465,475 535,435 535,335 C535,235 480,160 365,160 Z" fill="white"/></svg></div>
+                  <span style="font-size: 0.72rem; font-weight: 700; color: #fff;">Liquid Glass</span>
+                </div>
+                <div onclick="applyThemeColor('#00f5ff', 'rgba(0, 245, 255, 0.4)')" style="padding: 10px; border-radius: 14px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); text-align: center; cursor: pointer;">
+                  <div style="width: 38px; height: 38px; margin: 0 auto 6px; border-radius: 10px; background: #00f5ff; display: flex; align-items: center; justify-content: center;"><svg viewBox="0 0 730 484" fill="none" style="width: 22px; height: 22px;"><path d="M145,270 C145,130 240,25 365,25 C490,25 585,130 585,270 L555,270 C555,145 470,55 365,55 C260,55 175,145 175,270 Z" fill="black"/><path d="M365,160 C250,160 195,235 195,335 C195,435 265,475 365,475 C465,475 535,435 535,335 C535,235 480,160 365,160 Z" fill="black"/></svg></div>
+                  <span style="font-size: 0.72rem; font-weight: 700; color: #fff;">Neon Cyan</span>
+                </div>
+                <div onclick="applyThemeColor('#bf5af2', 'rgba(191, 90, 242, 0.4)')" style="padding: 10px; border-radius: 14px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); text-align: center; cursor: pointer;">
+                  <div style="width: 38px; height: 38px; margin: 0 auto 6px; border-radius: 10px; background: #bf5af2; display: flex; align-items: center; justify-content: center;"><svg viewBox="0 0 730 484" fill="none" style="width: 22px; height: 22px;"><path d="M145,270 C145,130 240,25 365,25 C490,25 585,130 585,270 L555,270 C555,145 470,55 365,55 C260,55 175,145 175,270 Z" fill="white"/><path d="M365,160 C250,160 195,235 195,335 C195,435 265,475 365,475 C465,475 535,435 535,335 C535,235 480,160 365,160 Z" fill="white"/></svg></div>
+                  <span style="font-size: 0.72rem; font-weight: 700; color: #fff;">Neon Violet</span>
+                </div>
+                <div onclick="applyThemeColor('#ffffff', 'rgba(255, 255, 255, 0.4)')" style="padding: 10px; border-radius: 14px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); text-align: center; cursor: pointer;">
+                  <div style="width: 38px; height: 38px; margin: 0 auto 6px; border-radius: 10px; background: #ffffff; display: flex; align-items: center; justify-content: center;"><svg viewBox="0 0 730 484" fill="none" style="width: 22px; height: 22px;"><path d="M145,270 C145,130 240,25 365,25 C490,25 585,130 585,270 L555,270 C555,145 470,55 365,55 C260,55 175,145 175,270 Z" fill="black"/><path d="M365,160 C250,160 195,235 195,335 C195,435 265,475 365,475 C465,475 535,435 535,335 C535,235 480,160 365,160 Z" fill="black"/></svg></div>
+                  <span style="font-size: 0.72rem; font-weight: 700; color: #fff;">Monochrome</span>
+                </div>
+              </div>
+            </div>
+            <span style="font-size: 0.72rem; color: #38ef7d; text-align: center; font-weight: 600;">&check; In-app dynamic icon updates active</span>
+          </div>
+        `
       }
-    }, 1000);
+    };
+
+    function switchStage(key, btnElem) {
+      document.querySelectorAll('.tab-pill').forEach(btn => btn.classList.remove('active'));
+      if (btnElem) btnElem.classList.add('active');
+
+      const data = stageData[key];
+      const preview = document.getElementById('stagePreview');
+      const details = document.getElementById('stageDetails');
+
+      preview.innerHTML = data.previewHtml;
+      details.innerHTML = `
+        <h3>${data.title}</h3>
+        <p>${data.desc}</p>
+        <ul class="feature-points">
+          ${data.points.map(pt => `
+            <li class="feature-point">
+              <span class="point-icon">&check;</span>
+              <span>${pt}</span>
+            </li>
+          `).join('')}
+        </ul>
+      `;
+
+      // Also map stage key to interactive phone view
+      if (key === 'home') switchPhoneView('home');
+      else if (key === 'moods') switchPhoneView('explore');
+      else if (key === 'library') switchPhoneView('library');
+      else if (key === 'nowplaying') openNowPlaying();
+    }
+
+    function applyThemeColor(color, glow) {
+      document.documentElement.style.setProperty('--phone-accent', color);
+      document.documentElement.style.setProperty('--phone-glow', glow);
+      showToast('Theme updated: ' + color);
+    }
+
+    // Initialize Default Stage
+    switchStage('home');
+
+    // Live Audio Engine & Web Audio Synthesizer
+    let audioCtx = null;
+    let isPlaying = false;
+    let synthInterval = null;
+    let currentTrackIdx = 0;
+
+    const tracks = [
+      { title: "Kesariya", artist: "Arijit Singh, Pritam &bull; Brahmastra", duration: "3:28", grad: "linear-gradient(135deg, #f12711 0%, #f5af19 100%)", lyrics: "Kesariya tera ishq hai piya... Rang jaaun jo main haath lagaun" },
+      { title: "Alfaaz - Acoustic", artist: "Hamza Malik, Atif Khan", duration: "3:42", grad: "linear-gradient(135deg, #1b3855 0%, #225688 100%)", lyrics: "Tere bina jeena lage adhoora... Dil ki baatein kehne do zara" },
+      { title: "Chaleya", artist: "Arijit Singh, Shilpa Rao, Anirudh", duration: "3:20", grad: "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)", lyrics: "Ishq mein dil bana hai sharabi... Chaleya teri ore le chale dil" },
+      { title: "Apna Bana Le", artist: "Arijit Singh, Sachin-Jigar", duration: "4:21", grad: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)", lyrics: "Tu mera koi na hoke bhi kuch laage... Apna bana le piya" }
+    ];
+
+    function initAudio() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+    }
+
+    // Play pleasant ambient chords when music starts
+    function playAcousticNote(freq, time, duration = 0.8) {
+      if (!audioCtx) return;
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(freq, time);
+      
+      gain.gain.setValueAtTime(0, time);
+      gain.gain.linearRampToValueAtTime(0.08, time + 0.05);
+      gain.gain.exponentialRampToValueAtTime(0.001, time + duration);
+      
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      
+      osc.start(time);
+      osc.stop(time + duration);
+    }
+
+    function togglePlayState() {
+      initAudio();
+      isPlaying = !isPlaying;
+      
+      const playIcons = [
+        document.getElementById('mainPlayIcon'), 
+        document.getElementById('phonePlayIcon'),
+        document.getElementById('modalPlayIcon')
+      ];
+      
+      if (isPlaying) {
+        if (audioCtx && audioCtx.state === 'suspended') {
+          audioCtx.resume();
+        }
+        playIcons.forEach(icon => {
+          if (icon) icon.innerHTML = '<rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/>';
+        });
+        if (modalVinyl) modalVinyl.classList.add('playing');
+        
+        // Melodic acoustic chords loop
+        const notes = [329.63, 392.00, 493.88, 587.33, 659.25]; // E minor / G major
+        synthInterval = setInterval(() => {
+          if (!isPlaying) return;
+          const note = notes[Math.floor(Math.random() * notes.length)];
+          playAcousticNote(note, audioCtx.currentTime);
+        }, 650);
+
+        showToast("Playing Lossless Audio Stream");
+      } else {
+        playIcons.forEach(icon => {
+          if (icon) icon.innerHTML = '<polygon points="5 3 19 12 5 21 5 3"/>';
+        });
+        if (modalVinyl) modalVinyl.classList.remove('playing');
+        clearInterval(synthInterval);
+      }
+    }
+
+    function nextSong() {
+      currentTrackIdx = (currentTrackIdx + 1) % tracks.length;
+      updateTrackDisplay();
+    }
+
+    function prevSong() {
+      currentTrackIdx = (currentTrackIdx - 1 + tracks.length) % tracks.length;
+      updateTrackDisplay();
+    }
+
+    function updateTrackDisplay() {
+      const t = tracks[currentTrackIdx];
+      // Hero phone
+      document.getElementById('miniTitle').innerText = t.title;
+      document.getElementById('miniArtist').innerHTML = t.artist;
+      document.getElementById('miniThumb').style.background = t.grad;
+
+      // Modal
+      document.getElementById('modalSongTitle').innerText = t.title;
+      document.getElementById('modalSongArtist').innerHTML = t.artist;
+      document.getElementById('modalTotalTime').innerText = t.duration;
+      document.getElementById('modalLyricsText').innerHTML = `&ldquo;${t.lyrics}&rdquo;`;
+
+      // Showcase player section
+      document.getElementById('playerSongTitle').innerText = t.title;
+      document.getElementById('playerSongArtist').innerHTML = t.artist;
+      document.getElementById('totalTime').innerText = t.duration;
+      document.getElementById('playerArtBackground').style.background = t.grad;
+    }
+
+    function seekAudio(e) {
+      const rect = e.currentTarget.getBoundingClientRect();
+      const pct = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+      document.getElementById('scrubberFill').style.width = (pct * 100) + '%';
+      const totalSec = 208; // 3:28
+      const curSec = Math.floor(pct * totalSec);
+      const min = Math.floor(curSec / 60);
+      const sec = curSec % 60;
+      document.getElementById('currentTime').innerText = `${min}:${sec < 10 ? '0' : ''}${sec}`;
+    }
+
+    function seekAudioModal(e) {
+      const rect = e.currentTarget.getBoundingClientRect();
+      const pct = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+      document.getElementById('modalScrubberFill').style.width = (pct * 100) + '%';
+      const totalSec = 208;
+      const curSec = Math.floor(pct * totalSec);
+      const min = Math.floor(curSec / 60);
+      const sec = curSec % 60;
+      document.getElementById('modalCurrentTime').innerText = `${min}:${sec < 10 ? '0' : ''}${sec}`;
+    }
+
+    // Canvas Frequency Visualizer Rendering
+    const canvas = document.getElementById('visualizerCanvas');
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      const numBars = 48;
+      const barWidth = 4;
+      const barGap = 3;
+      let bars = new Array(numBars).fill(4);
+
+      function renderVisualizer() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
+
+        const totalWidth = numBars * (barWidth + barGap);
+        const startX = (canvas.width - totalWidth) / 2;
+
+        for (let i = 0; i < numBars; i++) {
+          if (isPlaying) {
+            const target = Math.random() * 42 + 6;
+            bars[i] += (target - bars[i]) * 0.28;
+          } else {
+            bars[i] += (4 - bars[i]) * 0.1;
+          }
+
+          const h = bars[i];
+          const x = startX + i * (barWidth + barGap);
+          const y = (canvas.height - h) / 2;
+
+          const grad = ctx.createLinearGradient(0, y, 0, y + h);
+          grad.addColorStop(0, '#ff375f');
+          grad.addColorStop(1, '#fa233b');
+
+          ctx.fillStyle = grad;
+          ctx.beginPath();
+          ctx.roundRect(x, y, barWidth, h, 2);
+          ctx.fill();
+        }
+
+        requestAnimationFrame(renderVisualizer);
+      }
+      renderVisualizer();
+    }
   </script>
 </body>
 </html>
