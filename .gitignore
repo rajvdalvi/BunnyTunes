@@ -1,0 +1,30 @@
+# Android & Build Artifacts
+build/
+bin/
+gen/
+out/
+*.apk
+*.ap_
+*.dex
+*.class
+*.idsig
+
+# Keys & Signing Secrets
+*.jks
+*.keystore
+*.key
+*.p12
+
+# Decompiled & Extraction workdirs
+original/
+decoded/
+tools/
+
+# Temporary and Cache files
+.gradle/
+.idea/
+*.iml
+*.log
+local.properties
+.DS_Store
+Thumbs.db
