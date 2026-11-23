@@ -1784,6 +1784,100 @@
         display: none;
       }
     }
+  
+    /* Sequential Screenshots Gallery */
+    .gallery-section {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 70px 24px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    @media (max-width: 900px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+      }
+    }
+
+    @media (max-width: 580px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .screenshot-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      overflow: hidden;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .screenshot-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--border-highlight);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7), 0 0 40px var(--primary-glow);
+    }
+
+    .screenshot-img-wrap {
+      border-radius: 18px;
+      overflow: hidden;
+      background: #000000;
+      aspect-ratio: 9 / 19.5;
+      position: relative;
+    }
+
+    .screenshot-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .screenshot-card:hover .screenshot-img-wrap img {
+      transform: scale(1.03);
+    }
+
+    .screenshot-meta {
+      padding: 4px 6px 8px;
+    }
+
+    .screenshot-seq-pill {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 4px;
+    }
+
+    .screenshot-meta h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: -0.01em;
+      margin-bottom: 4px;
+    }
+
+    .screenshot-meta p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
   </style>
 </head>
 <body>
@@ -1823,6 +1917,7 @@
 
         <ul class="nav-menu">
           <li><a href="#showcase">UI Showcase</a></li>
+          <li><a href="#screenshots">Screenshots</a></li>
           <li><a href="#player">Lossless Engine</a></li>
           <li><a href="#features">Features</a></li>
           <li><a href="#compare">Compare</a></li>
@@ -2454,6 +2549,126 @@
       </section>
 
       <!-- Bento Grid Features -->
+      
+      <!-- Sequential Real Screenshots Gallery -->
+      <section class="gallery-section" id="screenshots">
+        <div class="section-header-center">
+          <span class="badge-capsule" style="background: rgba(250,35,59,0.12); color: #ff5277; border-color: rgba(250,35,59,0.35);">Live Device Screenshots</span>
+          <h2>Sequential App Flow Experience</h2>
+          <p>Real unedited captures of BunnyTunes V1 running live on Android &mdash; arranged sequentially from discovery to lossless audio configuration.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <!-- 01: Home -->
+          <div class="screenshot-card">
+            <div class="screenshot-img-wrap">
+              <img src="screenshots/01_home.jpg" alt="01. Home Feed & Top Picks" loading="lazy" />
+            </div>
+            <div class="screenshot-meta">
+              <span class="screenshot-seq-pill">Screen 01 &bull; Discovery</span>
+              <h4>Home Feed &amp; Top Picks</h4>
+              <p>Transparent BunnyTunes vector emblem, Top Picks carousel (KING, Discovery Station), quick recents, and floating liquid glass dock.</p>
+            </div>
+          </div>
+
+          <!-- 02: Moods -->
+          <div class="screenshot-card">
+            <div class="screenshot-img-wrap">
+              <img src="screenshots/02_home_moods.jpg" alt="02. Find Your Mood & Albums" loading="lazy" />
+            </div>
+            <div class="screenshot-meta">
+              <span class="screenshot-seq-pill">Screen 02 &bull; Acoustics</span>
+              <h4>Find Your Mood &amp; Albums</h4>
+              <p>Emerald Energy &amp; Azure Relax mood cards with Bunny badges, alongside Albums &amp; singles (Dilfek, GTA VI soundtrack).</p>
+            </div>
+          </div>
+
+          <!-- 03: Explore -->
+          <div class="screenshot-card">
+            <div class="screenshot-img-wrap">
+              <img src="screenshots/03_explore.jpg" alt="03. Explore & Genre Grid" loading="lazy" />
+            </div>
+            <div class="screenshot-meta">
+              <span class="screenshot-seq-pill">Screen 03 &bull; Navigation</span>
+              <h4>Explore &amp; Regional Hub</h4>
+              <p>Explore 30+ regional categories: Bollywood Romantic, Classical, Workout, Bhojpuri, Bengali, and Electronic.</p>
+            </div>
+          </div>
+
+          <!-- 04: History -->
+          <div class="screenshot-card">
+            <div class="screenshot-img-wrap">
+              <img src="screenshots/04_history.jpg" alt="04. History & Quick Mixes" loading="lazy" />
+            </div>
+            <div class="screenshot-meta">
+              <span class="screenshot-seq-pill">Screen 04 &bull; History</span>
+              <h4>History &amp; Quick Mixes</h4>
+              <p>Replaced old radio tab with dedicated History &bull; My Supermix, Discover Mix, Liked Music with Bunny branding &amp; artist reels.</p>
+            </div>
+          </div>
+
+          <!-- 05: Library -->
+          <div class="screenshot-card">
+            <div class="screenshot-img-wrap">
+              <img src="screenshots/05_library.jpg" alt="05. Library Experience & Stats" loading="lazy" />
+            </div>
+            <div class="screenshot-meta">
+              <span class="screenshot-seq-pill">Screen 05 &bull; Personal</span>
+              <h4>Library &amp; Listener Stats</h4>
+              <p>Live listening stats (10 Minutes Listened, BXR Digital, Member 11/26), offline downloads manager, and playlist creation.</p>
+            </div>
+          </div>
+
+          <!-- 06: Search -->
+          <div class="screenshot-card">
+            <div class="screenshot-img-wrap">
+              <img src="screenshots/06_search.jpg" alt="06. Search & Autocomplete" loading="lazy" />
+            </div>
+            <div class="screenshot-meta">
+              <span class="screenshot-seq-pill">Screen 06 &bull; Search</span>
+              <h4>Instant Search &amp; Queries</h4>
+              <p>Real-time autocomplete and instant audio matching across 100M+ Hindi, Bollywood, Punjabi, and international songs.</p>
+            </div>
+          </div>
+
+          <!-- 07: Now Playing -->
+          <div class="screenshot-card">
+            <div class="screenshot-img-wrap">
+              <img src="screenshots/07_now_playing.jpg" alt="07. Now Playing & Synced Lyrics" loading="lazy" />
+            </div>
+            <div class="screenshot-meta">
+              <span class="screenshot-seq-pill">Screen 07 &bull; Playback</span>
+              <h4>Now Playing &amp; Synced Lyrics</h4>
+              <p>Full Apple Music frosted backdrop, real-time live synced karaoke lyrics (&ldquo;Hale Dil&rdquo;), bit-perfect scrubber &amp; output selector.</p>
+            </div>
+          </div>
+
+          <!-- 08: Audio Settings -->
+          <div class="screenshot-card">
+            <div class="screenshot-img-wrap">
+              <img src="screenshots/08_settings_audio.jpg" alt="08. Audio Quality & Dolby Atmos" loading="lazy" />
+            </div>
+            <div class="screenshot-meta">
+              <span class="screenshot-seq-pill">Screen 08 &bull; Hi-Fi</span>
+              <h4>Lossless &amp; Dolby Atmos</h4>
+              <p>Bit-perfect Lossless streaming for Wi-Fi and mobile data, Direct Source Stream DAC routing, and spatial Dolby Atmos surround toggle.</p>
+            </div>
+          </div>
+
+          <!-- 09: Settings About -->
+          <div class="screenshot-card">
+            <div class="screenshot-img-wrap">
+              <img src="screenshots/09_settings_about.jpg" alt="09. Preferences & Developer Credits" loading="lazy" />
+            </div>
+            <div class="screenshot-meta">
+              <span class="screenshot-seq-pill">Screen 09 &bull; Settings</span>
+              <h4>Preferences &amp; Developer Info</h4>
+              <p>Downloads, Playback, Content, Appearance, Local Music, and official developer credits honoring Raj Dalvi.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="bento-section" id="features">
         <div class="section-header-center">
           <h2>Engineered For Perfection</h2>

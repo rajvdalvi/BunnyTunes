@@ -1,4 +1,4 @@
-﻿<div align="center">
+<div align="center">
 
 # 🐰 Bunny Tunes
 ### Premium Music & Streaming Client for Android
@@ -12,11 +12,100 @@
 
 A stunning, ad-free music streaming app tailored with an **iOS Liquid Glass aesthetic**, smooth physics-based transition animations, lossless audio rendering, custom themes & changable icons, and curated trending Indian & Hindi music prioritization.
 
-[**Download APK**](https://github.com/rajvdalvi/BunnyTunes/releases/download/v1.0/BunnyTunes-V1.apk) • [**Live Website**](https://rajvdalvi.github.io/BunnyTunes/) • [**Features**](#-key-features) • [**Installation**](#-installation) • [**Credits**](#-developer--credits)
+[**Download APK**](https://github.com/rajvdalvi/BunnyTunes/releases/download/v1.0/BunnyTunes-V1.apk) • [**Live Website**](https://rajvdalvi.github.io/BunnyTunes/) • [**Screenshots**](#-screenshots) • [**Features**](#-key-features) • [**Installation**](#-installation) • [**Credits**](#-developer--credits)
 
 ---
 
 </div>
+
+## 📱 Screenshots (Sequential App Flow)
+
+<div align="center">
+
+### 1. Home, Moods & Exploration
+<table>
+  <tr>
+    <td align="center" width="33%">
+      <img src="assets/screenshots/01_home.jpg" width="100%" alt="01. Home & Top Picks" />
+      <br />
+      <b>01. Home &amp; Top Picks</b>
+      <br />
+      <sub>Bunny emblem, curated Indian releases, quick recents &amp; dynamic dock</sub>
+    </td>
+    <td align="center" width="33%">
+      <img src="assets/screenshots/02_home_moods.jpg" width="100%" alt="02. Find Your Mood" />
+      <br />
+      <b>02. Find Your Mood &amp; Albums</b>
+      <br />
+      <sub>Energy &amp; Relax mood cards with transparent Bunny badge</sub>
+    </td>
+    <td align="center" width="33%">
+      <img src="assets/screenshots/03_explore.jpg" width="100%" alt="03. Explore & Genres" />
+      <br />
+      <b>03. Explore &amp; Genres</b>
+      <br />
+      <sub>Bollywood Romantic, Classical, Workout, Melancholy &amp; 30+ regional categories</sub>
+    </td>
+  </tr>
+</table>
+
+### 2. History, Library & Search
+<table>
+  <tr>
+    <td align="center" width="33%">
+      <img src="assets/screenshots/04_history.jpg" width="100%" alt="04. History & Mixes" />
+      <br />
+      <b>04. History &amp; Mixes</b>
+      <br />
+      <sub>Supermix, Discover Mix, Liked Music with Bunny branding &amp; artist reels</sub>
+    </td>
+    <td align="center" width="33%">
+      <img src="assets/screenshots/05_library.jpg" width="100%" alt="05. Library Experience" />
+      <br />
+      <b>05. Library &amp; Stats</b>
+      <br />
+      <sub>Listening minutes, BunnyTunes Listener status, downloads &amp; playlists</sub>
+    </td>
+    <td align="center" width="33%">
+      <img src="assets/screenshots/06_search.jpg" width="100%" alt="06. Search & Autocomplete" />
+      <br />
+      <b>06. Search &amp; Autocomplete</b>
+      <br />
+      <sub>Lightning-fast search across 100M+ Indian &amp; international tracks</sub>
+    </td>
+  </tr>
+</table>
+
+### 3. Now Playing & Settings
+<table>
+  <tr>
+    <td align="center" width="33%">
+      <img src="assets/screenshots/07_now_playing.jpg" width="100%" alt="07. Now Playing & Lyrics" />
+      <br />
+      <b>07. Now Playing &amp; Lyrics</b>
+      <br />
+      <sub>Apple Music liquid backdrop, real-time live synced lyrics &amp; bit-perfect scrubber</sub>
+    </td>
+    <td align="center" width="33%">
+      <img src="assets/screenshots/08_settings_audio.jpg" width="100%" alt="08. Audio Quality & Dolby Atmos" />
+      <br />
+      <b>08. Audio Quality &amp; Dolby Atmos</b>
+      <br />
+      <sub>Hi-Res Lossless Wi-Fi/Mobile streaming, Direct Source &amp; Spatial Dolby Atmos</sub>
+    </td>
+    <td align="center" width="33%">
+      <img src="assets/screenshots/09_settings_about.jpg" width="100%" alt="09. Preferences & Developer Credits" />
+      <br />
+      <b>09. Preferences &amp; Credits</b>
+      <br />
+      <sub>Customizations, offline storage, performance &amp; developer credits to Raj Dalvi</sub>
+    </td>
+  </tr>
+</table>
+
+</div>
+
+---
 
 ## ✨ Key Features
 
@@ -28,15 +117,6 @@ A stunning, ad-free music streaming app tailored with an **iOS Liquid Glass aest
 - **⚡ Smooth iOS Animations:** Fluid deceleration curves and spring gestures mimicking Apple Music and iOS app store navigation.
 - **🚫 100% Ad-Free & Private:** Zero audio interruptions, no tracking telemetry, and no mandatory account sign-in required.
 - **🪶 Lightweight & Optimized:** Stripped of background wearable daemons, lowering total memory and battery footprint.
-
----
-
-## 📱 Screenshots
-
-<div align="center">
-  <!-- Place screenshots in an 'assets/screenshots/' directory -->
-  <p><i>Screenshots coming soon</i></p>
-</div>
 
 ---
 
