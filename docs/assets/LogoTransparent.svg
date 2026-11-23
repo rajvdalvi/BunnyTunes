@@ -1,0 +1,30 @@
+<svg width="730" height="484" viewBox="0 0 730 484" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(365, 242) scale(0.9) translate(-365, -242)">
+    <!-- Headphone Band -->
+    <path d="M160 270 C160 110 245 35 365 35 C485 35 570 110 570 270" stroke="white" stroke-width="28" stroke-linecap="round"/>
+    <!-- Left Ear -->
+    <path d="M305 230 C290 140 240 20 270 5 C300 -10 345 70 350 190 Z" fill="white"/>
+    <!-- Right Ear -->
+    <path d="M425 230 C440 140 490 20 460 5 C430 -10 385 70 380 190 Z" fill="white"/>
+    <!-- Left Ear Inner Tint -->
+    <path d="M302 190 C292 130 262 45 277 32 C292 20 318 80 324 160 Z" fill="#FA365C"/>
+    <!-- Right Ear Inner Tint -->
+    <path d="M428 190 C438 130 468 45 453 32 C438 20 412 80 406 160 Z" fill="#FA365C"/>
+    <!-- Bunny Head -->
+    <path d="M365 160 C250 160 195 235 195 335 C195 435 265 475 365 475 C465 475 535 435 535 335 C535 235 480 160 365 160 Z" fill="white"/>
+    <!-- Left Headphone Earcup -->
+    <path d="M125 250 C125 225 150 210 175 210 C200 210 215 235 215 300 C215 365 200 390 175 390 C150 390 125 365 125 335 Z" fill="white"/>
+    <!-- Right Headphone Earcup -->
+    <path d="M605 250 C605 225 580 210 555 210 C530 210 515 235 515 300 C515 365 530 390 555 390 C580 390 605 365 605 335 Z" fill="white"/>
+    <!-- Left Eye -->
+    <path d="M290 320 Q315 340 340 320" stroke="#202024" stroke-width="14" stroke-linecap="round"/>
+    <!-- Right Eye -->
+    <path d="M390 320 Q415 340 440 320" stroke="#202024" stroke-width="14" stroke-linecap="round"/>
+    <!-- Nose -->
+    <path d="M365 350 C352 350 348 362 365 372 C382 362 378 350 365 350 Z" fill="#FA365C"/>
+    <!-- Mouth -->
+    <path d="M344 380 Q365 398 365 376 Q365 398 386 380" stroke="#202024" stroke-width="10" stroke-linecap="round"/>
+    <!-- Sound Waves / Notes -->
+    <path d="M595 120 L640 100 L640 190 C630 180 615 178 602 185 C588 196 592 216 608 222 C624 228 648 216 648 190 L648 80 L590 105 Z" fill="white"/>
+  </g>
+</svg>
