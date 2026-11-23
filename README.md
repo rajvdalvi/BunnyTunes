@@ -6,13 +6,13 @@
 [![Website](https://img.shields.io/badge/Website-Live%20Showcase-FF2D55?logo=safari&logoColor=white)](https://rajvdalvi.github.io/BunnyTunes/)
 [![Android](https://img.shields.io/badge/Android-8.0%2B-3DDC84?logo=android&logoColor=white)](https://android.com)
 [![License: GPL-3.0](https://img.shields.io/badge/License-GPL--3.0-blue.svg)](LICENSE)
-[![Latest Release](https://img.shields.io/badge/Release-v2.0-FF2D55?logo=apple-music&logoColor=white)](https://github.com/rajvdalvi/BunnyTunes/releases)
+[![Latest Release](https://img.shields.io/badge/Release-v1.0-FF2D55?logo=apple-music&logoColor=white)](https://github.com/rajvdalvi/BunnyTunes/releases)
 [![Audio Quality](https://img.shields.io/badge/Audio-Lossless%20Hi--Res-gold)](#key-features)
 [![Developer](https://img.shields.io/badge/Developer-Raj%20Dalvi-black)](https://github.com/rajvdalvi)
 
-A stunning, ad-free music streaming app tailored with an **iOS Liquid Glass aesthetic**, smooth physics-based transition animations, lossless audio rendering, and curated trending Indian & Hindi music prioritization.
+A stunning, ad-free music streaming app tailored with an **iOS Liquid Glass aesthetic**, smooth physics-based transition animations, lossless audio rendering, custom themes & changable icons, and curated trending Indian & Hindi music prioritization.
 
-[**Download APK**](https://github.com/rajvdalvi/BunnyTunes/releases/latest) • [**Live Website**](https://rajvdalvi.github.io/BunnyTunes/) • [**Features**](#-key-features) • [**Installation**](#-installation) • [**Credits**](#-developer--credits)
+[**Download APK**](https://github.com/rajvdalvi/BunnyTunes/releases/download/v1.0/BunnyTunes-V1.apk) • [**Live Website**](https://rajvdalvi.github.io/BunnyTunes/) • [**Features**](#-key-features) • [**Installation**](#-installation) • [**Credits**](#-developer--credits)
 
 ---
 
@@ -21,12 +21,14 @@ A stunning, ad-free music streaming app tailored with an **iOS Liquid Glass aest
 ## ✨ Key Features
 
 - **🌸 Liquid Glass by Default:** Deep OLED frosted glass surfaces (`#0E0E11`), translucent control docks, and Apple Music-inspired ambient glows enabled right out of the box.
+- **🐰 BunnyTunes Branding & Custom Emblems:** Refined studio-headphone vector logo on the top-left navigation, album art corners of "Top picks for you" & "Find your mood", and library cards.
+- **🎨 Changable In-App Themes & Icons:** Includes Neon Violet, Neon Cyan, Neon Silver, and Monochrome adaptive icon packs.
+- **📜 Quick History Navigation:** Replaced radio menus with a seamless, direct **History** tab in the main navigation dock.
 - **🎵 Lossless High-Fidelity Audio:** Configured for maximum stream bitrate (`Lossless`) and bit-perfect DAC pass-through support.
 - **🇮🇳 Curated Hindi & Indian Priority:** Automated regional feed routing bringing trending Indian hits, Bollywood favorites, and regional charts directly to your Home feed.
-- **⚡ Smooth iOS Animations:** Custom fluid deceleration transitions (`bunny_slide_in_right`, smooth alpha ease-outs) mimicking Apple app navigation.
-- **🚫 100% Ad-Free & Private:** No audio interruptions, no analytics tracking, and no compulsory account sign-in required.
-- **🪶 Lightweight & Optimized:** Stripped of unnecessary background wearable daemons, lowering total memory and battery footprint.
-- **🎧 Similar Mix:** Modernized playback discovery engine to queue endless matching music without outdated radio clutter.
+- **⚡ Smooth iOS Animations:** Fluid deceleration curves and spring gestures mimicking Apple Music and iOS app store navigation.
+- **🚫 100% Ad-Free & Private:** Zero audio interruptions, no tracking telemetry, and no mandatory account sign-in required.
+- **🪶 Lightweight & Optimized:** Stripped of background wearable daemons, lowering total memory and battery footprint.
 
 ---
 
@@ -42,14 +44,14 @@ A stunning, ad-free music streaming app tailored with an **iOS Liquid Glass aest
 ## 📥 Installation
 
 ### Method 1: Direct Download (Recommended)
-1. Download the latest **`BunnyTunes-v2.0-RajDalvi.apk`** from [GitHub Releases](https://github.com/rajvdalvi/BunnyTunes/releases/latest).
+1. Download the latest **`BunnyTunes-V1.apk`** from [GitHub Releases](https://github.com/rajvdalvi/BunnyTunes/releases/download/v1.0/BunnyTunes-V1.apk).
 2. Open the downloaded `.apk` file on your Android device.
 3. If prompted, allow **"Install unknown apps"** for your browser or file manager.
 4. Tap **Install** and enjoy!
 
 ### Method 2: Via ADB (USB Debugging)
 ```bash
-adb install -r BunnyTunes-v2.0-RajDalvi.apk
+adb install -r BunnyTunes-V1.apk
 ```
 
 > **Note:** If you have an earlier unofficial version installed, uninstall it first to ensure clean certificate pairing.
