@@ -20,8 +20,7 @@ A stunning, ad-free music streaming app tailored with an **iOS Liquid Glass aest
 
 ## ✨ Key Features
 
-- **🌸 Liquid Glass by Default:** Deep OLED frosted glass surfaces (`#0E0E11`), translucent control docks, and Apple Music-inspired ambient glows enabled right out of the box.
-- **🐰 BunnyTunes Branding & Custom Emblems:** Refined studio-headphone vector logo on the top-left navigation, album art corners of "Top picks for you" & "Find your mood", and library cards.
+- **🌸 Liquid Glass:** Deep OLED frosted glass surfaces (`#0E0E11`), translucent control docks, and Apple Music-inspired ambient glows enabled right out of the box.
 - **🎨 Changable In-App Themes & Icons:** Includes Neon Violet, Neon Cyan, Neon Silver, and Monochrome adaptive icon packs.
 - **📜 Quick History Navigation:** Replaced radio menus with a seamless, direct **History** tab in the main navigation dock.
 - **🎵 Lossless High-Fidelity Audio:** Configured for maximum stream bitrate (`Lossless`) and bit-perfect DAC pass-through support.
