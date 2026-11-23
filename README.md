@@ -1,7 +1,7 @@
 ﻿<div align="center">
 
 # 🐰 Bunny Tunes
-### Premium Apple Music & Liquid Glass Streaming Client for Android
+### Premium Music & Streaming Client for Android
 
 [![Website](https://img.shields.io/badge/Website-Live%20Showcase-FF2D55?logo=safari&logoColor=white)](https://rajvdalvi.github.io/BunnyTunes/)
 [![Android](https://img.shields.io/badge/Android-8.0%2B-3DDC84?logo=android&logoColor=white)](https://android.com)
