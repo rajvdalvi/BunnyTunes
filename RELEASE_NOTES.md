@@ -1,41 +1,30 @@
-# BunnyTunes V1 - Official Release 🐰✨
+# BunnyTunes V2 — Official Android Release
 
-**Release Date:** November 2026  
-**Developer:** Raj Dalvi  
-**Platforms:** Android (APK) *(Windows Edition in Active Development)*  
-**Package:** `com.music.bitchord` (Customized BunnyTunes Edition)  
-
----
-
-### 🎉 What's New in BunnyTunes V1:
-
-#### 🤖 Android Mobile Edition
-- **Full BunnyTunes Vector Emblem:** Integrated the custom Bunny studio-headphone emblem into Compose Multiplatform drawables (`composeResources/drawable/ic_logo.xml`), replacing the legacy 3-wave logo everywhere (top-left home header, "Top Picks for You", "Find Your Mood", and Library cards).
-- **All-New Changeable Icon Previews:** Generated custom BunnyTunes vector icons across all densities (`mdpi`, `hdpi`, `xhdpi`, `xxhdpi`, `xxxhdpi`) for all themes (Liquid Glass, Dark Glass, Clear Glass, Neon Cyan, Neon Violet, Neon Silver, and Monochrome).
-- **Zero Traces of Previous Branding:** Replaced all occurrences of "BitChord listener" in Compose Variable Resources (`.cvr`) across all 19 supported languages with "BunnyTunes listener".
-- **Direct History in Navbar:** Replaced legacy radio/similar mix menus with direct, intuitive access to your listening history right in the navigation dock.
-- **Liquid Glass Theme by Default:** Deep OLED glass theme (`#0E0E11`) with ambient background glow enabled out of the box.
-- **Lossless Audio Quality:** Enforced highest bitrate audio decoding across Wi-Fi and mobile data with bit-perfect DAC pass-through support.
-- **Hindi & Indian Music Feed:** Default region locked to India (`IN`), instantly loading trending Bollywood hits, Indian charts, and regional playlists.
-- **Optimized & Lightweight:** Wear OS smartwatch services removed, lowering total memory and battery footprint.
-- **Settings Rebranded:** Customized app settings with "BunnyTunes V1", developer links to Raj Dalvi's GitHub, and the live showcase website.
-- **Signed & Verified:** Packaged with APK Signature Scheme v2 and v3 for full Android 8.0 through Android 17 compatibility.
-
-#### 🪟 Windows Desktop Edition (In Refinement)
-- A single-file standalone installer (`.exe`) with optimized packaging and native liquid glass shaders is currently in active development and internal testing. Official public releases on GitHub remain Android-only until fully finalized.
+**Version:** V2 (`v2.0`)
+**Developer:** Raj Dalvi
+**Platform:** Android 8.0+ (API 26 – API 36+)
+**Package:** `com.dev.bitchord`
 
 ---
 
-### 📦 Release Assets & Downloads
+### What's New in BunnyTunes V2
 
-| File | Platform | Size | SHA-256 Checksum |
+- **Redesigned Black & White Liquid Glass Identity:** New obsidian liquid-glass launcher icon, adaptive/monochrome icons, SVG brand assets, and high-contrast studio bunny emblem across Home, Mixes, Moods, and Library cards.
+- **AutoMix & Smart Beat Analysis:** Seamless beat-matched transitions and smart audio alignment powered by built-in ONNX models.
+- **JamesDSP Audio Engine & Bit-Perfect USB DAC:** Native DSP sound shaping plus lossless bit-perfect USB DAC output support.
+- **BunnyTunes Pass & Replay:** Personalized on-device listening identity card, Listening Experience stats, and shareable Replay posters & stories.
+- **Multi-Source & Extension Support:** YouTube Music, SMB, WebDAV, local music, Mornye/Spine extensions, live synced/translated lyrics, Discord Rich Presence, Last.fm & ListenBrainz scrobbling, and Classipod click-wheel UI mode.
+- **100% BunnyTunes Rebranded:** All visible strings, localized Compose resources, update checks, and developer links rebranded for BunnyTunes V2 by Raj Dalvi.
+
+---
+
+### Download & Verification
+
+| Asset | Platform | Size | SHA-256 Checksum |
 |:---|:---:|:---:|:---|
-| [**BunnyTunes-V1.apk**](https://github.com/rajvdalvi/BunnyTunes/releases/download/v1.0/BunnyTunes-V1.apk) | Android 8.0+ | 81.36 MB | `2D9E6D5F1CE7D06B2CC355A4F7260076FA0626FB0C3B38E64CDC5465DBBD6666` |
+| [**BunnyTunes-V2.apk**](https://github.com/rajvdalvi/BunnyTunes/releases/download/v2.0/BunnyTunes-V2.apk) | Android 8.0+ | 83.67 MB | `BE6171DE1E309BDE6DFE0E5123BC8C2951B5E3F5C6E215BAB47F2CE8DD69C677` |
 
----
-
-### 🛠️ Verification & Installation
-
-#### Android:
-Download `BunnyTunes-V1.apk`, grant unknown source permissions if prompted, and install.
-*(If you have an older version installed, uninstall it first to prevent certificate mismatch).*
+### Installation
+1. Download **`BunnyTunes-V2.apk`** from this release.
+2. *(If upgrading from an older V1 or third-party build signed with a different certificate, uninstall the previous app first.)*
+3. Install the APK on your Android device (or run `adb install -r BunnyTunes-V2.apk`).

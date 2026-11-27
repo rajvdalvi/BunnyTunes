@@ -7,13 +7,13 @@
 [![Android](https://img.shields.io/badge/Android-8.0%2B-3DDC84?logo=android&logoColor=white)](https://github.com/rajvdalvi/BunnyTunes/releases)
 [![Windows](https://img.shields.io/badge/Windows-Coming%20Soon-lightgrey?logo=windows&logoColor=white)](#-installation)
 [![License: GPL-3.0](https://img.shields.io/badge/License-GPL--3.0-blue.svg)](LICENSE)
-[![Latest Release](https://img.shields.io/badge/Release-v1.0-FF2D55?logo=apple-music&logoColor=white)](https://github.com/rajvdalvi/BunnyTunes/releases)
+[![Latest Release](https://img.shields.io/badge/Release-v2.0-000000?logo=apple-music&logoColor=white)](https://github.com/rajvdalvi/BunnyTunes/releases)
 [![Audio Quality](https://img.shields.io/badge/Audio-Lossless%20Hi--Res-gold)](#key-features)
 [![Developer](https://img.shields.io/badge/Developer-Raj%20Dalvi-black)](https://github.com/rajvdalvi)
 
 A stunning, ad-free music streaming app tailored with an **iOS Liquid Glass aesthetic**, smooth physics-based transition animations, lossless audio rendering, custom themes & changable icons, and curated trending Indian & Hindi music prioritization. Currently available for **Android** (Windows edition in development).
 
-[**Download Android APK**](https://github.com/rajvdalvi/BunnyTunes/releases/download/v1.0/BunnyTunes-V1.apk) • [**Live Website**](https://rajvdalvi.github.io/BunnyTunes/) • [**Screenshots**](#-screenshots-sequential-app-flow) • [**Installation**](#-installation)
+[**Download Android APK**](https://github.com/rajvdalvi/BunnyTunes/releases/download/v2.0/BunnyTunes-V2.apk) • [**Live Website**](https://rajvdalvi.github.io/BunnyTunes/) • [**Screenshots**](#-screenshots-sequential-app-flow) • [**Installation**](#-installation)
 
 ---
 
@@ -124,11 +124,11 @@ A stunning, ad-free music streaming app tailored with an **iOS Liquid Glass aest
 ## 📥 Installation & Downloads
 
 ### 🤖 Android (Direct APK)
-1. Download **`BunnyTunes-V1.apk`** (81 MB) from [GitHub Releases](https://github.com/rajvdalvi/BunnyTunes/releases/download/v1.0/BunnyTunes-V1.apk).
+1. Download **`BunnyTunes-V2.apk`** (83.67 MB) from [GitHub Releases](https://github.com/rajvdalvi/BunnyTunes/releases/download/v2.0/BunnyTunes-V2.apk).
 2. Open the downloaded `.apk` file on your Android device and tap **Install**.
 3. *Alternative (ADB):*
    ```bash
-   adb install -r BunnyTunes-V1.apk
+   adb install -r BunnyTunes-V2.apk
    ```
 
 ### 🪟 Windows PC (In Active Development)
@@ -137,7 +137,7 @@ A stunning, ad-free music streaming app tailored with an **iOS Liquid Glass aest
 
 | Asset | Platform | Type | Size | SHA-256 Checksum |
 |:---|:---:|:---:|:---:|:---|
-| **BunnyTunes-V1.apk** | Android 8.0+ | Signed APK | 81.36 MB | `2D9E6D5F1CE7D06B2CC355A4F7260076FA0626FB0C3B38E64CDC5465DBBD6666` |
+| **BunnyTunes-V2.apk** | Android 8.0+ | Signed APK | 83.67 MB | `BE6171DE1E309BDE6DFE0E5123BC8C2951B5E3F5C6E215BAB47F2CE8DD69C677` |
 
 ---
 
