@@ -8,8 +8,8 @@
   - Added fallback extraction & resolution for `spotify.link` / `spoti.fi` shortlinks, pasted share text, and bare 22-character playlist IDs in `SpotifyImporter`.
 - **Resource & Stability Fixes:** Recomputed all 4,432 Compose Multiplatform `.cvr` resource offsets with 0 errors and verified v2/v3 release signing.
 
-### Demo Video
-- Uploaded real-device walkthrough recording: `BunnyTunes-V2-Demo.mp4` (`92.33 MiB`).
+### Walkthrough Showcase
+- Watch the live screen recording showcase on the website: https://rajvdalvi.github.io/BunnyTunes/#demo
 
 ### APK Verification
 - **File:** `BunnyTunes-V2.apk`

@@ -1,65 +1,74 @@
 <div align="center">
-  <img src="docs/logo.png" alt="BunnyTunes Logo" width="128" height="128" />
-  <h1>BunnyTunes V2</h1>
-  <p><strong>Minimal monochrome Liquid Glass music player for Android</strong></p>
 
-  <p>
-    <a href="https://github.com/rajvdalvi/BunnyTunes/releases/latest">
-      <img src="https://img.shields.io/badge/Download-BunnyTunes%20V2.0-black?style=for-the-badge&logo=android" alt="Download BunnyTunes V2.0" />
-    </a>
-    <a href="https://rajvdalvi.github.io/BunnyTunes/">
-      <img src="https://img.shields.io/badge/Website-Live%20Showcase-white?style=for-the-badge&logo=githubpages&logoColor=black" alt="Website" />
-    </a>
-  </p>
+<img src="docs/logo.png" alt="BunnyTunes Logo" width="112" height="112" />
+
+# BunnyTunes V2
+### Minimal Monochrome Liquid Glass Music Client for Android
+
+[![Website](https://img.shields.io/badge/Website-Live%20Showcase-white?style=flat-square&logo=safari&logoColor=black)](https://rajvdalvi.github.io/BunnyTunes/)
+[![Android](https://img.shields.io/badge/Android-8.0%2B-3DDC84?style=flat-square&logo=android&logoColor=white)](https://github.com/rajvdalvi/BunnyTunes/releases)
+[![Windows](https://img.shields.io/badge/Windows-Coming%20Soon-lightgrey?style=flat-square&logo=windows&logoColor=white)](#-installation--downloads)
+[![License: GPL-3.0](https://img.shields.io/badge/License-GPL--3.0-blue.svg?style=flat-square)](LICENSE)
+[![Latest Release](https://img.shields.io/badge/Release-v2.0-000000?style=flat-square&logo=github&logoColor=white)](https://github.com/rajvdalvi/BunnyTunes/releases/tag/v2.0)
+[![Developer](https://img.shields.io/badge/Developer-Raj%20Dalvi-black?style=flat-square)](https://github.com/rajvdalvi)
+
+A clean, ad-free Android music streaming client designed around a monochrome **Liquid Glass aesthetic**, fluid transitions, lossless audio streaming, live synced lyrics & translation, **BunnyTunes Pass**, and **Spotify playlist import**.
+
+[**Download Android APK**](https://github.com/rajvdalvi/BunnyTunes/releases/download/v2.0/BunnyTunes-V2.apk) • [**Live Showcase**](https://rajvdalvi.github.io/BunnyTunes/) • [**App Walkthrough**](#-app-showcase) • [**Installation**](#-installation--downloads)
+
+---
+
+</div>
+
+## 🎬 App Showcase
+
+<div align="center">
+
+[![Watch BunnyTunes V2 Walkthrough](docs/logo.png)](https://rajvdalvi.github.io/BunnyTunes/#demo)
+
+**▶ [Watch Full Screen Recording Showcase](https://rajvdalvi.github.io/BunnyTunes/#demo)** &nbsp;|&nbsp; [View Video in Repository](docs/assets/BunnyTunes-V2-Demo.mp4)
+
+<sub>Real-device Android walkthrough showing Home, Podcasts, BunnyTunes Radio, Library, Instant Search, Lyrics &amp; Translation, Audio Output, BunnyTunes Pass, Appearance &amp; BunnyTunes v2.0 Settings.</sub>
+
 </div>
 
 ---
 
-## Screen Recording Demo
+## ✨ What's New in V2 (`v2.0`)
 
-Watch the full Android app walkthrough captured on device:
-
-- **Demo Video:** [BunnyTunes-V2-Demo.mp4](https://github.com/rajvdalvi/BunnyTunes/releases/download/v2.0/BunnyTunes-V2-Demo.mp4)
-
-https://github.com/rajvdalvi/BunnyTunes/releases/download/v2.0/BunnyTunes-V2-Demo.mp4
-
----
-
-## What's New in V2 (`v2.0`)
-
-- **Complete BunnyTunes Rebrand:** Installed launcher name is **BunnyTunes**, app settings display **BunnyTunes v2.0** (`Developer: Raj Dalvi`), BunnyTunes Radio, BunnyTunes Replay, and **BunnyTunes Pass** (`bunnytunes.app`) — with zero upstream legacy branding anywhere in the UI.
-- **Redesigned Black & White Liquid Glass Logo:** Custom monochrome adaptive foreground + monochrome themed icon (`#070709` obsidian glass backdrop) and matching in-app SVG marks.
-- **Spotify Playlist Import Fix:** Fixed anonymous Spotify session token harvesting via pure OkHttp fallback (avoiding WebView `/api/token` hangs for 100+ track playlists) and added shortlink (`spotify.link` / `spoti.fi`), share-text, and bare playlist ID extraction.
-- **Crash & Resource Stability Fixes:** Fixed all Compose Multiplatform `.cvr` string-resource byte offset descriptors, restored internal proxy/backup protocol compatibility, and signed with v2/v3 APK signature schemes.
-
-## Download & Verify
-
-| Field | Value |
-|---|---|
-| **Release Tag** | `v2.0` (`versionCode 200`, `versionName 2.0`) |
-| **APK Asset** | [`BunnyTunes-V2.apk`](https://github.com/rajvdalvi/BunnyTunes/releases/download/v2.0/BunnyTunes-V2.apk) |
-| **Demo Video Asset** | [`BunnyTunes-V2-Demo.mp4`](https://github.com/rajvdalvi/BunnyTunes/releases/download/v2.0/BunnyTunes-V2-Demo.mp4) |
-| **Package ID** | `com.dev.bitchord` |
-| **Min / Target Android** | Android 8.0+ (API 26) / Target API 36 |
-| **File Size** | `83.67 MB` (`87,736,812` bytes) |
-| **SHA-256** | `42df74211c9719a44d9d62ccfbd22d6c0ffb1ff369b984e69ef173fe89179df8` |
-
-### Install via ADB
-
-```bash
-adb install -r BunnyTunes-V2.apk
-```
+- **Complete BunnyTunes Rebrand:** Installed launcher name is **`BunnyTunes`**, Settings shows **`BunnyTunes v2.0`** (`Developer: Raj Dalvi`), plus **BunnyTunes Pass** (`bunnytunes.app`), **BunnyTunes Radio**, and **BunnyTunes Replay** with zero legacy upstream branding.
+- **Redesigned Black & White Liquid Glass Logo:** Custom monochrome adaptive launcher foreground, themed monochrome icon (`#070709` obsidian glass backdrop), and crisp SVG marks.
+- **Fixed Spotify Playlist Import:** Resolved anonymous session token harvesting via fast OkHttp embed fallback for 100+ track playlists and added support for `spotify.link` / `spoti.fi` shortlinks, share text, and bare playlist IDs.
+- **Resource & Stability Fixes:** Recomputed all 4,432 Compose Multiplatform `.cvr` resource offsets with zero errors and verified APK v2/v3 release signatures.
 
 ---
 
-## Key Features
+## 📥 Installation & Downloads
 
-- **Home, Explore & Radio:** Personalized mixes, curated moods/genres, podcasts, and BunnyTunes Radio.
-- **Synchronized Lyrics & Translation:** Dynamic blurred artwork canvas with live synced lyrics and inline translation.
-- **Lossless Audio & Spatial Support:** Lossless quality controls, Direct Source Stream, hardware Dolby Atmos support, and offline downloads.
-- **Spotify Playlist Import & Local Playlists:** Paste a Spotify playlist link, `spotify:playlist:` URI, share text, or `spotify.link` URL to match tracks on YouTube Music and save directly or locally on-device.
-- **BunnyTunes Pass & Replay:** Built-in listening telemetry cards and annual/monthly Replay summaries.
+### 🤖 Android (Direct APK)
+1. Download **`BunnyTunes-V2.apk`** (`83.67 MB`) from [GitHub Releases](https://github.com/rajvdalvi/BunnyTunes/releases/download/v2.0/BunnyTunes-V2.apk).
+2. Open the `.apk` on your Android device and tap **Install**.
+3. *Alternative (ADB):*
+   ```bash
+   adb install -r BunnyTunes-V2.apk
+   ```
+
+| Asset | Platform | Type | Size | SHA-256 Checksum |
+|:---|:---:|:---:|:---:|:---|
+| **BunnyTunes-V2.apk** | Android 8.0+ | Signed APK | 83.67 MB | `42df74211c9719a44d9d62ccfbd22d6c0ffb1ff369b984e69ef173fe89179df8` |
 
 ---
 
-<p align="center">Built &amp; maintained by <strong>Raj Dalvi</strong></p>
+## 🛠️ Tech Stack & Architecture
+
+- **UI Framework:** Jetpack Compose (Material 3) & Compose Multiplatform
+- **Audio Engine:** AndroidX Media3 / ExoPlayer with Lossless PCM & Spatial/Dolby Atmos support
+- **Package Name:** `com.dev.bitchord` (`versionCode 200`, `versionName 2.0`)
+- **Min / Target SDK:** Android 8.0 (API 26) / Target API 36
+- **Security:** Signed with **APK Signature Scheme v2 & v3**
+
+---
+
+<div align="center">
+Built &amp; maintained by <b>Raj Dalvi</b> · Licensed under <a href="LICENSE">GPL-3.0</a>
+</div>
