@@ -437,7 +437,7 @@
         <a href="#overview" class="px-3 py-1.5 rounded-full hover:text-white hover:bg-white/10 transition-colors">Overview</a>
         <a href="#interactive-app" class="px-3 py-1.5 rounded-full hover:text-white hover:bg-white/10 transition-colors">Interactive App</a>
         <a href="#features" class="px-3 py-1.5 rounded-full hover:text-white hover:bg-white/10 transition-colors">Features</a>
-        <a href="#screenshots" class="px-3 py-1.5 rounded-full hover:text-white hover:bg-white/10 transition-colors">Screenshots</a>
+        <a href="#demo" class="px-3 py-1.5 rounded-full hover:text-white hover:bg-white/10 transition-colors">Demo Video</a>
         <a href="#audio-engine" class="px-3 py-1.5 rounded-full hover:text-white hover:bg-white/10 transition-colors">Audio Engine</a>
         <a href="#listen-together" class="px-3 py-1.5 rounded-full hover:text-white hover:bg-white/10 transition-colors">Listen Together</a>
         <a href="#download" class="px-3 py-1.5 rounded-full hover:text-white hover:bg-white/10 transition-colors">Download</a>
@@ -1258,238 +1258,53 @@
 
     
     <!-- ========================================================================
-         SECTION 3: SEQUENTIAL SCREENSHOT SHOWCASE (9 REAL MOBILE SCREENS)
+         SECTION 3: REAL ANDROID WALKTHROUGH VIDEO SHOWCASE
          ======================================================================== -->
-    <section id="screenshots" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
+    <section id="demo" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
       <!-- Ambient Glow Backdrop -->
-      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-rose-600/10 blur-[130px] rounded-full pointer-events-none"></div>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-white/10 blur-[130px] rounded-full pointer-events-none"></div>
 
       <div class="text-center max-w-3xl mx-auto mb-12 reveal">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-500/15 border border-rose-400/25 text-xs font-bold text-rose-300 mb-4">
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-          <span>Authentic Mobile Showcase</span>
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-bold text-white/90 mb-4">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+          <span>BunnyTunes V2 Walkthrough</span>
           <span class="text-white/35">•</span>
-          <span>9 Sequential Screens</span>
+          <span>Live Android Screen Recording</span>
         </div>
         <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-4">
           Engineered for Android. Captured in Real-Time.
         </h2>
         <p class="text-white/60 text-sm sm:text-base leading-relaxed">
-          Explore BunnyTunes' true production interface captured directly on Android — featuring fluid liquid glass blur, OLED true-black backgrounds, synchronized lyrics, and lossless audio telemetry.
+          Watch the real Android build of BunnyTunes V2 in action — showcasing monochrome liquid glass blur, OLED true-black UI, BunnyTunes Radio, live lyrics &amp; translation, BunnyTunes Pass, and lossless audio controls.
         </p>
-
-        <!-- Category Filter Tabs -->
-        <div class="flex flex-wrap items-center justify-center gap-2 mt-8" id="screenshotFilters" role="tablist">
-          <button class="sc-filter-btn active px-4 py-2 rounded-full text-xs font-semibold bg-white text-black shadow-lg shadow-white/10 transition-all" data-filter="all">All Screens (9)</button>
-          <button class="sc-filter-btn px-4 py-2 rounded-full text-xs font-semibold liquid-glass text-white/80 hover:text-white hover:bg-white/10 transition-all" data-filter="home">Home &amp; Explore (1–3)</button>
-          <button class="sc-filter-btn px-4 py-2 rounded-full text-xs font-semibold liquid-glass text-white/80 hover:text-white hover:bg-white/10 transition-all" data-filter="mixes">Mixes &amp; Library (4–5)</button>
-          <button class="sc-filter-btn px-4 py-2 rounded-full text-xs font-semibold liquid-glass text-white/80 hover:text-white hover:bg-white/10 transition-all" data-filter="player">Search &amp; Lyrics (6–7)</button>
-          <button class="sc-filter-btn px-4 py-2 rounded-full text-xs font-semibold liquid-glass text-white/80 hover:text-white hover:bg-white/10 transition-all" data-filter="settings">Settings &amp; Engine (8–9)</button>
-        </div>
       </div>
 
-      <!-- 9 Sequential Screenshot Cards Grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8" id="screenshotGrid">
-
-        <!-- Card 1: Home Top Picks -->
-        <div class="sc-card group liquid-glass rounded-[2rem] p-4 transition-all duration-300 hover:scale-[1.02] hover:border-white/25 cursor-pointer reveal" data-category="home" data-index="0">
-          <div class="relative rounded-2xl overflow-hidden aspect-[472/820] bg-black/60 border border-white/10">
-            <img src="screenshots/01_home.jpg" alt="Home - Top Picks &amp; Trending" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-              <span class="px-4 py-2 rounded-full bg-white text-black text-xs font-bold shadow-2xl flex items-center gap-1.5 transform translate-y-2 group-hover:translate-y-0 transition-transform">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
-                Tap to Expand
-              </span>
-            </div>
-            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/15 text-[10px] font-mono font-bold text-white">01 / 09</span>
-            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-rose-500/80 backdrop-blur-md text-[10px] font-bold text-white">Top Picks</span>
-          </div>
-          <div class="pt-4 px-2">
-            <h3 class="text-base font-bold text-white group-hover:text-rose-300 transition-colors">01 • Home &amp; Top Picks</h3>
-            <p class="text-xs text-white/55 mt-1 line-clamp-2">Daily recommendation feed with Arijit Singh singles, recent tracks, and persistent liquid glass mini-player.</p>
-          </div>
+      <div class="max-w-md mx-auto liquid-glass rounded-[2.5rem] p-3 sm:p-4 border border-white/20 shadow-2xl reveal">
+        <div class="relative rounded-[2rem] overflow-hidden bg-black border border-white/10">
+          <video
+            controls
+            playsinline
+            preload="metadata"
+            poster="logo.png"
+            class="w-full h-auto max-h-[75vh] object-contain bg-black"
+          >
+            <source src="https://github.com/rajvdalvi/BunnyTunes/releases/download/v2.0/BunnyTunes-V2-Demo.mp4" type="video/mp4" />
+            Your browser does not support embedded MP4 playback.
+          </video>
         </div>
-
-        <!-- Card 2: Find Your Mood -->
-        <div class="sc-card group liquid-glass rounded-[2rem] p-4 transition-all duration-300 hover:scale-[1.02] hover:border-white/25 cursor-pointer reveal" data-category="home" data-index="1">
-          <div class="relative rounded-2xl overflow-hidden aspect-[472/820] bg-black/60 border border-white/10">
-            <img src="screenshots/02_home_moods.jpg" alt="Find Your Mood &amp; Trending Albums" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-              <span class="px-4 py-2 rounded-full bg-white text-black text-xs font-bold shadow-2xl flex items-center gap-1.5 transform translate-y-2 group-hover:translate-y-0 transition-transform">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
-                Tap to Expand
-              </span>
-            </div>
-            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/15 text-[10px] font-mono font-bold text-white">02 / 09</span>
-            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-emerald-500/80 backdrop-blur-md text-[10px] font-bold text-white">Mood Channels</span>
+        <div class="mt-4 px-2 pb-1 flex items-center justify-between gap-3">
+          <div>
+            <div class="text-sm font-bold text-white">BunnyTunes V2 — Full App Walkthrough</div>
+            <div class="text-xs text-white/55">Real device screen recording (1080p MP4)</div>
           </div>
-          <div class="pt-4 px-2">
-            <h3 class="text-base font-bold text-white group-hover:text-emerald-300 transition-colors">02 • Find Your Mood</h3>
-            <p class="text-xs text-white/55 mt-1 line-clamp-2">Quick visual mood selectors (Energy, Relax, Feeling Good) and trending albums like Dilfek &amp; GTA VI.</p>
-          </div>
-        </div>
-
-        <!-- Card 3: 12+ Curated Moods & Genres -->
-        <div class="sc-card group liquid-glass rounded-[2rem] p-4 transition-all duration-300 hover:scale-[1.02] hover:border-white/25 cursor-pointer reveal" data-category="home" data-index="2">
-          <div class="relative rounded-2xl overflow-hidden aspect-[472/820] bg-black/60 border border-white/10">
-            <img src="screenshots/03_explore.jpg" alt="12+ Curated Moods &amp; Regional Genres" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-              <span class="px-4 py-2 rounded-full bg-white text-black text-xs font-bold shadow-2xl flex items-center gap-1.5 transform translate-y-2 group-hover:translate-y-0 transition-transform">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
-                Tap to Expand
-              </span>
-            </div>
-            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/15 text-[10px] font-mono font-bold text-white">03 / 09</span>
-            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-indigo-500/80 backdrop-blur-md text-[10px] font-bold text-white">Curated Genres</span>
-          </div>
-          <div class="pt-4 px-2">
-            <h3 class="text-base font-bold text-white group-hover:text-indigo-300 transition-colors">03 • 12+ Curated Genres</h3>
-            <p class="text-xs text-white/55 mt-1 line-clamp-2">Complete genre catalog: Romance, Workout, Sleep, Bengali, Bhojpuri, Carnatic classical &amp; Dance.</p>
-          </div>
-        </div>
-
-        <!-- Card 4: History & Dynamic Mixes -->
-        <div class="sc-card group liquid-glass rounded-[2rem] p-4 transition-all duration-300 hover:scale-[1.02] hover:border-white/25 cursor-pointer reveal" data-category="mixes" data-index="3">
-          <div class="relative rounded-2xl overflow-hidden aspect-[472/820] bg-black/60 border border-white/10">
-            <img src="screenshots/04_history.jpg" alt="History &amp; Dynamic Supermixes" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-              <span class="px-4 py-2 rounded-full bg-white text-black text-xs font-bold shadow-2xl flex items-center gap-1.5 transform translate-y-2 group-hover:translate-y-0 transition-transform">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
-                Tap to Expand
-              </span>
-            </div>
-            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/15 text-[10px] font-mono font-bold text-white">04 / 09</span>
-            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-purple-500/80 backdrop-blur-md text-[10px] font-bold text-white">Smart Mixes</span>
-          </div>
-          <div class="pt-4 px-2">
-            <h3 class="text-base font-bold text-white group-hover:text-purple-300 transition-colors">04 • History &amp; Mixes</h3>
-            <p class="text-xs text-white/55 mt-1 line-clamp-2">Algorithm-free personalized mixes: My Supermix, Discover Mix, New Release Mix, Replay Mix, &amp; My Mix 01.</p>
-          </div>
-        </div>
-
-        <!-- Card 5: Library & Listening Telemetry -->
-        <div class="sc-card group liquid-glass rounded-[2rem] p-4 transition-all duration-300 hover:scale-[1.02] hover:border-white/25 cursor-pointer reveal" data-category="mixes" data-index="4">
-          <div class="relative rounded-2xl overflow-hidden aspect-[472/820] bg-black/60 border border-white/10">
-            <img src="screenshots/05_library.jpg" alt="Personal Library &amp; Member Telemetry Card" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-              <span class="px-4 py-2 rounded-full bg-white text-black text-xs font-bold shadow-2xl flex items-center gap-1.5 transform translate-y-2 group-hover:translate-y-0 transition-transform">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
-                Tap to Expand
-              </span>
-            </div>
-            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/15 text-[10px] font-mono font-bold text-white">05 / 09</span>
-            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-amber-500/80 backdrop-blur-md text-[10px] font-bold text-white">Member Stats</span>
-          </div>
-          <div class="pt-4 px-2">
-            <h3 class="text-base font-bold text-white group-hover:text-amber-300 transition-colors">05 • Personal Library &amp; Stats</h3>
-            <p class="text-xs text-white/55 mt-1 line-clamp-2">Gradient member card tracking minutes listened, account status (BXR DIGITAL), offline Downloads &amp; Local Music.</p>
-          </div>
-        </div>
-
-        <!-- Card 6: Instant Search -->
-        <div class="sc-card group liquid-glass rounded-[2rem] p-4 transition-all duration-300 hover:scale-[1.02] hover:border-white/25 cursor-pointer reveal" data-category="player" data-index="5">
-          <div class="relative rounded-2xl overflow-hidden aspect-[472/820] bg-black/60 border border-white/10">
-            <img src="screenshots/06_search.jpg" alt="Instant Search &amp; Auto-Suggestions" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-              <span class="px-4 py-2 rounded-full bg-white text-black text-xs font-bold shadow-2xl flex items-center gap-1.5 transform translate-y-2 group-hover:translate-y-0 transition-transform">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
-                Tap to Expand
-              </span>
-            </div>
-            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/15 text-[10px] font-mono font-bold text-white">06 / 09</span>
-            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-sky-500/80 backdrop-blur-md text-[10px] font-bold text-white">Instant Search</span>
-          </div>
-          <div class="pt-4 px-2">
-            <h3 class="text-base font-bold text-white group-hover:text-sky-300 transition-colors">06 • Instant Search</h3>
-            <p class="text-xs text-white/55 mt-1 line-clamp-2">Real-time keyword matching with predictive autocompletions and enriched album art result previews.</p>
-          </div>
-        </div>
-
-        <!-- Card 7: Player & Synced Lyrics -->
-        <div class="sc-card group liquid-glass rounded-[2rem] p-4 transition-all duration-300 hover:scale-[1.02] hover:border-white/25 cursor-pointer reveal" data-category="player" data-index="6">
-          <div class="relative rounded-2xl overflow-hidden aspect-[472/820] bg-black/60 border border-white/10">
-            <img src="screenshots/07_now_playing.jpg" alt="Player &amp; Synced Lyrics" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-              <span class="px-4 py-2 rounded-full bg-white text-black text-xs font-bold shadow-2xl flex items-center gap-1.5 transform translate-y-2 group-hover:translate-y-0 transition-transform">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
-                Tap to Expand
-              </span>
-            </div>
-            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/15 text-[10px] font-mono font-bold text-white">07 / 09</span>
-            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-rose-500/80 backdrop-blur-md text-[10px] font-bold text-white">Synced Lyrics</span>
-          </div>
-          <div class="pt-4 px-2">
-            <h3 class="text-base font-bold text-white group-hover:text-rose-300 transition-colors">07 • Player &amp; Synced Lyrics</h3>
-            <p class="text-xs text-white/55 mt-1 line-clamp-2">Dynamic blurred artwork backdrop with live word-by-word synced lyrics, active glowing lines, and seek gestures.</p>
-          </div>
-        </div>
-
-        <!-- Card 8: Audio Quality & Dolby Atmos -->
-        <div class="sc-card group liquid-glass rounded-[2rem] p-4 transition-all duration-300 hover:scale-[1.02] hover:border-white/25 cursor-pointer reveal" data-category="settings" data-index="7">
-          <div class="relative rounded-2xl overflow-hidden aspect-[472/820] bg-black/60 border border-white/10">
-            <img src="screenshots/08_settings_audio.jpg" alt="Audio Quality &amp; Dolby Atmos Settings" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-              <span class="px-4 py-2 rounded-full bg-white text-black text-xs font-bold shadow-2xl flex items-center gap-1.5 transform translate-y-2 group-hover:translate-y-0 transition-transform">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
-                Tap to Expand
-              </span>
-            </div>
-            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/15 text-[10px] font-mono font-bold text-white">08 / 09</span>
-            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-emerald-500/80 backdrop-blur-md text-[10px] font-bold text-white">Lossless &amp; Atmos</span>
-          </div>
-          <div class="pt-4 px-2">
-            <h3 class="text-base font-bold text-white group-hover:text-emerald-300 transition-colors">08 • Audio Quality &amp; Atmos</h3>
-            <p class="text-xs text-white/55 mt-1 line-clamp-2">Direct Source Stream switch, Lossless on Wi-Fi and Mobile Data, and hardware Dolby Atmos surround toggle.</p>
-          </div>
-        </div>
-
-        <!-- Card 9: Settings & Developer Attribution -->
-        <div class="sc-card group liquid-glass rounded-[2rem] p-4 transition-all duration-300 hover:scale-[1.02] hover:border-white/25 cursor-pointer reveal" data-category="settings" data-index="8">
-          <div class="relative rounded-2xl overflow-hidden aspect-[472/820] bg-black/60 border border-white/10">
-            <img src="screenshots/09_settings_about.jpg" alt="About BunnyTunes V1 &amp; Developer Raj Dalvi" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-              <span class="px-4 py-2 rounded-full bg-white text-black text-xs font-bold shadow-2xl flex items-center gap-1.5 transform translate-y-2 group-hover:translate-y-0 transition-transform">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
-                Tap to Expand
-              </span>
-            </div>
-            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/15 text-[10px] font-mono font-bold text-white">09 / 09</span>
-            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-rose-500/80 backdrop-blur-md text-[10px] font-bold text-white">Developer Spotlight</span>
-          </div>
-          <div class="pt-4 px-2">
-            <h3 class="text-base font-bold text-white group-hover:text-rose-300 transition-colors">09 • Settings &amp; About V1</h3>
-            <p class="text-xs text-white/55 mt-1 line-clamp-2">BunnyTunes V1 build info, Developer Raj Dalvi attribution, GitHub repository link, and YouTube Music backend.</p>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Interactive Fullscreen Lightbox Modal -->
-      <div id="screenshotModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-2xl opacity-0 pointer-events-none transition-all duration-300 flex items-center justify-center p-4 sm:p-6" role="dialog" aria-modal="true" aria-label="Screenshot Lightbox">
-        <button id="modalCloseBtn" aria-label="Close Lightbox" class="absolute top-5 right-5 sm:top-8 sm:right-8 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 text-white flex items-center justify-center transition-all z-20">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
-        </button>
-
-        <!-- Navigation Buttons -->
-        <button id="modalPrevBtn" aria-label="Previous Screenshot" class="absolute left-3 sm:left-8 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 text-white flex items-center justify-center transition-all z-20">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
-        </button>
-        <button id="modalNextBtn" aria-label="Next Screenshot" class="absolute right-3 sm:right-8 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 text-white flex items-center justify-center transition-all z-20">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-        </button>
-
-        <!-- Modal Content Container -->
-        <div class="max-w-md w-full flex flex-col items-center">
-          <div class="relative w-full rounded-[2.5rem] p-2 liquid-glass border border-white/20 shadow-2xl overflow-hidden max-h-[78vh] flex items-center justify-center">
-            <img id="modalImg" src="" alt="Screenshot" class="w-full h-auto max-h-[72vh] object-contain rounded-[2rem]" />
-          </div>
-          <div class="mt-4 text-center">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-[11px] font-mono text-white/80 mb-1">
-              <span id="modalCounter">Screen 01 of 09</span>
-            </div>
-            <h3 id="modalTitle" class="text-lg font-bold text-white">01 • Home &amp; Top Picks</h3>
-            <p id="modalDesc" class="text-xs text-white/60 max-w-sm mt-0.5">Recommendation feed with recent tracks and persistent player.</p>
-          </div>
+          <a
+            href="https://github.com/rajvdalvi/BunnyTunes/releases/download/v2.0/BunnyTunes-V2-Demo.mp4"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="shrink-0 inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 text-xs font-semibold text-white transition-all"
+          >
+            Open MP4 ↗
+          </a>
         </div>
       </div>
     </section>
@@ -1721,7 +1536,7 @@
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
               <div class="rounded-2xl bg-black/45 border border-white/10 p-3.5">
                 <div class="text-[10px] text-white/45 uppercase font-bold tracking-wider">Package</div>
-                <div class="text-sm font-extrabold text-white mt-0.5 truncate" title="BunnyTunes-V2.apk">BunnyTunes-V1</div>
+                <div class="text-sm font-extrabold text-white mt-0.5 truncate" title="BunnyTunes-V2.apk">BunnyTunes V2.0</div>
               </div>
               <div class="rounded-2xl bg-black/45 border border-white/10 p-3.5">
                 <div class="text-[10px] text-white/45 uppercase font-bold tracking-wider">File Size</div>
@@ -1764,7 +1579,7 @@
                 </button>
               </div>
               <div class="font-mono text-[11px] text-white/70 break-all select-all bg-black/40 p-2.5 rounded-xl border border-white/5">
-                122593D45B643918E6777440CEFD5949DB76A88872E10750605BD7555A2405B6
+                42DF74211C9719A44D9D62CCFBD22D6C0FFB1FF369B984E69EF173FE89179DF8
               </div>
             </div>
 
@@ -3241,98 +3056,12 @@
       });
     
       /* ----------------------------------------------------------------------
-         11. SCREENSHOT SHOWCASE GALLERY & LIGHTBOX CONTROLS
+         11. CLIPBOARD HELPERS
          ---------------------------------------------------------------------- */
-      const SCREENSHOT_DATA = [
-        {
-          src: 'screenshots/01_home.jpg',
-          title: '01 • Home & Top Picks',
-          desc: 'Daily personalized feed with trending Arijit Singh singles, recent tracks, and persistent player.'
-        },
-        {
-          src: 'screenshots/02_home_moods.jpg',
-          title: '02 • Find Your Mood & Albums',
-          desc: 'Quick visual mood triggers (Energy, Relax, Feeling Good) and curated trending albums like Dilfek & GTA VI.'
-        },
-        {
-          src: 'screenshots/03_explore.jpg',
-          title: '03 • 12+ Curated Moods & Genres',
-          desc: 'Comprehensive genre catalog: Romance, Workout, Sleep, Bengali, Bhojpuri, Carnatic classical & Dance.'
-        },
-        {
-          src: 'screenshots/04_history.jpg',
-          title: '04 • History & Dynamic Mixes',
-          desc: 'Smart stations and personalized algorithm-free mixes: My Supermix, Discover Mix, Liked Music & My Mix 01.'
-        },
-        {
-          src: 'screenshots/05_library.jpg',
-          title: '05 • Personal Library & Stats',
-          desc: 'Personal listening telemetry card tracking minutes listened, member since badge, offline Downloads & Local Music.'
-        },
-        {
-          src: 'screenshots/06_search.jpg',
-          title: '06 • Instant Search & Suggestions',
-          desc: 'Real-time keyword matching with predictive autocompletions and enriched artwork result previews.'
-        },
-        {
-          src: 'screenshots/07_now_playing.jpg',
-          title: '07 • Player & Synced Lyrics',
-          desc: 'Dynamic blurred artwork backdrop with live word-by-word synced lyrics, active glowing lines, and seek gestures.'
-        },
-        {
-          src: 'screenshots/08_settings_audio.jpg',
-          title: '08 • Audio Quality & Dolby Atmos',
-          desc: 'Direct Source Stream switch, Lossless on Wi-Fi and Mobile Data, and hardware Dolby Atmos surround toggle.'
-        },
-        {
-          src: 'screenshots/09_settings_about.jpg',
-          title: '09 • Settings & About V1',
-          desc: 'BunnyTunes V1 build info, Developer Raj Dalvi attribution, GitHub repository link, and YouTube Music backend.'
-        }
-      ];
-
-      let currentScIndex = 0;
-
-      function openScreenshotModal(index) {
-        currentScIndex = index;
-        const item = SCREENSHOT_DATA[index];
-        const modal = document.getElementById('screenshotModal');
-        const modalImg = document.getElementById('modalImg');
-        const modalCounter = document.getElementById('modalCounter');
-        const modalTitle = document.getElementById('modalTitle');
-        const modalDesc = document.getElementById('modalDesc');
-
-        if (!modal || !modalImg) return;
-        modalImg.src = item.src;
-        modalImg.alt = item.title;
-        if (modalCounter) modalCounter.textContent = `Screen 0${index + 1} of 09`;
-        if (modalTitle) modalTitle.textContent = item.title;
-        if (modalDesc) modalDesc.textContent = item.desc;
-
-        modal.classList.remove('opacity-0', 'pointer-events-none');
-        document.body.style.overflow = 'hidden';
-      }
-
-      function closeScreenshotModal() {
-        const modal = document.getElementById('screenshotModal');
-        if (!modal) return;
-        modal.classList.add('opacity-0', 'pointer-events-none');
-        document.body.style.overflow = '';
-      }
-
-      function nextScreenshot() {
-        currentScIndex = (currentScIndex + 1) % SCREENSHOT_DATA.length;
-        openScreenshotModal(currentScIndex);
-      }
-
-      function prevScreenshot() {
-        currentScIndex = (currentScIndex - 1 + SCREENSHOT_DATA.length) % SCREENSHOT_DATA.length;
-        openScreenshotModal(currentScIndex);
-      }
 
       // Clipboard Helpers with Toast feedback
       window.copyChecksum = function () {
-        const hash = '122593D45B643918E6777440CEFD5949DB76A88872E10750605BD7555A2405B6';
+        const hash = '42DF74211C9719A44D9D62CCFBD22D6C0FFB1FF369B984E69EF173FE89179DF8';
         if (navigator.clipboard) {
           navigator.clipboard.writeText(hash).then(() => {
             showToast('SHA-256 hash copied to clipboard');
@@ -3361,71 +3090,7 @@
         }
       };
 
-      // Wire Screenshot Cards and Lightbox
-      function initScreenshotGallery() {
-        document.querySelectorAll('.sc-card').forEach(card => {
-          card.addEventListener('click', () => {
-            const idx = parseInt(card.getAttribute('data-index') || '0', 10);
-            openScreenshotModal(idx);
-          });
-        });
-
-        const closeBtn = document.getElementById('modalCloseBtn');
-        if (closeBtn) closeBtn.addEventListener('click', closeScreenshotModal);
-
-        const nextBtn = document.getElementById('modalNextBtn');
-        if (nextBtn) nextBtn.addEventListener('click', (e) => { e.stopPropagation(); nextScreenshot(); });
-
-        const prevBtn = document.getElementById('modalPrevBtn');
-        if (prevBtn) prevBtn.addEventListener('click', (e) => { e.stopPropagation(); prevScreenshot(); });
-
-        const modal = document.getElementById('screenshotModal');
-        if (modal) {
-          modal.addEventListener('click', (e) => {
-            if (e.target === modal) closeScreenshotModal();
-          });
-        }
-
-        // Keyboard handler
-        window.addEventListener('keydown', (e) => {
-          const m = document.getElementById('screenshotModal');
-          if (!m || m.classList.contains('pointer-events-none')) return;
-          if (e.key === 'Escape') closeScreenshotModal();
-          else if (e.key === 'ArrowRight') nextScreenshot();
-          else if (e.key === 'ArrowLeft') prevScreenshot();
-        });
-
-        // Filter tabs
-        const filterBtns = document.querySelectorAll('.sc-filter-btn');
-        filterBtns.forEach(btn => {
-          btn.addEventListener('click', () => {
-            filterBtns.forEach(b => {
-              b.classList.remove('active', 'bg-white', 'text-black', 'shadow-lg', 'shadow-white/10');
-              b.classList.add('liquid-glass', 'text-white/80');
-            });
-            btn.classList.add('active', 'bg-white', 'text-black', 'shadow-lg', 'shadow-white/10');
-            btn.classList.remove('liquid-glass', 'text-white/80');
-
-            const filter = btn.getAttribute('data-filter') || 'all';
-            document.querySelectorAll('.sc-card').forEach(card => {
-              const cat = card.getAttribute('data-category') || '';
-              if (filter === 'all' || cat === filter) {
-                card.style.display = '';
-              } else {
-                card.style.display = 'none';
-              }
-            });
-          });
-        });
-      }
-
-      // Append initialization to DOMContentLoaded or execute immediately
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initScreenshotGallery);
-      } else {
-        initScreenshotGallery();
-      }
-
+      // Clipboard Helpers with Toast feedback (continued)
     })();
   </script>
 </body>
