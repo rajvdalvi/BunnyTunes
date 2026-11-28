@@ -14,21 +14,83 @@
 
 A clean, ad-free Android music streaming client designed around a monochrome **Liquid Glass aesthetic**, fluid transitions, lossless audio streaming, live synced lyrics & translation, **BunnyTunes Pass**, and **Spotify playlist import**.
 
-[**Download Android APK**](https://github.com/rajvdalvi/BunnyTunes/releases/download/v2.0/BunnyTunes-V2.apk) • [**Live Showcase**](https://rajvdalvi.github.io/BunnyTunes/) • [**App Walkthrough**](#-app-showcase) • [**Installation**](#-installation--downloads)
+[**Download Android APK**](https://github.com/rajvdalvi/BunnyTunes/releases/download/v2.0/BunnyTunes-V2.apk) • [**Live Showcase**](https://rajvdalvi.github.io/BunnyTunes/) • [**Screenshots**](#-screenshots) • [**Installation**](#-installation--downloads)
 
 ---
 
 </div>
 
-## 🎬 App Showcase
+## 📱 Screenshots
 
 <div align="center">
 
-[![Watch BunnyTunes V2 Walkthrough](docs/logo.png)](https://rajvdalvi.github.io/BunnyTunes/#demo)
+### 1. Home, Liquid Glass Dock, Radio & Library
+<table>
+  <tr>
+    <td align="center" width="25%">
+      <img src="assets/screenshots/01_home.png" width="100%" alt="01. Home & Top Picks" />
+      <br />
+      <b>01. Home &amp; Top Picks</b>
+      <br />
+      <sub>Replay card, Recents &amp; liquid dock</sub>
+    </td>
+    <td align="center" width="25%">
+      <img src="assets/screenshots/02_liquid_dock.png" width="100%" alt="02. Liquid Glass Lens" />
+      <br />
+      <b>02. Liquid Glass Lens</b>
+      <br />
+      <sub>Refracting dock lens transition</sub>
+    </td>
+    <td align="center" width="25%">
+      <img src="assets/screenshots/03_radio_flow.png" width="100%" alt="03. BunnyTunes Radio" />
+      <br />
+      <b>03. BunnyTunes Radio</b>
+      <br />
+      <sub>Flow glass station &amp; moods</sub>
+    </td>
+    <td align="center" width="25%">
+      <img src="assets/screenshots/04_library.png" width="100%" alt="04. Library & Telemetry" />
+      <br />
+      <b>04. Library &amp; Stats</b>
+      <br />
+      <sub>Minutes listened &amp; playlists</sub>
+    </td>
+  </tr>
+</table>
 
-**▶ [Watch Full Screen Recording Showcase](https://rajvdalvi.github.io/BunnyTunes/#demo)** &nbsp;|&nbsp; [View Video in Repository](docs/assets/BunnyTunes-V2-Demo.mp4)
-
-<sub>Real-device Android walkthrough showing Home, Podcasts, BunnyTunes Radio, Library, Instant Search, Lyrics &amp; Translation, Audio Output, BunnyTunes Pass, Appearance &amp; BunnyTunes v2.0 Settings.</sub>
+### 2. Settings, Full-Bleed Player, Synced Lyrics & Albums
+<table>
+  <tr>
+    <td align="center" width="25%">
+      <img src="assets/screenshots/05_settings.png" width="100%" alt="05. Settings & BunnyTunes Pass" />
+      <br />
+      <b>05. Settings &amp; Pass</b>
+      <br />
+      <sub>BunnyTunes Pass &amp; catalogue</sub>
+    </td>
+    <td align="center" width="25%">
+      <img src="assets/screenshots/06_now_playing.png" width="100%" alt="06. Full-Bleed Player" />
+      <br />
+      <b>06. Now Playing</b>
+      <br />
+      <sub>Edge-to-edge canvas &amp; scrubber</sub>
+    </td>
+    <td align="center" width="25%">
+      <img src="assets/screenshots/07_synced_lyrics.png" width="100%" alt="07. Synced Lyrics & Translation" />
+      <br />
+      <b>07. Synced Lyrics</b>
+      <br />
+      <sub>Word-synced Devanagari &amp; translate</sub>
+    </td>
+    <td align="center" width="25%">
+      <img src="assets/screenshots/08_albums_mixes.png" width="100%" alt="08. Albums & Song Mixes" />
+      <br />
+      <b>08. Albums &amp; Mixes</b>
+      <br />
+      <sub>Large cards, mixes &amp; Replay</sub>
+    </td>
+  </tr>
+</table>
 
 </div>
 

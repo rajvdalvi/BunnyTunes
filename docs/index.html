@@ -437,7 +437,7 @@
         <a href="#overview" class="px-3 py-1.5 rounded-full hover:text-white hover:bg-white/10 transition-colors">Overview</a>
         <a href="#interactive-app" class="px-3 py-1.5 rounded-full hover:text-white hover:bg-white/10 transition-colors">Interactive App</a>
         <a href="#features" class="px-3 py-1.5 rounded-full hover:text-white hover:bg-white/10 transition-colors">Features</a>
-        <a href="#demo" class="px-3 py-1.5 rounded-full hover:text-white hover:bg-white/10 transition-colors">Demo Video</a>
+        <a href="#screenshots" class="px-3 py-1.5 rounded-full hover:text-white hover:bg-white/10 transition-colors">Screenshots</a>
         <a href="#audio-engine" class="px-3 py-1.5 rounded-full hover:text-white hover:bg-white/10 transition-colors">Audio Engine</a>
         <a href="#listen-together" class="px-3 py-1.5 rounded-full hover:text-white hover:bg-white/10 transition-colors">Listen Together</a>
         <a href="#download" class="px-3 py-1.5 rounded-full hover:text-white hover:bg-white/10 transition-colors">Download</a>
@@ -472,7 +472,7 @@
       <a href="#overview" class="mobile-nav-link px-4 py-3 rounded-2xl hover:bg-white/10">Overview</a>
       <a href="#interactive-app" class="mobile-nav-link px-4 py-3 rounded-2xl hover:bg-white/10">Interactive App</a>
       <a href="#features" class="mobile-nav-link px-4 py-3 rounded-2xl hover:bg-white/10">Features</a>
-      <a href="#demo" class="mobile-nav-link px-4 py-3 rounded-2xl hover:bg-white/10">Demo Video</a>
+      <a href="#screenshots" class="mobile-nav-link px-4 py-3 rounded-2xl hover:bg-white/10">Screenshots</a>
       <a href="#audio-engine" class="mobile-nav-link px-4 py-3 rounded-2xl hover:bg-white/10">Audio Engine</a>
       <a href="#listen-together" class="mobile-nav-link px-4 py-3 rounded-2xl hover:bg-white/10">Listen Together</a>
       <a href="#download" class="mobile-nav-link px-4 py-3 rounded-2xl hover:bg-white/10">Download</a>
@@ -1259,44 +1259,185 @@
 
     
     <!-- ========================================================================
-         SECTION 3: REAL ANDROID WALKTHROUGH VIDEO SHOWCASE
+         SECTION 3: SEQUENTIAL SCREENSHOT SHOWCASE (8 REAL MOBILE SCREENS)
          ======================================================================== -->
-    <section id="demo" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
+    <section id="screenshots" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
       <!-- Ambient Glow Backdrop -->
       <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-white/10 blur-[130px] rounded-full pointer-events-none"></div>
 
       <div class="text-center max-w-3xl mx-auto mb-12 reveal">
         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-bold text-white/90 mb-4">
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
-          <span>BunnyTunes V2 Walkthrough</span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          <span>Authentic Mobile Showcase</span>
           <span class="text-white/35">•</span>
-          <span>Live Android Screen Recording</span>
+          <span>8 Real V2 Screens</span>
         </div>
         <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-4">
           Engineered for Android. Captured in Real-Time.
         </h2>
         <p class="text-white/60 text-sm sm:text-base leading-relaxed">
-          Watch the real Android build of BunnyTunes V2 in action — showcasing monochrome liquid glass blur, OLED true-black UI, BunnyTunes Radio, live lyrics &amp; translation, BunnyTunes Pass, and lossless audio controls.
+          Explore BunnyTunes V2's live production UI on Android — monochrome liquid glass dock refraction, BunnyTunes Radio, personal library telemetry, synced Devanagari lyrics, and BunnyTunes Pass settings.
         </p>
+
+        <!-- Category Filter Tabs -->
+        <div class="flex flex-wrap items-center justify-center gap-2 mt-8" id="screenshotFilters" role="tablist">
+          <button class="sc-filter-btn active px-4 py-2 rounded-full text-xs font-semibold bg-white text-black shadow-lg shadow-white/10 transition-all" data-filter="all">All Screens (8)</button>
+          <button class="sc-filter-btn px-4 py-2 rounded-full text-xs font-semibold liquid-glass text-white/80 hover:text-white hover:bg-white/10 transition-all" data-filter="home">Home &amp; Liquid Glass</button>
+          <button class="sc-filter-btn px-4 py-2 rounded-full text-xs font-semibold liquid-glass text-white/80 hover:text-white hover:bg-white/10 transition-all" data-filter="library">Radio &amp; Library</button>
+          <button class="sc-filter-btn px-4 py-2 rounded-full text-xs font-semibold liquid-glass text-white/80 hover:text-white hover:bg-white/10 transition-all" data-filter="player">Player &amp; Lyrics</button>
+          <button class="sc-filter-btn px-4 py-2 rounded-full text-xs font-semibold liquid-glass text-white/80 hover:text-white hover:bg-white/10 transition-all" data-filter="settings">Settings &amp; Pass</button>
+        </div>
       </div>
 
-      <div class="max-w-md mx-auto liquid-glass rounded-[2.5rem] p-3 sm:p-4 border border-white/20 shadow-2xl reveal">
-        <div class="relative rounded-[2rem] overflow-hidden bg-black border border-white/10">
-          <video
-            controls
-            controlslist="nodownload"
-            playsinline
-            preload="metadata"
-            poster="logo.png"
-            class="w-full h-auto max-h-[75vh] object-contain bg-black"
-          >
-            <source src="assets/BunnyTunes-V2-Demo.mp4" type="video/mp4" />
-            Your browser does not support embedded MP4 playback.
-          </video>
+      <!-- 8 Real Screenshot Cards Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7" id="screenshotGrid">
+
+        <!-- Card 1 -->
+        <div class="sc-card group liquid-glass rounded-[2rem] p-3.5 transition-all duration-300 hover:scale-[1.02] hover:border-white/25 cursor-pointer reveal" data-category="home" data-index="0">
+          <div class="relative rounded-2xl overflow-hidden aspect-[9/19.5] bg-black border border-white/10">
+            <img src="screenshots/01_home.png" alt="01 Home &amp; Top Picks" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/15 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <span class="px-4 py-2 rounded-full bg-white text-black text-xs font-bold shadow-2xl">Tap to Expand</span>
+            </div>
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/15 text-[10px] font-mono font-bold text-white">01 / 08</span>
+          </div>
+          <div class="pt-3.5 px-1.5">
+            <h3 class="text-sm font-bold text-white group-hover:text-rose-300 transition-colors">01 • Home &amp; Top Picks</h3>
+            <p class="text-xs text-white/55 mt-1 line-clamp-2">Replay card, curated Hindi/Indian tracks, Recents, mini-player, and liquid glass dock.</p>
+          </div>
         </div>
-        <div class="mt-4 px-2 pb-1 text-center">
-          <div class="text-sm font-bold text-white">BunnyTunes V2 — Live Android Walkthrough</div>
-          <div class="text-xs text-white/55 mt-0.5">Home • Podcasts • Radio • Library • Search • Lyrics • BunnyTunes Pass • Settings</div>
+
+        <!-- Card 2 -->
+        <div class="sc-card group liquid-glass rounded-[2rem] p-3.5 transition-all duration-300 hover:scale-[1.02] hover:border-white/25 cursor-pointer reveal" data-category="home" data-index="1">
+          <div class="relative rounded-2xl overflow-hidden aspect-[9/19.5] bg-black border border-white/10">
+            <img src="screenshots/02_liquid_dock.png" alt="02 Liquid Glass Navigation Lens" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/15 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <span class="px-4 py-2 rounded-full bg-white text-black text-xs font-bold shadow-2xl">Tap to Expand</span>
+            </div>
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/15 text-[10px] font-mono font-bold text-white">02 / 08</span>
+          </div>
+          <div class="pt-3.5 px-1.5">
+            <h3 class="text-sm font-bold text-white group-hover:text-cyan-300 transition-colors">02 • Liquid Glass Lens</h3>
+            <p class="text-xs text-white/55 mt-1 line-clamp-2">Interactive chromatic glass lens refracting dynamically across bottom navigation tabs.</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="sc-card group liquid-glass rounded-[2rem] p-3.5 transition-all duration-300 hover:scale-[1.02] hover:border-white/25 cursor-pointer reveal" data-category="library" data-index="2">
+          <div class="relative rounded-2xl overflow-hidden aspect-[9/19.5] bg-black border border-white/10">
+            <img src="screenshots/03_radio_flow.png" alt="03 BunnyTunes Radio &amp; Flow" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/15 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <span class="px-4 py-2 rounded-full bg-white text-black text-xs font-bold shadow-2xl">Tap to Expand</span>
+            </div>
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/15 text-[10px] font-mono font-bold text-white">03 / 08</span>
+          </div>
+          <div class="pt-3.5 px-1.5">
+            <h3 class="text-sm font-bold text-white group-hover:text-amber-300 transition-colors">03 • BunnyTunes Radio</h3>
+            <p class="text-xs text-white/55 mt-1 line-clamp-2">Glass Flow station card, Start a station, Moods &amp; genres, and recent plays.</p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="sc-card group liquid-glass rounded-[2rem] p-3.5 transition-all duration-300 hover:scale-[1.02] hover:border-white/25 cursor-pointer reveal" data-category="library" data-index="3">
+          <div class="relative rounded-2xl overflow-hidden aspect-[9/19.5] bg-black border border-white/10">
+            <img src="screenshots/04_library.png" alt="04 Personal Library &amp; Stats" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/15 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <span class="px-4 py-2 rounded-full bg-white text-black text-xs font-bold shadow-2xl">Tap to Expand</span>
+            </div>
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/15 text-[10px] font-mono font-bold text-white">04 / 08</span>
+          </div>
+          <div class="pt-3.5 px-1.5">
+            <h3 class="text-sm font-bold text-white group-hover:text-purple-300 transition-colors">04 • Library &amp; Telemetry</h3>
+            <p class="text-xs text-white/55 mt-1 line-clamp-2">Minutes listened card, On Device audio, Playlists, Artists, and Liked Music.</p>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="sc-card group liquid-glass rounded-[2rem] p-3.5 transition-all duration-300 hover:scale-[1.02] hover:border-white/25 cursor-pointer reveal" data-category="settings" data-index="4">
+          <div class="relative rounded-2xl overflow-hidden aspect-[9/19.5] bg-black border border-white/10">
+            <img src="screenshots/05_settings.png" alt="05 Settings &amp; BunnyTunes Pass" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/15 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <span class="px-4 py-2 rounded-full bg-white text-black text-xs font-bold shadow-2xl">Tap to Expand</span>
+            </div>
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/15 text-[10px] font-mono font-bold text-white">05 / 08</span>
+          </div>
+          <div class="pt-3.5 px-1.5">
+            <h3 class="text-sm font-bold text-white group-hover:text-emerald-300 transition-colors">05 • Settings &amp; Pass</h3>
+            <p class="text-xs text-white/55 mt-1 line-clamp-2">Music catalogue toggle (Spotify / YouTube Music), BunnyTunes Pass, and Audio quality.</p>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="sc-card group liquid-glass rounded-[2rem] p-3.5 transition-all duration-300 hover:scale-[1.02] hover:border-white/25 cursor-pointer reveal" data-category="player" data-index="5">
+          <div class="relative rounded-2xl overflow-hidden aspect-[9/19.5] bg-black border border-white/10">
+            <img src="screenshots/06_now_playing.png" alt="06 Fullscreen Now Playing" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/15 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <span class="px-4 py-2 rounded-full bg-white text-black text-xs font-bold shadow-2xl">Tap to Expand</span>
+            </div>
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/15 text-[10px] font-mono font-bold text-white">06 / 08</span>
+          </div>
+          <div class="pt-3.5 px-1.5">
+            <h3 class="text-sm font-bold text-white group-hover:text-rose-300 transition-colors">06 • Full-Bleed Player</h3>
+            <p class="text-xs text-white/55 mt-1 line-clamp-2">Edge-to-edge album artwork canvas, inline lyric preview line, and tactile scrubber.</p>
+          </div>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="sc-card group liquid-glass rounded-[2rem] p-3.5 transition-all duration-300 hover:scale-[1.02] hover:border-white/25 cursor-pointer reveal" data-category="player" data-index="6">
+          <div class="relative rounded-2xl overflow-hidden aspect-[9/19.5] bg-black border border-white/10">
+            <img src="screenshots/07_synced_lyrics.png" alt="07 Synced Lyrics &amp; Translation" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/15 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <span class="px-4 py-2 rounded-full bg-white text-black text-xs font-bold shadow-2xl">Tap to Expand</span>
+            </div>
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/15 text-[10px] font-mono font-bold text-white">07 / 08</span>
+          </div>
+          <div class="pt-3.5 px-1.5">
+            <h3 class="text-sm font-bold text-white group-hover:text-amber-300 transition-colors">07 • Synced Lyrics &amp; Sing</h3>
+            <p class="text-xs text-white/55 mt-1 line-clamp-2">Word-by-word synced Devanagari lyrics with Vocal Reduction and live Translation controls.</p>
+          </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="sc-card group liquid-glass rounded-[2rem] p-3.5 transition-all duration-300 hover:scale-[1.02] hover:border-white/25 cursor-pointer reveal" data-category="home" data-index="7">
+          <div class="relative rounded-2xl overflow-hidden aspect-[9/19.5] bg-black border border-white/10">
+            <img src="screenshots/08_albums_mixes.png" alt="08 Albums, Singles &amp; Song Mixes" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/15 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <span class="px-4 py-2 rounded-full bg-white text-black text-xs font-bold shadow-2xl">Tap to Expand</span>
+            </div>
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/15 text-[10px] font-mono font-bold text-white">08 / 08</span>
+          </div>
+          <div class="pt-3.5 px-1.5">
+            <h3 class="text-sm font-bold text-white group-hover:text-sky-300 transition-colors">08 • Albums &amp; Song Mixes</h3>
+            <p class="text-xs text-white/55 mt-1 line-clamp-2">Large-format Albums &amp; singles cards, Song mixes, Listen again, and floating mini-bar.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Interactive Fullscreen Lightbox Modal -->
+      <div id="screenshotModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-2xl opacity-0 pointer-events-none transition-all duration-300 flex items-center justify-center p-4 sm:p-6" role="dialog" aria-modal="true" aria-label="Screenshot Lightbox">
+        <button id="modalCloseBtn" aria-label="Close Lightbox" class="absolute top-5 right-5 sm:top-8 sm:right-8 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 text-white flex items-center justify-center transition-all z-20">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+
+        <button id="modalPrevBtn" aria-label="Previous Screenshot" class="absolute left-3 sm:left-8 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 text-white flex items-center justify-center transition-all z-20">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+        </button>
+        <button id="modalNextBtn" aria-label="Next Screenshot" class="absolute right-3 sm:right-8 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 text-white flex items-center justify-center transition-all z-20">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </button>
+
+        <div class="max-w-sm w-full flex flex-col items-center">
+          <div class="relative w-full rounded-[2.5rem] p-2 liquid-glass border border-white/20 shadow-2xl overflow-hidden max-h-[78vh] flex items-center justify-center">
+            <img id="modalImg" src="" alt="Screenshot" class="w-full h-auto max-h-[72vh] object-contain rounded-[2rem]" />
+          </div>
+          <div class="mt-4 text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-[11px] font-mono text-white/80 mb-1">
+              <span id="modalCounter">Screen 01 of 08</span>
+            </div>
+            <h3 id="modalTitle" class="text-lg font-bold text-white">01 • Home &amp; Top Picks</h3>
+            <p id="modalDesc" class="text-xs text-white/60 max-w-sm mt-0.5">Replay card, curated Hindi/Indian tracks, Recents, mini-player, and liquid glass dock.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -3082,7 +3223,94 @@
         }
       };
 
-      // Clipboard Helpers with Toast feedback (continued)
+      /* ----------------------------------------------------------------------
+         11. SCREENSHOT SHOWCASE GALLERY & LIGHTBOX CONTROLS
+         ---------------------------------------------------------------------- */
+      const SCREENSHOT_DATA = [
+        { src: 'screenshots/01_home.png', title: '01 • Home & Top Picks', desc: 'Replay card, curated Hindi/Indian tracks, Recents, mini-player, and liquid glass dock.' },
+        { src: 'screenshots/02_liquid_dock.png', title: '02 • Liquid Glass Lens', desc: 'Interactive chromatic glass lens refracting dynamically across bottom navigation tabs.' },
+        { src: 'screenshots/03_radio_flow.png', title: '03 • BunnyTunes Radio', desc: 'Glass Flow station card, Start a station, Moods & genres, and recent plays.' },
+        { src: 'screenshots/04_library.png', title: '04 • Library & Telemetry', desc: 'Minutes listened card, On Device audio, Playlists, Artists, and Liked Music.' },
+        { src: 'screenshots/05_settings.png', title: '05 • Settings & Pass', desc: 'Music catalogue toggle (Spotify / YouTube Music), BunnyTunes Pass, and Audio quality.' },
+        { src: 'screenshots/06_now_playing.png', title: '06 • Full-Bleed Player', desc: 'Edge-to-edge album artwork canvas, inline lyric preview line, and tactile scrubber.' },
+        { src: 'screenshots/07_synced_lyrics.png', title: '07 • Synced Lyrics & Sing', desc: 'Word-by-word synced Devanagari lyrics with Vocal Reduction and live Translation controls.' },
+        { src: 'screenshots/08_albums_mixes.png', title: '08 • Albums & Song Mixes', desc: 'Large-format Albums & singles cards, Song mixes, Listen again, and floating mini-bar.' }
+      ];
+      let currentScIndex = 0;
+      function openScreenshotModal(index) {
+        currentScIndex = index;
+        const item = SCREENSHOT_DATA[index];
+        const modal = document.getElementById('screenshotModal');
+        const modalImg = document.getElementById('modalImg');
+        const modalCounter = document.getElementById('modalCounter');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalDesc = document.getElementById('modalDesc');
+        if (!modal || !modalImg || !item) return;
+        modalImg.src = item.src;
+        modalImg.alt = item.title;
+        if (modalCounter) modalCounter.textContent = `Screen 0${index + 1} of 08`;
+        if (modalTitle) modalTitle.textContent = item.title;
+        if (modalDesc) modalDesc.textContent = item.desc;
+        modal.classList.remove('opacity-0', 'pointer-events-none');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeScreenshotModal() {
+        const modal = document.getElementById('screenshotModal');
+        if (!modal) return;
+        modal.classList.add('opacity-0', 'pointer-events-none');
+        document.body.style.overflow = '';
+      }
+      function nextScreenshot() {
+        currentScIndex = (currentScIndex + 1) % SCREENSHOT_DATA.length;
+        openScreenshotModal(currentScIndex);
+      }
+      function prevScreenshot() {
+        currentScIndex = (currentScIndex - 1 + SCREENSHOT_DATA.length) % SCREENSHOT_DATA.length;
+        openScreenshotModal(currentScIndex);
+      }
+      function initScreenshotGallery() {
+        document.querySelectorAll('.sc-card').forEach(card => {
+          card.addEventListener('click', () => {
+            openScreenshotModal(parseInt(card.getAttribute('data-index') || '0', 10));
+          });
+        });
+        const closeBtn = document.getElementById('modalCloseBtn');
+        if (closeBtn) closeBtn.addEventListener('click', closeScreenshotModal);
+        const nextBtn = document.getElementById('modalNextBtn');
+        if (nextBtn) nextBtn.addEventListener('click', (e) => { e.stopPropagation(); nextScreenshot(); });
+        const prevBtn = document.getElementById('modalPrevBtn');
+        if (prevBtn) prevBtn.addEventListener('click', (e) => { e.stopPropagation(); prevScreenshot(); });
+        const modal = document.getElementById('screenshotModal');
+        if (modal) modal.addEventListener('click', (e) => { if (e.target === modal) closeScreenshotModal(); });
+        window.addEventListener('keydown', (e) => {
+          const m = document.getElementById('screenshotModal');
+          if (!m || m.classList.contains('pointer-events-none')) return;
+          if (e.key === 'Escape') closeScreenshotModal();
+          else if (e.key === 'ArrowRight') nextScreenshot();
+          else if (e.key === 'ArrowLeft') prevScreenshot();
+        });
+        const filterBtns = document.querySelectorAll('.sc-filter-btn');
+        filterBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            filterBtns.forEach(b => {
+              b.classList.remove('active', 'bg-white', 'text-black', 'shadow-lg', 'shadow-white/10');
+              b.classList.add('liquid-glass', 'text-white/80');
+            });
+            btn.classList.add('active', 'bg-white', 'text-black', 'shadow-lg', 'shadow-white/10');
+            btn.classList.remove('liquid-glass', 'text-white/80');
+            const filter = btn.getAttribute('data-filter') || 'all';
+            document.querySelectorAll('.sc-card').forEach(card => {
+              const cat = card.getAttribute('data-category') || '';
+              card.style.display = (filter === 'all' || cat === filter) ? '' : 'none';
+            });
+          });
+        });
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initScreenshotGallery);
+      } else {
+        initScreenshotGallery();
+      }
     })();
   </script>
 </body>
